@@ -10,7 +10,7 @@ $app = new App([
 ]);
 
 $app->getContainer()['view'] = function ($container) {
-    return new Twig(__DIR__ . '/../views');
+    return new Twig(__DIR__ . '/../resources/views');
 };
 
 require __DIR__ . '/../app/routes.php';
