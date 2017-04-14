@@ -1,4 +1,4 @@
 preset: recommended
 
- enabled:
-   - concat_with_spaces
+enabled:
+  - concat_with_spaces
