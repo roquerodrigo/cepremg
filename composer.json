@@ -1,0 +1,19 @@
+{
+  "name": "roquerodrigo/cepremg",
+  "authors": [
+    {
+      "name": "Rodrigo Roque",
+      "email": "rodrigoroque@unifei.edu.br"
+    }
+  ],
+  "require": {
+    "doctrine/orm": "^2.5",
+    "slim/slim": "^3.8",
+    "slim/twig-view": "^2.2"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
