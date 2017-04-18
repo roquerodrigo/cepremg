@@ -3,10 +3,10 @@
 use Slim\App;
 use Slim\Views\Twig;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../app/boostrap.php';
 
 $app = new App([
-    'settings' => require __DIR__ . '/../app/config.php'
+    'settings' => $config,
 ]);
 
 $app->getContainer()['view'] = function ($container) {

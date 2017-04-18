@@ -1,0 +1,38 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {% include 'layouts/navbar.html.twig' %}
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Importar dados da estação</h3>
+            </div>
+            <div class="panel-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="davis">Arquivo de dados da estação</label>
+                        <input type="file" id="davis" name="davis">
+                    </div>
+                    <hr>
+                    <input type="hidden" name="convert" value="0">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="convert" value="1"> A intensidade do vento está em km/h. Converter para m/s.
+                        </label>
+                    </div>
+                    <hr>
+                    <input type="hidden" name="overwrite" value="0">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="overwrite" value="1"> Sobrescrever dados existentes
+                        </label>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-default">Importar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
