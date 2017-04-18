@@ -20,5 +20,10 @@
     "psr-4": {
       "App\\": "app/"
     }
+  },
+  "scripts": {
+    "schema:create": "php vendor/doctrine/orm/bin/doctrine orm:schema-tool:create",
+    "schema:refresh": "php vendor/doctrine/orm/bin/doctrine orm:schema-tool:drop --force && php vendor/doctrine/orm/bin/doctrine orm:schema-tool:create",
+    "schema:update": "php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update --force"
   }
 }
