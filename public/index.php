@@ -7,7 +7,7 @@ use Slim\Views\Twig;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$config = require __DIR__ . "/../app/config.php";
+$config = require __DIR__ . '/../app/config.php';
 
 $app = new App([
     'settings' => $config,
@@ -18,7 +18,7 @@ $app->getContainer()['view'] = function ($container) {
 };
 
 $app->getContainer()['db'] = function ($container) {
-    $doctrineConfig = Setup::createAnnotationMetadataConfiguration([__DIR__ . "/models"], $container->get('settings')['isDevMode']);
+    $doctrineConfig = Setup::createAnnotationMetadataConfiguration([__DIR__ . '/models'], $container->get('settings')['isDevMode']);
 
     return EntityManager::create($container->get('settings')['database'], $doctrineConfig);
 };
