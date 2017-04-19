@@ -10,13 +10,12 @@ use Slim\Http\Response;
 
 class ImportController extends Controller
 {
-
-    public function showForm(Request $request, Response $response, Array $args)
+    public function showForm(Request $request, Response $response, array $args)
     {
         return $this->view->render($response, 'import.html.twig');
     }
 
-    public function import(Request $request, Response $response, Array $args)
+    public function import(Request $request, Response $response, array $args)
     {
         ini_set('max_execution_time', 300);
 
@@ -60,21 +59,19 @@ class ImportController extends Controller
                     } else {
                         throw new Exception('Erro na linha ' . ($i + 1));
                     }
-
                 }
 
                 $this->container->db->flush();
-
             } catch (Exception $e) {
                 $caught = true;
                 $messages[] = [
-                    'message' => "Erro no arquivo " . $file->getClientFilename() . ":\n" . $e->getMessage() . "\n",
+                    'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\n" . $e->getMessage() . "\n",
                     'type'    => 'danger',
                 ];
             } finally {
                 if (empty($caught)) {
                     $messages[] = [
-                        'message' => "Arquivo " . $file->getClientFilename() . " inserido com sucesso.",
+                        'message' => 'Arquivo ' . $file->getClientFilename() . ' inserido com sucesso.',
                         'type'    => 'success',
                     ];
                 }
