@@ -4,6 +4,14 @@
     {% include 'layouts/navbar.html.twig' %}
 
     <div class="container">
+
+        {% for message in messages %}
+            <div class="alert alert-{{ message.type }}" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                {{ message.message | nl2br }}
+            </div>
+        {% endfor %}
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Importar dados da estação</h3>
@@ -12,7 +20,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="davis">Arquivo de dados da estação</label>
-                        <input type="file" id="davis" name="davis">
+                        <input type="file" id="davis" name="davis[]" multiple>
                     </div>
                     <hr>
                     <input type="hidden" name="convert" value="0">

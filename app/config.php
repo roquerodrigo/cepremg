@@ -3,8 +3,11 @@
 return [
     'displayErrorDetails' => true,
     'database'            => [
-        'driver' => 'pdo_sqlite',
-        'path'   => __DIR__ . '/../db.sqlite',
+        'driver'   => 'pdo_mysql',
+        'host'     => 'localhost',
+        'dbname'   => 'cepremg',
+        'user'     => 'root',
+        'password' => '',
     ],
     'isDevMode'           => true,
 ];

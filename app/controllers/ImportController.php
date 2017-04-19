@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Davis;
 use DateTime;
+use Exception;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -17,33 +18,71 @@ class ImportController extends Controller
 
     public function import(Request $request, Response $response, Array $args)
     {
+        ini_set('max_execution_time', 300);
+
         $files = $request->getUploadedFiles();
-        $lines = explode("\n", $files['davis']->getStream());
 
-        // Ignora as duas primeiras linhas (cabecalho da tabela) e a última (em branco).
-        $length = count($lines) - 1;
-        for ($i = 2; $i < $length; $i++) {
-            $data = explode("\t", $lines[$i]);
+        foreach ($files['davis'] as $file) {
+            try {
+                if (!$this->container->db->isOpen()) {
+                    $this->container->db = $this->container->db->create(
+                        $this->container->db->getConnection(),
+                        $this->container->db->getConfiguration()
+                    );
+                }
 
-            $davis = new Davis();
+                $lines = explode("\n", $file->getStream());
 
-            $davis->setDateTime(
-                DateTime::createFromFormat('d/m/y H:i', $data[0] . ' ' . $data[1])
-            )
-                ->setTempOut($data[2])
-                ->setHiTemp($data[3])
-                ->setLowTemp($data[4])
-                ->setOutHum($data[5])
-                ->setDewPt($data[6])
-                ->setWindSpeed($data[7])
-                ->setWindDir($data[8])
-                ->setBar($data[16])
-                ->setRain($data[17])
-                ->setSolarRad($data[19])
-                ->setUVIndex($data[22]);
+                // Ignora as duas primeiras linhas (cabecalho da tabela) e a última (em branco).
+                $length = count($lines) - 1;
+                for ($i = 2; $i < $length; $i++) {
+                    $data = explode("\t", $lines[$i]);
 
-            $this->container->db->persist($davis);
+                    $dateTime = DateTime::createFromFormat('d/m/y H:i', $data[0] . ' ' . $data[1]);
+
+                    if ($dateTime instanceof DateTime) {
+                        $davis = new Davis();
+
+                        $davis->setDateTime($dateTime)
+                            ->setTempOut($data[2])
+                            ->setHiTemp($data[3])
+                            ->setLowTemp($data[4])
+                            ->setOutHum($data[5])
+                            ->setDewPt($data[6])
+                            ->setWindSpeed($data[7])
+                            ->setWindDir($data[8])
+                            ->setBar($data[16])
+                            ->setRain($data[17])
+                            ->setSolarRad($data[19])
+                            ->setUVIndex($data[22]);
+
+                        $this->container->db->persist($davis);
+                    } else {
+                        throw new Exception('Erro na linha ' . ($i + 1));
+                    }
+
+                }
+
+                $this->container->db->flush();
+
+            } catch (Exception $e) {
+                $caught = true;
+                $messages[] = [
+                    'message' => "Erro no arquivo " . $file->getClientFilename() . ":\n" . $e->getMessage() . "\n",
+                    'type'    => 'danger',
+                ];
+            } finally {
+                if (empty($caught)) {
+                    $messages[] = [
+                        'message' => "Arquivo " . $file->getClientFilename() . " inserido com sucesso.",
+                        'type'    => 'success',
+                    ];
+                }
+            }
         }
-        $this->container->db->flush();
+
+        return $this->view->render($response, 'import.html.twig', [
+            'messages' => $messages,
+        ]);
     }
 }
