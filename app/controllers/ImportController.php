@@ -23,10 +23,10 @@ class ImportController extends Controller
 
         foreach ($files['davis'] as $file) {
             try {
-                if (!$this->container->db->isOpen()) {
-                    $this->container->db = $this->container->db->create(
-                        $this->container->db->getConnection(),
-                        $this->container->db->getConfiguration()
+                if (!$this->db->isOpen()) {
+                    $this->db = $this->db->create(
+                        $this->db->getConnection(),
+                        $this->db->getConfiguration()
                     );
                 }
 
@@ -55,13 +55,13 @@ class ImportController extends Controller
                             ->setSolarRad($data[19])
                             ->setUVIndex($data[22]);
 
-                        $this->container->db->persist($davis);
+                        $this->db->persist($davis);
                     } else {
                         throw new Exception('Erro na linha ' . ($i + 1));
                     }
                 }
 
-                $this->container->db->flush();
+                $this->db->flush();
             } catch (Exception $e) {
                 $caught = true;
                 $messages[] = [

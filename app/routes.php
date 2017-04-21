@@ -1,11 +1,9 @@
 <?php
 
-use Slim\Http\Request;
-use Slim\Http\Response;
+use App\Controllers\DataController;
+use App\Controllers\ImportController;
 
-$app->get('/', function (Request $request, Response $response) {
-    return $this->view->render($response, 'index.html.twig');
-});
-
-$app->get('/import', \App\Controllers\ImportController::class . ':showForm');
-$app->post('/import', \App\Controllers\ImportController::class . ':import');
+$app->get('/', DataController::class . ':index');
+$app->get('/get-data', DataController::class . ':getData');
+$app->get('/import', ImportController::class . ':showForm');
+$app->post('/import', ImportController::class . ':import');

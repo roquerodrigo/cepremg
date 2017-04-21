@@ -1,0 +1,94 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {% include 'layouts/navbar.html.twig' %}
+    {% verbatim %}
+    <div class="container" ng-app="app">
+        <div ng-controller="AppController">
+            <highchart id="container" config="chartConfig"></highchart>
+        </div>
+    </div>
+    {% endverbatim %}
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+
+        let app = angular.module('app', ['highcharts-ng']);
+
+        app.controller('AppController', function AppController($scope, $http) {
+
+            $scope.chartSeries = [];
+
+            $scope.chartConfig = {
+                chart: {
+                    height: 500,
+                    type: 'spline'
+                },
+                plotOptions: {
+                    series: {
+                        stacking: ''
+                    },
+                    spline: {
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                },
+                series: $scope.chartSeries,
+                title: {
+                    text: 'Temperatura'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: { // don't display the dummy year
+                        month: '%e. %b',
+                        year: '%b'
+                    },
+                    title: {
+                        text: 'Data'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Temperatura (ºC)'
+                    },
+                    min: 0
+                },
+            };
+
+            $scope.getData = function (callback) {
+                $http.get('/get-data').then(function (response) {
+                    callback(response.data);
+                });
+            };
+
+            $scope.getData(function (data) {
+
+                let hiTemp = [];
+                let lowTemp = [];
+                let tempOut = [];
+                for (let i in data) {
+
+                    let split = data[i].date.split('-');
+
+                    let year = split[0];
+                    let month = split[1];
+                    let day = split[2];
+                    let hour = data[i].hour;
+
+                    tempOut.push([
+                        Date.UTC(year, month, day, hour),
+                        parseFloat(data[i].tempOut)
+                    ]);
+                }
+
+                $scope.chartSeries.push({
+                    name: 'Temperatura média',
+                    data: tempOut
+                });
+            });
+
+        });
+    </script>
+{% endblock %}

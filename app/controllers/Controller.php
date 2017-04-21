@@ -6,6 +6,7 @@ use Slim\Container;
 
 class Controller
 {
+    protected $db;
     protected $container;
     protected $view;
 
@@ -13,5 +14,6 @@ class Controller
     {
         $this->container = $container;
         $this->view = $this->container->view;
+        $this->db = $this->container->db;
     }
 }
