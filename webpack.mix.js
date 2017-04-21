@@ -7,5 +7,6 @@ mix.less('resources/assets/less/app.less', 'public/assets/css')
         'node_modules/angular/angular.js',
         'node_modules/highcharts/js/highcharts.js',
         'node_modules/highcharts-ng/dist/highcharts-ng.js',
+        'node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js',
         'resources/assets/js/app.js'
     ], 'public/assets/js/app.js');

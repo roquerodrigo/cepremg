@@ -24,10 +24,10 @@
   "devDependencies": {
     "angular": "^1.6.4",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1",
-    "laravel-mix": "^0.11.0",
-    "purifycss-webpack": "^0.6.1",
+    "bootstrap-datepicker": "^1.6.4",
     "highcharts": "^5.0.10",
-    "highcharts-ng": "^1.1.0"
+    "highcharts-ng": "^1.1.0",
+    "jquery": "^3.2.1",
+    "laravel-mix": "^0.11.0"
   }
 }

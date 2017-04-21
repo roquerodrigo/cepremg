@@ -5,7 +5,39 @@
     {% verbatim %}
     <div class="container" ng-app="app">
         <div ng-controller="AppController">
-            <highchart id="container" config="chartConfig"></highchart>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>Tipo de gráfico</label>
+                    <select class="form-control" ng-change="getData()" ng-model="chartType">
+                        <option value="temp">Temperatura</option>
+                        <option value="outHum">Umidade do ar</option>
+                        <option value="dewPt">Temperatura do ponto de orvalho</option>
+                        <option value="windSpeed">Intensidade do vento</option>
+                        <option value="bar">Pressão atmosférica</option>
+                        <option value="rain">Preciptação</option>
+                        <option value="solarRad">Radiação solar</option>
+                        <option value="UVIndex">Índice ultra violeta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Inicio</label>
+                    <input class="form-control"
+                    data-provide="datepicker"
+                    data-date-format="yyyy-mm-dd"
+                    ng-model="start">
+                </div>
+                <div class="form-group">
+                    <label>Final</label>
+                    <input class="form-control"
+                    data-provide="datepicker"
+                    data-date-format="yyyy-mm-dd"
+                    ng-model="end">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" ng-click="getData()">Atualizar</button>
+                </div>
+            </form>
+            <highchart id="container" config="chart"></highchart>
         </div>
     </div>
     {% endverbatim %}
@@ -18,77 +50,18 @@
 
         app.controller('AppController', function AppController($scope, $http) {
 
-            $scope.chartSeries = [];
-
-            $scope.chartConfig = {
-                chart: {
-                    height: 500,
-                    type: 'spline'
-                },
-                plotOptions: {
-                    series: {
-                        stacking: ''
-                    },
-                    spline: {
-                        marker: {
-                            enabled: true
-                        }
-                    }
-                },
-                series: $scope.chartSeries,
-                title: {
-                    text: 'Temperatura'
-                },
-                xAxis: {
-                    type: 'datetime',
-                    dateTimeLabelFormats: { // don't display the dummy year
-                        month: '%e. %b',
-                        year: '%b'
-                    },
-                    title: {
-                        text: 'Data'
-                    }
-                },
-                yAxis: {
-                    title: {
-                        text: 'Temperatura (ºC)'
-                    },
-                    min: 0
-                },
-            };
+            $scope.chartType = 'temp';
+            $scope.chart = {};
+            $scope.start = '2016-01-02';
+            $scope.end = '2016-01-03';
 
             $scope.getData = function (callback) {
-                $http.get('/get-data').then(function (response) {
-                    callback(response.data);
+                $http.get('/get-data/type/' + $scope.chartType + '/start/' + $scope.start + '/end/' + $scope.end + '').then(function (response) {
+                    $scope.chart = response.data;
                 });
             };
 
-            $scope.getData(function (data) {
-
-                let hiTemp = [];
-                let lowTemp = [];
-                let tempOut = [];
-                for (let i in data) {
-
-                    let split = data[i].date.split('-');
-
-                    let year = split[0];
-                    let month = split[1];
-                    let day = split[2];
-                    let hour = data[i].hour;
-
-                    tempOut.push([
-                        Date.UTC(year, month, day, hour),
-                        parseFloat(data[i].tempOut)
-                    ]);
-                }
-
-                $scope.chartSeries.push({
-                    name: 'Temperatura média',
-                    data: tempOut
-                });
-            });
-
+            $scope.getData();
         });
     </script>
 {% endblock %}
