@@ -6,3 +6,5 @@
 /mix.js
 /fonts/
 db.sqlite
+
+app/config\.php
