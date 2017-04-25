@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">CEPreMG</a>
+            <a class="navbar-brand" href="/">CEPreMG</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -16,7 +16,14 @@
                 {#<li><a href="#">Link</a></li>#}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logout</a></li>
+            
+            {% if auth == true %}
+                <li><a href="/import">Carregar Dados</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            
             </ul>
         </div>
     </div>

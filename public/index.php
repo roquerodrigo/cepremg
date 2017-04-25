@@ -24,5 +24,6 @@ $app->getContainer()['db'] = function ($container) {
 };
 
 require __DIR__ . '/../app/routes.php';
-
+if(!isset($_SESSION))
+	session_start();
 $app->run();

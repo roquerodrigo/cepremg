@@ -1,9 +1,9 @@
-<?phps
+<?php
  
-namespace App\Models;
-/*
- * @Entity 
- * @Table(name="user")
+namespace App\models;
+
+/**
+ * @Entity @Table(name="User")
  **/
 class User
 {
@@ -14,24 +14,24 @@ class User
 	protected $id;
 
 	/**
-     * @var string Nome de Usuário
-     * @Column(type="text", unique=true, nullable=false) 
+     * @var string Login de Usuário
+     * @Column(type="string", length=15, unique=true, nullable=false) 
      */
 	protected $userName;
 
-	/* 
-	 * @var string
+	/**
+	 * @var text Senha do Usuário
 	 * @Column(type="text", nullable=false)
 	 */
 	protected $password;
 
-	/* 
-	 * @var string
-	 * @Column(type="text", nullable=false)
+	/**
+	 * @var string Nome do Usuário
+	 * @Column(type="string",length=30, nullable=false)
 	 */
 	protected $name;
 
-	/* 
+	/**
 	 * @param string name
 	 * @param string value
 	 */
@@ -42,7 +42,7 @@ class User
         }
     }
 
-    /* 
+    /**
 	 * @param string name
 	 * @return mixed
 	 */

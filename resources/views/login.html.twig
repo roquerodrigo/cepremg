@@ -1,0 +1,36 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {% include 'layouts/navbar.html.twig' %}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 well well-lg">
+
+  		<h1 class="text-center"> Login </h1>
+
+    	<form method="POST">
+    		<div class="form-group">
+    			<label for="uname-id">Login:</label>
+    			<input id="uname-id" class="form-control" name="uname" placeholder="Nome de usuário" type="text">
+    		</div>
+    		
+    		<div class="form-group">
+    			<label for="pwd-id">Password:</label>
+    			<input id="pwd-id" class="form-control" name="pwd" placeholder="Senha" type="password">
+    		</div>
+
+    		<div class="form-group">
+    			<input class="btn btn-primary" value="Login" type="submit">
+    			<input class="btn btn-default" type="reset">
+    		</div>
+    	</form>
+    	{% if failure == true %}
+    		<div class="panel panel-danger">
+    			<div class="panel-heading">Erro: Login inválido</div>
+			</div>
+    	{% endif %}
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+{% endblock %}

@@ -154,6 +154,6 @@ class DataController extends Controller
 
     public function index(Request $request, Response $response, array $args)
     {
-        return $this->view->render($response, 'data.html.twig');
+        return $this->view->render($response, 'data.html.twig',$_SESSION);
     }
 }
