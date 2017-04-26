@@ -12,7 +12,7 @@ class ImportController extends Controller
 {
     public function showForm(Request $request, Response $response, array $args)
     {
-        return $this->view->render($response, 'import.html.twig',$_SESSION);
+        return $this->view->render($response, 'import.html.twig');
     }
 
     public function import(Request $request, Response $response, array $args)

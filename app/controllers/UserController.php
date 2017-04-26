@@ -12,7 +12,7 @@ class UserController extends Controller
     public function showForm(Request $request, Response $response, array $args)
     {
       
-       return $this->view->render($response, 'login.html.twig',$_SESSION);
+       return $this->view->render($response, 'login.html.twig');
     }
 
     public function login(Request $request, Response $response, array $args)
@@ -38,7 +38,8 @@ class UserController extends Controller
             $_SESSION['name'] = $result[0]['name'];
             $_SESSION['auth'] = true;
 
-            return $this->view->render($response,'adminArea.html.twig',$_SESSION);
+            $this->view['session'] = $_SESSION;
+            return $this->view->render($response,'adminArea.html.twig');
         }
        //return $this->view->render($response, 'import.html.twig');*/
         
@@ -47,7 +48,10 @@ class UserController extends Controller
     public function logout(Request $request, Response $response, array $args) 
     {
         session_unset();
-        return $this->view->render($response, 'data.html.twig',$_SESSION);
+        session_destroy();
+
+        $this->view['session'] = array();
+        return $this->view->render($response, 'data.html.twig');
     }
 }
 
