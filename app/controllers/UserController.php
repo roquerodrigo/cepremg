@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         // Não encontrei nada referente a recuperação de dados pelo slim
         $uname = $_POST['uname'];
-        $pwd = $_POST['uname'];
+        $pwd = $_POST['pwd'];
         
         $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
         
