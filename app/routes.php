@@ -11,8 +11,13 @@ $app->post('/import', ImportController::class . ':import');
 
 /**
  * Rotas para Controle de Acesso
+ * e CRUD de usuário.
  */
 
 $app->get('/login', UserController::class . ':showForm');
 $app->post('/login', UserController::class . ':login');
 $app->get('/logout',UserController::class.':logout');
+
+$app->get('/user',UserController::class.':index');
+$app->get('/user/register', UserController::class.':createForm');
+$app->post('/user/register', UserController::class.':create');
