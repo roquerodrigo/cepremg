@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         
         $uname = $_POST['uname'];
-        $pwd = $_POST['pwd'];
+        $pwd = hash('sha512',$_POST['pwd']);
         
         $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
         
@@ -105,6 +105,20 @@ class UserController extends Controller
 
         }
         return $this->view->render($response, 'data.html.twig');
+    }
+
+    public function updateForm(Request $request, Response $response, array $args) {
+        if($this->view['session']['auth'] === true) {
+            return $this->view->render($response, 'updateUserForm.html.twig');
+        }
+        /*
+         * Redirecionar para página de erro 404.
+         */
+        return $this->view->render($response, 'data.html.twig');     
+    }
+
+    public function update() {
+
     }
 }
 

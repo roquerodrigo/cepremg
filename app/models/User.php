@@ -17,7 +17,7 @@ class User
      * @var string Login de Usuário
      * @Column(type="string", length=15, unique=true, nullable=false) 
      */
-	protected $username;
+	protected $userName;
 
 	/**
 	 * @var text Senha do Usuário
