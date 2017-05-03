@@ -83,7 +83,7 @@ class ImportController extends Controller
 
         return $this->view->render($response, 'import.html.twig', [
             'messages' => $messages,
-            'auth'=>$_SESSION['auth'],
+            'auth'     => $_SESSION['auth'],
         ]);
     }
 }

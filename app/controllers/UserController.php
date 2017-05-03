@@ -1,66 +1,65 @@
 <?php
+
 namespace App\Controllers;
 
 use App\models\User;
-use Doctrine\ORM\QueryBuilder;
 use Exception;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
 class UserController extends Controller
 {
-    public function index(Request $request, Response $response, array $args){
-        if($this->view['session']['auth'] === true) {
-          return $this->view->render($response,'adminArea.html.twig'); 
+    public function index(Request $request, Response $response, array $args)
+    {
+        if ($this->view['session']['auth'] === true) {
+            return $this->view->render($response, 'adminArea.html.twig');
         }
         /*
          * Redirecionar para página de erro ou login.
          */
         return $this->view->render($response, 'data.html.twig');
     }
+
     public function showForm(Request $request, Response $response, array $args)
     {
-      
-       return $this->view->render($response, 'login.html.twig');
+        return $this->view->render($response, 'login.html.twig');
     }
 
     public function login(Request $request, Response $response, array $args)
     {
-        
         $uname = $_POST['uname'];
-        $pwd = hash('sha512',$_POST['pwd']);
-        
+        $pwd = hash('sha512', $_POST['pwd']);
+
         $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
-        
+
         $query->select('User.name, User.id')
               ->where('User.userName = :uname and User.password = :pwd')
-              ->setParameter('uname',$uname)
-              ->setParameter('pwd',$pwd);
+              ->setParameter('uname', $uname)
+              ->setParameter('pwd', $pwd);
 
         $result = $query->getQuery()->getArrayResult();
-        
-        if(count($result) != 1) {
-            return $this->view->render($response,'login.html.twig',array('failure'=>true));
-        } else {
 
+        if (count($result) != 1) {
+            return $this->view->render($response, 'login.html.twig', ['failure'=>true]);
+        } else {
             $_SESSION['name'] = $result[0]['name'];
             $_SESSION['id'] = $result[0]['id'];
             $_SESSION['auth'] = true;
 
             $this->view['session'] = $_SESSION;
-            return $this->view->render($response,'adminArea.html.twig');
+
+            return $this->view->render($response, 'adminArea.html.twig');
         }
-       
-        
     }
 
-    public function logout(Request $request, Response $response, array $args) 
+    public function logout(Request $request, Response $response, array $args)
     {
-        if($this->view['session']['auth'] === true) {
+        if ($this->view['session']['auth'] === true) {
             session_unset();
             session_destroy();
 
-           $this->view['session'] = array();
+            $this->view['session'] = [];
+
             return $this->view->render($response, 'data.html.twig');
         } else {
             /*
@@ -72,7 +71,7 @@ class UserController extends Controller
 
     public function createForm(Request $request, Response $response, array $args)
     {
-        if($this->view['session']['auth'] === true) {
+        if ($this->view['session']['auth'] === true) {
             return $this->view->render($response, 'createUserForm.html.twig');
         }
         /*
@@ -83,71 +82,74 @@ class UserController extends Controller
 
     public function create(Request $request, Response $response, array $args)
     {
-        if($this->view['session']['auth'] === true) {
+        if ($this->view['session']['auth'] === true) {
             $username = $_POST['uname'];
             $password = $_POST['pwd'];
             $passwordConfirm = $_POST['pwdConfirm'];
             $name = $_POST['name'];
-            if($password !== $passwordConfirm) {
-                return $this->view->render($response,'createUserForm.html.twig',array('failure'=>true));
+            if ($password !== $passwordConfirm) {
+                return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
             }
 
-            $user = new User;
+            $user = new User();
             $user->userName = $username;
-            $user->password = hash('sha512',$password);
+            $user->password = hash('sha512', $password);
             $user->name = $name;
-            try{
+            try {
                 $this->db->persist($user);
                 $this->db->flush();
-            } catch (Exception $e ) {
-                return $this->view->render($response,'createUserForm.html.twig',array('failure'=>true,'message'=>': Usuário já cadastrado'));
+            } catch (Exception $e) {
+                return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true, 'message'=>': Usuário já cadastrado']);
             }
-            return $this->view->render($response,'createUserForm.html.twig',array('success'=>true));
 
+            return $this->view->render($response, 'createUserForm.html.twig', ['success'=>true]);
         }
+
         return $this->view->render($response, 'data.html.twig');
     }
 
-    public function updateForm(Request $request, Response $response, array $args) {
-        if($this->view['session']['auth'] === true) {
+    public function updateForm(Request $request, Response $response, array $args)
+    {
+        if ($this->view['session']['auth'] === true) {
             return $this->view->render($response, 'updateUserForm.html.twig');
         }
         /*
          * Redirecionar para página de erro ou login.
          */
-        return $this->view->render($response, 'data.html.twig');     
+        return $this->view->render($response, 'data.html.twig');
     }
 
-    public function update(Request $request, Response $response, array $args) {
-        if($this->view['session']['auth'] === true) {
+    public function update(Request $request, Response $response, array $args)
+    {
+        if ($this->view['session']['auth'] === true) {
             extract($_POST);
 
-            if($newPwd !== $newPwdConfirm) {
-                return $this->view->render($response,'createUserForm.html.twig',array('failure'=>true));
+            if ($newPwd !== $newPwdConfirm) {
+                return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
             }
 
-            $user = $this->db->find(User::class,$_SESSION['id']);
+            $user = $this->db->find(User::class, $_SESSION['id']);
             $user->name = $newName;
-            if($newPwd !== '')
-                $user->password = hash('sha512',$newPwd); 
+            if ($newPwd !== '') {
+                $user->password = hash('sha512', $newPwd);
+            }
             $user->id = $_SESSION['id'];
 
-            try{
+            try {
                 $this->db->merge($user);
                 $this->db->flush();
             } catch (Exception $e) {
-                return $this->view->render($response,'updateUserForm.html.twig',array('failure'=>true));
+                return $this->view->render($response, 'updateUserForm.html.twig', ['failure'=>true]);
             } finally {
-                $_SESSION['name'] =  $newName;
+                $_SESSION['name'] = $newName;
                 $this->view['session'] = $_SESSION;
             }
-            return $this->view->render($response, 'updateUserForm.html.twig',array('success' => true));
 
+            return $this->view->render($response, 'updateUserForm.html.twig', ['success' => true]);
         }
         /*
          * Redirecionar para página de erro ou login.
          */
-        return $this->view->render($response, 'data.html.twig');     
+        return $this->view->render($response, 'data.html.twig');
     }
 }
-

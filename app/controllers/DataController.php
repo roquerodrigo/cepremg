@@ -120,11 +120,11 @@ class DataController extends Controller
             $dateTime = mktime($result['hour'], 0, 0, $date[1], $date[2], $date[0]) * 1000;
 
             if ($type == 'temp') {
-                $series['hiTemp']['data'][] = [$dateTime, (float)$result['hiTemp']];
-                $series['lowTemp']['data'][] = [$dateTime, (float)$result['lowTemp']];
-                $series['tempOut']['data'][] = [$dateTime, (float)$result['tempOut']];
+                $series['hiTemp']['data'][] = [$dateTime, (float) $result['hiTemp']];
+                $series['lowTemp']['data'][] = [$dateTime, (float) $result['lowTemp']];
+                $series['tempOut']['data'][] = [$dateTime, (float) $result['tempOut']];
             } else {
-                $series[$type]['data'][] = [$dateTime, (float)$result[$type]];
+                $series[$type]['data'][] = [$dateTime, (float) $result[$type]];
             }
         }
 
