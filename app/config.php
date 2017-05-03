@@ -1,4 +1,5 @@
 <?php
+
 return [
     'displayErrorDetails' => true,
     'database'            => [

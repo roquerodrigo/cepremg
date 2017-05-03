@@ -26,11 +26,9 @@ $app->getContainer()['db'] = function ($container) {
 require __DIR__ . '/../app/routes.php';
 
 /* Setting _SESSION global for twig*/
-if(!session_id()) {
-	session_start();
-	$app->getContainer()['view']['session'] =   $_SESSION;
+if (!session_id()) {
+    session_start();
+    $app->getContainer()['view']['session'] = $_SESSION;
 }
-
-
 
 $app->run();
