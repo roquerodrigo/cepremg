@@ -1,39 +1,45 @@
 -- --------------------------------------------------- --
 -- Views para gráficos Anuais e Mensais                --
 -- --------------------------------------------------- --
--- Deem uma olhada no campo de direção do vento,       --
--- ele vai retornar sempre um número (0) por causa do  --
--- seu tipo. Portanto precisa ser feito um ajuste      --
--- para pegar a MODA das direções recebidas.           --
--- Quem resolver, por favor manda uma mensagem         --
--- no grupo.                                           --
------------------------------------------------------- --
+
 CREATE OR REPLACE VIEW davisYear AS
-SELECT YEAR(d.dateTime) year,
-	   AVG(tempOut) tempOut,
-	   AVG(hiTemp) hiTemp,
-	   AVG(lowTemp) lowTemp,
-	   AVG(outHum) outHum,
-	   AVG(dewPt) dewPt,
-	   AVG(windSpeed) windSpeed,
-	   AVG(windDir) windDir, -- CAMPO QUE VAI DAR PROBLEMA
-	   AVG(bar) bar,
-	   AVG(rain) rain,
-	   AVG(solarRad) solarRad,
-	   AVG(UVIndex) UVIndex
- FROM davis d GROUP BY year;
+SELECT t0.*,t1.windDir FROM (
+	SELECT YEAR(davis.dateTime) year,
+	       AVG(tempOut) tempOut,
+	   	   AVG(hiTemp) hiTemp,
+	   	   AVG(lowTemp) lowTemp,
+	  	   AVG(outHum) outHum,
+	       AVG(dewPt) dewPt,
+	       AVG(windSpeed) windSpeed,
+	       AVG(bar) bar,
+	       AVG(rain) rain,
+	       AVG(solarRad) solarRad,
+	       AVG(UVIndex) UVIndex
+    FROM davis  GROUP BY year) t0 JOIN 
+    (
+  		SELECT YEAR(davis.dateTime) year,
+  		       davis.windDir,
+  		       COUNT(windDir) n
+   		FROM davis GROUP BY year,windDir ORDER BY n DESC LIMIT 1) t1
+ ON t0.year = t1.year;
 
 CREATE OR REPLACE VIEW davisMonth AS
-SELECT CONCAT(YEAR(d.dateTime),'-',MONTH(d.dateTime)) month,
-	   AVG(tempOut) tempOut,
-	   AVG(hiTemp) hiTemp,
-	   AVG(lowTemp) lowTemp,
-	   AVG(outHum) outHum,
-	   AVG(dewPt) dewPt,
-	   AVG(windSpeed) windSpeed,
-	   AVG(windDir) windDir, -- CAMPO QUE VAI DAR PROBLEMA
-	   AVG(bar) bar,
-	   AVG(rain) rain,
-	   AVG(solarRad) solarRad,
-	   AVG(UVIndex) UVIndex
- FROM davis d GROUP BY month;
+SELECT t0.*,t1.windDir FROM (
+	SELECT CONCAT(YEAR(davis.dateTime),'-',MONTH(davis.dateTime)) month,
+	       AVG(tempOut) tempOut,
+	   	   AVG(hiTemp) hiTemp,
+	   	   AVG(lowTemp) lowTemp,
+	  	   AVG(outHum) outHum,
+	       AVG(dewPt) dewPt,
+	       AVG(windSpeed) windSpeed,
+	       AVG(bar) bar,
+	       AVG(rain) rain,
+	       AVG(solarRad) solarRad,
+	       AVG(UVIndex) UVIndex
+    FROM davis  GROUP BY month) t0 JOIN 
+    (
+  		SELECT CONCAT(YEAR(davis.dateTime),'-',MONTH(davis.dateTime)) month,
+  		       davis.windDir,
+  		       COUNT(windDir) n
+   		FROM davis GROUP BY month,windDir ORDER BY n DESC LIMIT 1) t1
+ON t0.month = t1.month;
