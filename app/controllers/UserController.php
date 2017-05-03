@@ -14,7 +14,7 @@ class UserController extends Controller
           return $this->view->render($response,'adminArea.html.twig'); 
         }
         /*
-         * Redirecionar para página de erro 404.
+         * Redirecionar para página de erro ou login.
          */
         return $this->view->render($response, 'data.html.twig');
     }
@@ -32,7 +32,7 @@ class UserController extends Controller
         
         $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
         
-        $query->select('User.name')
+        $query->select('User.name, User.id')
               ->where('User.userName = :uname and User.password = :pwd')
               ->setParameter('uname',$uname)
               ->setParameter('pwd',$pwd);
@@ -44,6 +44,7 @@ class UserController extends Controller
         } else {
 
             $_SESSION['name'] = $result[0]['name'];
+            $_SESSION['id'] = $result[0]['id'];
             $_SESSION['auth'] = true;
 
             $this->view['session'] = $_SESSION;
@@ -63,7 +64,7 @@ class UserController extends Controller
             return $this->view->render($response, 'data.html.twig');
         } else {
             /*
-             * Redirecionar para página de erro 404.
+             * Redirecionar para página de erro ou login.
              */
             return $this->view->render($response, 'data.html.twig');
         }
@@ -75,7 +76,7 @@ class UserController extends Controller
             return $this->view->render($response, 'createUserForm.html.twig');
         }
         /*
-         * Redirecionar para página de erro 404.
+         * Redirecionar para página de erro ou login.
          */
         return $this->view->render($response, 'data.html.twig');
     }
@@ -92,7 +93,7 @@ class UserController extends Controller
             }
 
             $user = new User;
-            $user->username = '$username;';
+            $user->userName = $username;
             $user->password = hash('sha512',$password);
             $user->name = $name;
             try{
@@ -112,13 +113,41 @@ class UserController extends Controller
             return $this->view->render($response, 'updateUserForm.html.twig');
         }
         /*
-         * Redirecionar para página de erro 404.
+         * Redirecionar para página de erro ou login.
          */
         return $this->view->render($response, 'data.html.twig');     
     }
 
-    public function update() {
+    public function update(Request $request, Response $response, array $args) {
+        if($this->view['session']['auth'] === true) {
+            extract($_POST);
 
+            if($newPwd !== $newPwdConfirm) {
+                return $this->view->render($response,'createUserForm.html.twig',array('failure'=>true));
+            }
+
+            $user = $this->db->find(User::class,$_SESSION['id']);
+            $user->name = $newName;
+            if($newPwd !== '')
+                $user->password = hash('sha512',$newPwd); 
+            $user->id = $_SESSION['id'];
+
+            try{
+                $this->db->merge($user);
+                $this->db->flush();
+            } catch (Exception $e) {
+                return $this->view->render($response,'updateUserForm.html.twig',array('failure'=>true));
+            } finally {
+                $_SESSION['name'] =  $newName;
+                $this->view['session'] = $_SESSION;
+            }
+            return $this->view->render($response, 'updateUserForm.html.twig',array('success' => true));
+
+        }
+        /*
+         * Redirecionar para página de erro ou login.
+         */
+        return $this->view->render($response, 'data.html.twig');     
     }
 }
 

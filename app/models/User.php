@@ -15,7 +15,7 @@ class User
 
 	/**
      * @var string Login de Usuário
-     * @Column(type="string", length=15, unique=true, nullable=false) 
+     * @Column(name="userName",type="string", length=15, unique=true, nullable=false) 
      */
 	protected $userName;
 
@@ -27,7 +27,7 @@ class User
 
 	/**
 	 * @var string Nome do Usuário
-	 * @Column(type="string",length=30, nullable=false)
+	 * @Column(name="name",type="string",length=30, nullable=false)
 	 */
 	protected $name;
 

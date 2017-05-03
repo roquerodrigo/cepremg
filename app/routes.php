@@ -19,6 +19,9 @@ $app->post('/login', UserController::class . ':login');
 $app->get('/logout',UserController::class.':logout');
 
 $app->get('/user',UserController::class.':index');
+
 $app->get('/user/register', UserController::class.':createForm');
 $app->post('/user/register', UserController::class.':create');
+
 $app->get('/user/myaccount',UserController::class.':updateForm');
+$app->post('/user/myaccount',UserController::class.':update');
