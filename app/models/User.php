@@ -1,9 +1,9 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 /**
- * @Entity @Table(name="User")
+ * @Entity @Table(name="users")
  **/
 class User
 {
@@ -11,46 +11,103 @@ class User
      * @var int Chave de implementação
      * @Id @Column(type="integer") @GeneratedValue
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string Login de Usuário
      * @Column(name="userName",type="string", length=15, unique=true, nullable=false)
      */
-    protected $userName;
+    private $userName;
 
     /**
-     * @var text Senha do Usuário
+     * @var string Senha do Usuário
      * @Column(type="text", nullable=false)
      */
-    protected $password;
+    private $password;
 
     /**
      * @var string Nome do Usuário
      * @Column(name="name",type="string",length=30, nullable=false)
      */
-    protected $name;
+    private $name;
 
     /**
-     * @param string name
-     * @param string value
+     * @return int
      */
-    public function __set($name, $value)
+    public function getId()
     {
-        if (property_exists(get_class($this), $name)) {
-            $this->$name = $value;
-        }
+        return $this->id;
     }
 
     /**
-     * @param string name
+     * @param int $id
      *
-     * @return mixed
+     * @return User
      */
-    public function __get($name)
+    public function setId($id)
     {
-        if (property_exists(get_class($this), $name)) {
-            return $this->$name;
-        }
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserName()
+    {
+        return $this->userName;
+    }
+
+    /**
+     * @param string $userName
+     *
+     * @return User
+     */
+    public function setUserName($userName)
+    {
+        $this->userName = $userName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }
