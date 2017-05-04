@@ -8,7 +8,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $config = require __DIR__ . '/app/config.php';
 
-$doctrineConfig = Setup::createAnnotationMetadataConfiguration([__DIR__ . '/app/models'], $config['isDevMode']);
+$doctrineConfig = Setup::createAnnotationMetadataConfiguration([__DIR__ . '/app/Models'], $config['isDevMode']);
 
 $entityManager = EntityManager::create($config['database'], $doctrineConfig);
 
