@@ -7,8 +7,8 @@
         <div ng-controller="AppController">
             <form class="form-inline">
                 <div class="form-group">
-                    <label>Tipo de gráfico</label>
-                    <select class="form-control" ng-change="getData()" ng-model="chartType">
+                    <label>Variável</label>
+                    <select class="form-control" ng-change="getData()" ng-model="chartVar">
                         <option value="temp">Temperatura</option>
                         <option value="outHum">Umidade do ar</option>
                         <option value="dewPt">Temperatura do ponto de orvalho</option>
@@ -17,6 +17,16 @@
                         <option value="rain">Preciptação</option>
                         <option value="solarRad">Radiação solar</option>
                         <option value="UVIndex">Índice ultra violeta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de gráfico</label>
+                    <select class="form-control" ng-change="getData()" ng-model="chartType">
+                        <option value="hourly">Horário</option>
+                        <option value="daily">Diario</option>
+                        <option value="monthly">Mensal</option>
+                        <option value="yearly">Anual</option>
+
                     </select>
                 </div>
                 <div class="form-group">
@@ -50,13 +60,14 @@
 
         app.controller('AppController', function AppController($scope, $http) {
 
-            $scope.chartType = 'temp';
+            $scope.chartVar = 'temp';
+            $scope.chartType = 'hourly';
             $scope.chart = {};
-            $scope.start = '2016-01-02';
-            $scope.end = '2016-01-03';
+            $scope.start = '2010-04-02';
+            $scope.end = '2010-04-03';
 
             $scope.getData = function (callback) {
-                $http.get('/get-data/type/' + $scope.chartType + '/start/' + $scope.start + '/end/' + $scope.end + '').then(function (response) {
+                $http.get('/get-data/type/' + $scope.chartVar + '/time-period/' + $scope.chartType + '/start/' + $scope.start + '/end/' + $scope.end + '').then(function (response) {
                     $scope.chart = response.data;
                 });
             };

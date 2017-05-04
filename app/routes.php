@@ -5,7 +5,7 @@ use App\Controllers\ImportController;
 use App\controllers\UserController;
 
 $app->get('/', DataController::class . ':index');
-$app->get('/get-data/type/{type}/start/{start}/end/{end}', DataController::class . ':getData');
+$app->get('/get-data/type/{type}/time-period/{timePeriod}/start/{start}/end/{end}', DataController::class . ':getData');
 $app->get('/import', ImportController::class . ':showForm');
 $app->post('/import', ImportController::class . ':import');
 

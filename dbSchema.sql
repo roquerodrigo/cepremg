@@ -1,45 +1,141 @@
--- --------------------------------------------------- --
--- Views para gráficos Anuais e Mensais                --
--- --------------------------------------------------- --
+# A tabela foi separada em várias de acordo com os tipos de gráficos para aumentar o desempenho.
+# Com isso, os cálculos de média, min, max, etc. não precisam ser refeitos a cada consulta.
 
-CREATE OR REPLACE VIEW davisYear AS
-SELECT t0.*,t1.windDir FROM (
-	SELECT YEAR(davis.dateTime) year,
-	       AVG(tempOut) tempOut,
-	   	   AVG(hiTemp) hiTemp,
-	   	   AVG(lowTemp) lowTemp,
-	  	   AVG(outHum) outHum,
-	       AVG(dewPt) dewPt,
-	       AVG(windSpeed) windSpeed,
-	       AVG(bar) bar,
-	       AVG(rain) rain,
-	       AVG(solarRad) solarRad,
-	       AVG(UVIndex) UVIndex
-    FROM davis  GROUP BY year) t0 JOIN 
-    (
-  		SELECT YEAR(davis.dateTime) year,
-  		       davis.windDir,
-  		       COUNT(windDir) n
-   		FROM davis GROUP BY year,windDir ORDER BY n DESC LIMIT 1) t1
- ON t0.year = t1.year;
+# Além disso, a tabela de dados diários é atualizada com os dados da tabela com os dados horários,
+# a mensal com dados diários e assim por diante. Isso é feito para diminuir o tempo de processamento
+# pelo banco ao eliminar cálculos redundantes.
 
-CREATE OR REPLACE VIEW davisMonth AS
-SELECT t0.*,t1.windDir FROM (
-	SELECT CONCAT(YEAR(davis.dateTime),'-',MONTH(davis.dateTime)) month,
-	       AVG(tempOut) tempOut,
-	   	   AVG(hiTemp) hiTemp,
-	   	   AVG(lowTemp) lowTemp,
-	  	   AVG(outHum) outHum,
-	       AVG(dewPt) dewPt,
-	       AVG(windSpeed) windSpeed,
-	       AVG(bar) bar,
-	       AVG(rain) rain,
-	       AVG(solarRad) solarRad,
-	       AVG(UVIndex) UVIndex
-    FROM davis  GROUP BY month) t0 JOIN 
-    (
-  		SELECT CONCAT(YEAR(davis.dateTime),'-',MONTH(davis.dateTime)) month,
-  		       davis.windDir,
-  		       COUNT(windDir) n
-   		FROM davis GROUP BY month,windDir ORDER BY n DESC LIMIT 1) t1
-ON t0.month = t1.month;
+# Ainda falta adicionar o campo de direção do vento. A imlementação anterior estava causando sérios problemas
+# de desempenho
+
+# Gráfico horário
+
+TRUNCATE davis_hourly;
+
+INSERT INTO davis_hourly (
+  date_time,
+  temp_out,
+  hi_temp,
+  low_temp,
+  out_hum,
+  dew_pt,
+  wind_speed,
+  bar,
+  rain,
+  solar_rad,
+  uv_index
+)
+  SELECT
+    DATE_FORMAT(d0.date_time, "%Y-%m-%d %H:00:00") formated_date_time,
+    AVG(d0.temp_out)                               temp_out,
+    MAX(d0.hi_temp)                                hi_temp,
+    MIN(d0.low_temp)                               low_temp,
+    AVG(d0.out_hum)                                out_hum,
+    AVG(d0.dew_pt)                                 dew_pt,
+    AVG(d0.wind_speed)                             wind_speed,
+    AVG(d0.bar)                                    bar,
+    SUM(d0.rain)                                   rain,
+    AVG(d0.solar_rad)                              solar_rad,
+    AVG(d0.uv_index)                               uv_index
+  FROM davis d0
+  GROUP BY formated_date_time
+  HAVING COUNT(formated_date_time) >= 0;
+
+# Gráfico diário
+
+TRUNCATE davis_daily;
+
+INSERT INTO davis_daily (
+  date_time,
+  temp_out,
+  hi_temp,
+  low_temp,
+  out_hum,
+  dew_pt,
+  wind_speed,
+  bar,
+  rain,
+  solar_rad,
+  uv_index
+)
+  SELECT
+    DATE_FORMAT(d0.date_time, "%Y-%m-%d 00:00:00") formated_date_time,
+    AVG(d0.temp_out)                               temp_out,
+    MAX(d0.hi_temp)                                hi_temp,
+    MIN(d0.low_temp)                               low_temp,
+    AVG(d0.out_hum)                                out_hum,
+    AVG(d0.dew_pt)                                 dew_pt,
+    AVG(d0.wind_speed)                             wind_speed,
+    AVG(d0.bar)                                    bar,
+    SUM(d0.rain)                                   rain,
+    AVG(d0.solar_rad)                              solar_rad,
+    AVG(d0.uv_index)                               uv_index
+  FROM davis_hourly d0
+  GROUP BY formated_date_time
+  HAVING COUNT(formated_date_time) >= 0;
+
+# Gráfico mensal
+
+TRUNCATE davis_monthly;
+
+INSERT INTO davis_monthly (
+  date_time,
+  temp_out,
+  hi_temp,
+  low_temp,
+  out_hum,
+  dew_pt,
+  wind_speed,
+  bar,
+  rain,
+  solar_rad,
+  uv_index
+)
+  SELECT
+    DATE_FORMAT(d0.date_time, "%Y-%m-01 00:00:00") formated_date_time,
+    AVG(d0.temp_out)                               temp_out,
+    MAX(d0.hi_temp)                                hi_temp,
+    MIN(d0.low_temp)                               low_temp,
+    AVG(d0.out_hum)                                out_hum,
+    AVG(d0.dew_pt)                                 dew_pt,
+    AVG(d0.wind_speed)                             wind_speed,
+    AVG(d0.bar)                                    bar,
+    SUM(d0.rain)                                   rain,
+    AVG(d0.solar_rad)                              solar_rad,
+    AVG(d0.uv_index)                               uv_index
+  FROM davis_daily d0
+  GROUP BY formated_date_time
+  HAVING COUNT(formated_date_time) >= 0;
+
+# Gráfico anual
+
+TRUNCATE davis_yearly;
+
+INSERT INTO davis_yearly (
+  date_time,
+  temp_out,
+  hi_temp,
+  low_temp,
+  out_hum,
+  dew_pt,
+  wind_speed,
+  bar,
+  rain,
+  solar_rad,
+  uv_index
+)
+  SELECT
+    DATE_FORMAT(d0.date_time, "%Y-00-00 00:00:00") formated_date_time,
+    AVG(d0.temp_out)                               temp_out,
+    MAX(d0.hi_temp)                                hi_temp,
+    MIN(d0.low_temp)                               low_temp,
+    AVG(d0.out_hum)                                out_hum,
+    AVG(d0.dew_pt)                                 dew_pt,
+    AVG(d0.wind_speed)                             wind_speed,
+    AVG(d0.bar)                                    bar,
+    SUM(d0.rain)                                   rain,
+    AVG(d0.solar_rad)                              solar_rad,
+    AVG(d0.uv_index)                               uv_index
+  FROM davis_monthly d0
+  GROUP BY formated_date_time
+  HAVING COUNT(formated_date_time) >= 0;
