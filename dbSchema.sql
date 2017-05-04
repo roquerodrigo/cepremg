@@ -125,7 +125,7 @@ INSERT INTO davis_yearly (
   uv_index
 )
   SELECT
-    DATE_FORMAT(d0.date_time, "%Y-00-00 00:00:00") formated_date_time,
+    DATE_FORMAT(d0.date_time, "%Y-01-01 00:00:00") formated_date_time,
     AVG(d0.temp_out)                               temp_out,
     MAX(d0.hi_temp)                                hi_temp,
     MIN(d0.low_temp)                               low_temp,
