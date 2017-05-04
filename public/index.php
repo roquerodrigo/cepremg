@@ -5,6 +5,8 @@ use Doctrine\ORM\Tools\Setup;
 use Slim\App;
 use Slim\Views\Twig;
 
+date_default_timezone_set('UTC');
+
 require __DIR__ . '/../vendor/autoload.php';
 
 $config = require __DIR__ . '/../app/config.php';
