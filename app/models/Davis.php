@@ -9,84 +9,84 @@ class Davis
 {
     /**
      * @var int Chave de implementação
-     * @Id @Column(type="integer") @GeneratedValue
+     * @Id @Column(name="id", type="integer") @GeneratedValue
      */
     private $id;
 
     /**
      * @var \DateTime Hora do registro
-     * @Column(type="datetime", unique=true)
+     * @Column(name="date_time", type="datetime", unique=true)
      */
     private $dateTime;
 
     /**
      * @var float Temperatura
-     * @Column(type="float", nullable=true)
+     * @Column(name="temp_out", type="float", nullable=true)
      */
     private $tempOut;
 
     /**
      * @var float Maior temperatura
-     * @Column(type="float", nullable=true)
+     * @Column(name="hi_temp", type="float", nullable=true)
      */
     private $hiTemp;
 
     /**
      * @var float Menor temperatura
-     * @Column(type="float", nullable=true)
+     * @Column(name="low_temp", type="float", nullable=true)
      */
     private $lowTemp;
 
     /**
      * @var int Umidade do ar
-     * @Column(type="float", nullable=true)
+     * @Column(name="out_hum", type="float", nullable=true)
      */
     private $outHum;
 
     /**
      * @var float Temperatura de ponto de orvalho
-     * @Column(type="float", nullable=true)
+     * @Column(name="dew_pt", type="float", nullable=true)
      */
     private $dewPt;
 
     /**
      * @var float Intensidade do vento
-     * @Column(type="float", nullable=true)
+     * @Column(name="wind_speed", type="float", nullable=true)
      */
     private $windSpeed;
 
     /**
      * @var float Direção do vento
-     * @Column(type="string", length=3, nullable=true)
+     * @Column(name="wind_dir", type="string", length=3, nullable=true)
      */
     private $windDir;
 
     /**
      * @var float Pressão atmosférica
-     * @Column(type="float", nullable=true)
+     * @Column(name="bar", type="float", nullable=true)
      */
     private $bar;
 
     /**
      * @var float Precipitação
-     * @Column(type="float", nullable=true)
+     * @Column(name="rain", type="float", nullable=true)
      */
     private $rain;
 
     /**
      * @var int Radiação solar
-     * @Column(type="float", nullable=true)
+     * @Column(name="solar_rad", type="float", nullable=true)
      */
     private $solarRad;
 
     /**
      * @var float Índice ultra-violeta
-     * @Column(type="float", nullable=true)
+     * @Column(name="uv_index", type="float", nullable=true)
      */
     private $UVIndex;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -94,7 +94,7 @@ class Davis
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      *
      * @return Davis
      */
