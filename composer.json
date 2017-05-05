@@ -7,7 +7,6 @@
     }
   ],
   "require": {
-    "beberlei/DoctrineExtensions": "^1.0",
     "doctrine/orm": "^2.5",
     "slim/slim": "^3.8",
     "slim/twig-view": "^2.2"
