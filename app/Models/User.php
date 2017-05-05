@@ -9,7 +9,7 @@ class User
 {
     /**
      * @var int Chave de implementação
-     * @Id @Column(type="integer") @GeneratedValue
+     * @Id @Column(type="integer",options={"unsigned":true}) @GeneratedValue
      */
     private $id;
 
@@ -32,16 +32,17 @@ class User
     private $name;
 
     /**
-     * @var int Nível de privilégio do usuário
-     * @Column(name="privilege",type="smallint", nullable=false)
+     * @var int Nível de privilégio do usuário [0]ROOT       : pode desativar usuários;
+     *                                         [1]COMMOM USER: pode apenas popular o banco.
+     * @Column(name="privilege",type="smallint", nullable=false, options={"default":1, "unsigned":true})
      */
-    private $privilege;
+    private $privilege=1;
 
     /**
      * @var boolean Usuário está ou não habilitado
      * @Column(name="isAble",type="boolean", nullable=false, options={"default":true})
      */
-    private $isAble;
+    private $isAble=true;
 
     /**
      * @return int
@@ -107,7 +108,7 @@ class User
      */
     public function getUserName()
     {
-        return $this->userName;
+        return $this->username;
     }
 
     /**
@@ -117,7 +118,7 @@ class User
      */
     public function setUserName($userName)
     {
-        $this->userName = $userName;
+        $this->username = $userName;
 
         return $this;
     }

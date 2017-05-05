@@ -2,26 +2,43 @@
 
 use App\Controllers\DataController;
 use App\Controllers\ImportController;
-use App\controllers\UserController;
+use App\Controllers\UserController;
 
 $app->get('/', DataController::class . ':index');
 $app->get('/get-data/type/{type}/time-period/{timePeriod}/start/{start}/end/{end}', DataController::class . ':getData');
-$app->get('/import', ImportController::class . ':showForm');
-$app->post('/import', ImportController::class . ':import');
+
+$app->get('/login', UserController::class . ':loginForm');
+$app->post('/login', UserController::class . ':login');
 
 /*
- * Rotas para Controle de Acesso
+ * Rotas que precisam de Controle de Acesso
  * e CRUD de usuário.
  */
 
-$app->get('/login', UserController::class . ':showForm');
-$app->post('/login', UserController::class . ':login');
-$app->get('/logout', UserController::class . ':logout');
 
-$app->get('/user', UserController::class . ':index');
+$isLogedIn = function ($request, $response, $next) {
+ 	if($_SESSION['auth']!==true){
+ 		die(header('Location: /login')); 		
+ 	}
+    $response = $next($request, $response);
+    return $response;
+};
 
-$app->get('/user/register', UserController::class . ':createForm');
-$app->post('/user/register', UserController::class . ':create');
+$app->group('/import', function(){
 
-$app->get('/user/myaccount', UserController::class . ':updateForm');
-$app->post('/user/myaccount', UserController::class . ':update');
+	$this->get('', ImportController::class . ':showForm');
+	$this->post('', ImportController::class . ':import');
+
+})->add($isLogedIn);
+
+$app->group('/user', function(){
+
+	$this->get('', UserController::class . ':index');
+	$this->get('/register',UserController::class . ':createForm');
+	$this->post('/register',UserController::class . ':create');
+	$this->get('/myaccount', UserController::class . ':updateForm');
+	$this->post('/myaccount', UserController::class . ':update');
+
+})->add($isLogedIn);
+
+$app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
