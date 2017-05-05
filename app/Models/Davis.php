@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Models;
-
 /**
- * @Entity @Table(name="davis")
+ * ReportData
+ *
+ * @ORM\Table(name="reports_report_data",options={"engine":"MyISAM"})
+ * @ORM\Entity(repositoryClass="Jac\ReportGeneratorBundle\Entity\ReportDataRepository")
+ */
+/**
+ * @Entity @Table(name="davis", options={"engine":"MyISAM"})
  **/
 class Davis
 {
