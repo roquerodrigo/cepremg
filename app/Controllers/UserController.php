@@ -33,7 +33,7 @@ class UserController extends Controller
         $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
 
         $query->select('User.name, User.id')
-              ->where('User.userName = :uname and User.password = :pwd')
+              ->where('User.username = :uname and User.password = :pwd')
               ->setParameter('uname', $uname)
               ->setParameter('pwd', $pwd);
 
@@ -92,9 +92,10 @@ class UserController extends Controller
             }
 
             $user = new User();
-            $user->userName = $username;
-            $user->password = hash('sha512', $password);
-            $user->name = $name;
+            $user->setUserName($username);
+            $user->setPassword(hash('sha512', $password));
+            $user->setName($name);
+
             try {
                 $this->db->persist($user);
                 $this->db->flush();
@@ -129,11 +130,11 @@ class UserController extends Controller
             }
 
             $user = $this->db->find(User::class, $_SESSION['id']);
-            $user->name = $newName;
+            $user->setName($newName);
             if ($newPwd !== '') {
-                $user->password = hash('sha512', $newPwd);
+                $user->setPassword(hash('sha512', $newPwd));
             }
-            $user->id = $_SESSION['id'];
+            $user->setId($_SESSION['id']);
 
             try {
                 $this->db->merge($user);

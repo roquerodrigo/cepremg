@@ -15,9 +15,9 @@ class User
 
     /**
      * @var string Login de Usuário
-     * @Column(name="userName",type="string", length=15, unique=true, nullable=false)
+     * @Column(name="username",type="string", length=15, unique=true, nullable=false)
      */
-    private $userName;
+    private $username;
 
     /**
      * @var string Senha do Usuário
@@ -30,6 +30,57 @@ class User
      * @Column(name="name",type="string",length=30, nullable=false)
      */
     private $name;
+
+    /**
+     * @var int Nível de privilégio do usuário
+     * @Column(name="privilege",type="smallint", nullable=false)
+     */
+    private $privilege;
+
+    /**
+     * @var boolean Usuário está ou não habilitado
+     * @Column(name="isAble",type="boolean", nullable=false, options={"default":true})
+     */
+    private $isAble;
+
+    /**
+     * @return int
+     */
+    public function getPrivilege() 
+    {
+        return $this->privilege;
+    }
+
+    /**
+     * @param int $privilege
+     *
+     * @return User
+     */
+    public function setPrivilege(int $privilege) 
+    {
+        $this->privilege = $privilege;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIsAble()
+    {
+        return $this->isAble;
+    }
+
+    /**
+     * @param int $isAble
+     *
+     * @return User
+     */
+    public function setIsAble(int $isAble) 
+    {
+        $this->isAble = $isAble;
+        return $this;
+    }
+
 
     /**
      * @return int
