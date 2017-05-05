@@ -11,6 +11,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $config = require __DIR__ . '/../app/config.php';
 
+if (is_file(__DIR__ . '/../app/config-overwrite.php')) {
+    $developmentConfig = require __DIR__ . '/../app/config-overwrite.php';
+    $config = array_merge($config, $developmentConfig);
+}
+
 $app = new App([
     'settings' => $config,
 ]);

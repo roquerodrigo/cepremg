@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'displayErrorDetails' => true,
     'database'            => [
         'driver'   => 'pdo_mysql',
         'host'     => 'localhost',
@@ -9,5 +8,6 @@ return [
         'user'     => 'root',
         'password' => '',
     ],
-    'isDevMode'           => true,
+    'displayErrorDetails' => false,
+    'isDevMode'           => false,
 ];

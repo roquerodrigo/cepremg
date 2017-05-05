@@ -6,5 +6,4 @@
 /mix.js
 /fonts/
 db.sqlite
-
-app/config\.php
+/app/config-overwrite.php
