@@ -1,0 +1,35 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {% include 'layouts/navbar.html.twig' %}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 well well-lg">
+    	<h1> DESABILITAR USUÁRIOS </h1>
+        <form method="POST">
+        <table>
+        <!-- Usuários habilitados, se enviados serão desabilitados -->
+        {% for user in enabled %}
+        <tr>
+        	<td><input type="checkbox" name="disable[]" value="{{user.id}}"></td>
+        	<td>{{user.id}}</td>
+        	<td>{{user.name}}</td>
+        </tr>
+        {% endfor %}
+
+        {% for user in enabled %}
+        <tr>
+        	<td><input type="checkbox" name="disable[]" value="{{user.id}}"></td>
+        	<td>{{user.id}}</td>
+        	<td>{{user.name}}</td>
+        </tr>
+        {% endfor %}
+
+        </table>
+        <input type="submit">
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+{% endblock %}

@@ -21,29 +21,35 @@ class UserController extends Controller
 
     public function login(Request $request, Response $response, array $args)
     {
-        $uname = $_POST['uname'];
-        $pwd = hash('sha512', $_POST['pwd']);
+        $uname = $request->getParsedBodyParam('uname');
+        $pwd   = $request->getParsedBodyParam('pwd');
 
-        $query = $this->db->getRepository(User::class)->createQueryBuilder('User');
+        $pwd = hash('sha512', $pwd);
+        
+        try {
 
-        $query->select('User.name, User.id')
-              ->where('User.username = :uname and User.password = :pwd')
-              ->setParameter('uname', $uname)
-              ->setParameter('pwd', $pwd);
+            $repository = $this->db->getRepository(User::class);
+            $user = $repository->findOneBy(array('username'=>$uname,'password'=>$pwd));
+        
+        } catch( Exception $e) {
 
-        $result = $query->getQuery()->getArrayResult();
-
-        if (count($result) != 1) {
             return $this->view->render($response, 'login.html.twig', ['failure'=>true]);
-        } else {
-            $_SESSION['name'] = $result[0]['name'];
-            $_SESSION['id'] = $result[0]['id'];
-            $_SESSION['auth'] = true;
-
-            $this->view['session'] = $_SESSION;
-
-            return $this->view->render($response, 'adminArea.html.twig');
+        
         }
+
+        if ($user === null) 
+            return $this->view->render($response, 'login.html.twig', ['failure'=>true]);
+        
+           
+        $_SESSION['name'] = $user->getName();
+        $_SESSION['id'] = $user->getId();
+        $_SESSION['auth'] = $user->getIsAble();
+        $_SESSION['privilege'] = $user->getPrivilege();
+
+        $this->view['session'] = $_SESSION;
+
+        return $response->withStatus(200)->withHeader('Location', '/user');
+        
     }
 
     public function logout(Request $request, Response $response, array $args)
@@ -53,7 +59,7 @@ class UserController extends Controller
 
             $this->view['session'] = [];
 
-            return $this->view->render($response, 'data.html.twig');
+            return $response->withStatus(200)->withHeader('Location', '/login');
     }
 
     public function createForm(Request $request, Response $response, array $args)
@@ -63,11 +69,12 @@ class UserController extends Controller
 
     public function create(Request $request, Response $response, array $args)
     {
-        $username = $_POST['uname'];
-        $password = $_POST['pwd'];
-        $passwordConfirm = $_POST['pwdConfirm'];
-        $name = $_POST['name'];
-        if ($password !== $passwordConfirm) {
+        $username        = $request->getParsedBodyParam('uname');
+        $password        = $request->getParsedBodyParam('pwd');
+        $passwordConfirm = $request->getParsedBodyParam('pwdConfirm');
+        $name            = $request->getParsedBodyParam('name');
+
+        if ($password !== $passwordConfirm or $password == '') {
             return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
         }
          
@@ -77,10 +84,14 @@ class UserController extends Controller
         $user->setName($name);
 
         try {
+
             $this->db->persist($user);
             $this->db->flush();
+
         } catch (Exception $e) {
+
             return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true, 'message'=>': Usuário já cadastrado']);
+
         }
 
         return $this->view->render($response, 'createUserForm.html.twig', ['success'=>true]);
@@ -93,28 +104,83 @@ class UserController extends Controller
 
     public function update(Request $request, Response $response, array $args)
     {
-        extract($_POST);
+        
+        $newPwd        = $request->getParsedBodyParam('newPwd');
+        $newPwdConfirm = $request->getParsedBodyParam('newPwdConfirm');
+        $newName       = $request->getParsedBodyParam('newName');
 
-        if ($newPwd !== $newPwdConfirm) {
-            return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
+        if ($newPwd !== '') {
+
+            if($newPwd !== $newPwdConfirm) {
+
+              return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
+            }
+
         }
-
+        
         $user = $this->db->find(User::class, $_SESSION['id']);
         $user->setName($newName);
-        if ($newPwd !== '') {
-            $user->setPassword(hash('sha512', $newPwd));
-        }
         $user->setId($_SESSION['id']);
+        $user->setPassword(hash('sha512', $newPwd));
+       
         try {
+
             $this->db->merge($user);
             $this->db->flush();
+
         } catch (Exception $e) {
+
             return $this->view->render($response, 'updateUserForm.html.twig', ['failure'=>true]);
+
         } finally {
+
             $_SESSION['name'] = $newName;
             $this->view['session'] = $_SESSION;
+
         }
 
         return $this->view->render($response, 'updateUserForm.html.twig', ['success' => true]);
     }
+
+    public function deleteForm(Request $request, Response $response, array $args)
+    {
+        try{
+            $repository = $this->db->getRepository(User::class);
+            $users = $repository->findByPrivilege(1);
+        } catch (Exception $e) {
+            $e->getMessage();
+            return;
+        } 
+
+        if(count($users) === 0)
+        {
+           # ARRAY VAZIO MANDAR PAGINA COM AVISO 
+        }
+        
+        $enabled = array();
+        $disabled = array();
+        foreach ($users as $user) {
+
+            if($user.getIsAble() == true) {
+
+                array_push($enabled,array(
+                    'name'=>$user->getName(),
+                    'id'  =>$user->getId()));
+            } else {
+
+                array_push($disabled,array(
+                    'name'=>$user->getName(),
+                    'id'=>$user->getId()));
+            }
+        }
+
+        return $this->view->render($response, 'deleteUserForm.html.twig',
+            ['Enabled' => $enabled,
+             'Disabled'=> $disabled]);
+    }
+
+    public function delete(Request $request, Response $response, array $args) {
+        var_dump($_POST);
+    }
+
 }
