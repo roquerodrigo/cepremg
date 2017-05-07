@@ -12,13 +12,11 @@ class ImportController extends Controller
 {
     public function showForm(Request $request, Response $response, array $args)
     {
-        //if($this->view['session']['auth'] === true)
         return $this->view->render($response, 'import.html.twig');
     }
 
     public function import(Request $request, Response $response, array $args)
     {
-        //if($this->view['session']['auth'] === true) {
         ini_set('max_execution_time', 300);
 
         $files = $request->getUploadedFiles();
@@ -78,12 +76,10 @@ class ImportController extends Controller
                     ];
                 }
             }
-            //}
         }
 
         return $this->view->render($response, 'import.html.twig', [
             'messages' => $messages,
-            'auth'     => $_SESSION['auth'],
         ]);
     }
 }
