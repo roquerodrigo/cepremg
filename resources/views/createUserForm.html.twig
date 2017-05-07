@@ -9,7 +9,7 @@
 
   		<h1 class="text-center">Cadastrar Novo Usuário</h1>
 
-    	<form method="POST">
+    	<form method="POST" action="/admin/register-user">
     		<div class="form-group">
     			<label for="name-id">Nome Completo:</label>
     			<input id="name-id" class="form-control" name="name" placeholder="Nome Completo" type="text">
@@ -34,17 +34,20 @@
     			<input class="btn btn-default" type="reset">
     		</div>
     	</form>
-    	{% if failure == true %}
+
+    	{% if message == 'failure' %}
     		<div class="panel panel-danger">
-    			<div class="panel-heading">Erro {{message}}</div>
+    			<div class="panel-heading">Erro: Usuário já cadastrado?</div>
 			</div>
     	{% endif %}
-    	{% if success == true %}
+    	
+        {% if message == 'success' %}
     		<div class="panel panel-success">
     			<div class="panel-heading">Sucesso: Cadastro efetuado.</div>
 			</div>
     	{% endif %}
-    	</div>
+    	
+        </div>
     <div class="col-md-4"></div>
     </div>
 {% endblock %}

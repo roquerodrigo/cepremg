@@ -9,11 +9,21 @@ use Slim\Http\Response;
 
 class AdminController extends Controller
 {
+    /*
+     * @route /admin/register-user
+     * @method GET
+     */
     public function createForm(Request $request, Response $response, array $args)
-    {
-        return $this->view->render($response, 'createUserForm.html.twig');
+    {   
+        echo $args['message'];
+        return $this->view->render($response, 'createUserForm.html.twig',
+            ['message'=>$args['message']]);
     }
 
+    /*
+     * @route /admin/register-user[/{message}]
+     * @method POST
+     */
     public function create(Request $request, Response $response, array $args)
     {
         $username = $request->getParsedBodyParam('uname');
@@ -22,7 +32,7 @@ class AdminController extends Controller
         $name = $request->getParsedBodyParam('name');
 
         if ($password !== $passwordConfirm or $password == '') {
-            return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true]);
+            return $response->withStatus(200)->withHeader('Location', '/admin/register-user/failure');
         }
 
         $user = new User();
@@ -34,12 +44,16 @@ class AdminController extends Controller
             $this->db->persist($user);
             $this->db->flush();
         } catch (Exception $e) {
-            return $this->view->render($response, 'createUserForm.html.twig', ['failure'=>true, 'message'=>': Usuário já cadastrado']);
+            return $response->withStatus(200)->withHeader('Location', '/admin/register-user/failure');
         }
 
-        return $this->view->render($response, 'createUserForm.html.twig', ['success'=>true]);
+        return $response->withStatus(200)->withHeader('Location', '/admin/register-user/success');
     }
 
+    /*
+     * @route /admin/disable-user
+     * @method GET
+     */
     public function deleteForm(Request $request, Response $response, array $args)
     {
         try {
@@ -75,6 +89,10 @@ class AdminController extends Controller
              'Disabled'=> $disabled, ]);
     }
 
+    /*
+     * @route /admin/disable-user
+     * @method POST
+     */
     public function delete(Request $request, Response $response, array $args)
     {
         $disable = $request->getParsedBodyParam('disable');
@@ -99,7 +117,7 @@ class AdminController extends Controller
 
             return;
         } finally {
-            return $response->withStatus(200)->withHeader('Location', '/admin/disable');
+            return $response->withStatus(200)->withHeader('Location', '/admin/disable-user');
         }
     }
 }

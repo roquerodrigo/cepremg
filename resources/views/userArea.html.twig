@@ -13,7 +13,10 @@
             <h3>Usuários</h3>
             <hr>
             <ul class = "text-justify">
-            <li><a class = "mdi mdi-account-multiple-plus mdi-24px" href="/admin/register">Registrar usuário</a></li>
+            {% if session.privilege == 0 %}
+            <li><a class = "mdi mdi-account-multiple-plus mdi-24px" href="/admin/register-user">Registrar usuário</a></li>
+            <li><a class = "mdi mdi-account-multiple-minus mdi-24px" href="/admin/disable-user">Remover Usuário</a></li> 
+            {% endif %}
             <li><a class = "mdi mdi-account-edit mdi-24px" href="/user/myaccount">Atualizar seus dados</a></li>
             </ul>
         </div>

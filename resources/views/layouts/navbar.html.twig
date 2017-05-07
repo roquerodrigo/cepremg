@@ -19,7 +19,7 @@
             
             {% if session.auth == true %}
                 <li><a href="/import">Carregar Dados</a></li>
-                <li><a href="/user">Admin</a></li>
+                <li><a href="/user"> {{ session.name }} </a></li>
                 <li><a href="/logout">Logout</a></li>
             {% else %}
                 <li><a href="/login">Login</a></li>

@@ -9,16 +9,28 @@ use Slim\Http\Response;
 
 class UserController extends Controller
 {
+    /*
+     * @route /user
+     * @method GET
+     */
     public function index(Request $request, Response $response, array $args)
     {
-        return $this->view->render($response, 'adminArea.html.twig');
+        return $this->view->render($response, 'userArea.html.twig');
     }
 
+    /*
+     * @route /login
+     * @method GET
+     */
     public function loginForm(Request $request, Response $response, array $args)
     {
         return $this->view->render($response, 'login.html.twig');
     }
 
+    /*
+     * @route /login
+     * @method POST
+     */
     public function login(Request $request, Response $response, array $args)
     {
         $uname = $request->getParsedBodyParam('uname');
@@ -47,6 +59,10 @@ class UserController extends Controller
         return $response->withStatus(200)->withHeader('Location', '/user');
     }
 
+    /*
+     * @route /logout
+     * @method GET
+     */
     public function logout(Request $request, Response $response, array $args)
     {
         session_unset();
@@ -57,11 +73,19 @@ class UserController extends Controller
         return $response->withStatus(200)->withHeader('Location', '/login');
     }
 
+    /*
+     * @route /user/myaccount
+     * @method GET
+     */
     public function updateForm(Request $request, Response $response, array $args)
     {
         return $this->view->render($response, 'updateUserForm.html.twig');
     }
 
+    /*
+     * @route /user/myaccount
+     * @method POST
+     */
     public function update(Request $request, Response $response, array $args)
     {
         $newPwd = $request->getParsedBodyParam('newPwd');

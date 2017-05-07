@@ -44,6 +44,7 @@ class User
      */
     private $isAble = true;
 
+
     /**
      * @return int
      */
