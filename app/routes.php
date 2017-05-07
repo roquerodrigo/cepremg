@@ -3,6 +3,7 @@
 use App\Controllers\DataController;
 use App\Controllers\ImportController;
 use App\Controllers\UserController;
+use App\Controllers\AdminController;
 
 $app->get('/', DataController::class . ':index');
 $app->get('/get-data/type/{type}/time-period/{timePeriod}/start/{start}/end/{end}', DataController::class . ':getData');
@@ -52,7 +53,7 @@ $app->group('/import', function(){
 	$this->get('', ImportController::class . ':showForm');
 	$this->post('', ImportController::class . ':import');
 
-})->add($isLogedIn);
+});//->add($isLogedIn);
 
 /***********************************************
  * Routes: /user
@@ -70,6 +71,8 @@ $app->group('/user', function(){
 
 })->add($isLogedIn);
 
+$app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
+
 /***********************************************
  * Routes: /admin
  *
@@ -79,12 +82,12 @@ $app->group('/user', function(){
 
 $app->group('/admin',function(){
 
-	$this->get('/register', UserController::class . ':createForm');
-	$this->get('/disable',UserController::class.':deleteForm');
+	$this->get('/register-user', AdminController::class . ':createForm');
+	$this->get('/disable-user',AdminController::class.':deleteForm');
 
-	$this->post('/register', UserController::class . ':create');
-	$this->post('/disable',UserController::class.':delete');
+	$this->post('/register-user', AdminController::class . ':create');
+	$this->post('/disable-user',AdminController::class.':delete');
 
 })->add($isLogedIn)->add($isRoot);;
 
-$app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
+

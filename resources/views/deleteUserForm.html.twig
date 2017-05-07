@@ -9,26 +9,34 @@
     	<h1> DESABILITAR USUÁRIOS </h1>
         <form method="POST">
         <table>
-        <!-- Usuários habilitados, se enviados serão desabilitados -->
-        {% for user in enabled %}
+        
+  
+        {% for user in Enabled %}
         <tr>
         	<td><input type="checkbox" name="disable[]" value="{{user.id}}"></td>
         	<td>{{user.id}}</td>
         	<td>{{user.name}}</td>
+            <td>HABILITADO</td> 
         </tr>
         {% endfor %}
 
-        {% for user in enabled %}
+        {% for user in Disabled %}
         <tr>
-        	<td><input type="checkbox" name="disable[]" value="{{user.id}}"></td>
+        	<td><input type="checkbox" name="enable[]" value="{{user.id}}"></td>
         	<td>{{user.id}}</td>
         	<td>{{user.name}}</td>
+            <td>BANIDO</td> 
         </tr>
         {% endfor %}
 
         </table>
         <input type="submit">
         </form>
+        {% if warning_message != '' %}
+            <div class="panel panel-warning">
+                <div class="panel-heading">{{warning_message}}</div>
+            </div>
+        {% endif %}
     </div>
     <div class="col-md-4"></div>
     </div>
