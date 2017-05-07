@@ -38,6 +38,4 @@ if (!session_id()) {
 
 require __DIR__ . '/../app/routes.php';
 
-
-
 $app->run();

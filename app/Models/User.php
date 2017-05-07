@@ -33,21 +33,21 @@ class User
 
     /**
      * @var int Nível de privilégio do usuário [0]ROOT       : pode desativar usuários;
-     *                                         [1]COMMOM USER: pode apenas popular o banco.
+     *          [1]COMMOM USER: pode apenas popular o banco.
      * @Column(name="privilege",type="smallint", nullable=false, options={"default":1, "unsigned":true})
      */
-    private $privilege=1;
+    private $privilege = 1;
 
     /**
-     * @var boolean Usuário está ou não habilitado
+     * @var bool Usuário está ou não habilitado
      * @Column(name="isAble",type="boolean", nullable=false, options={"default":true})
      */
-    private $isAble=true;
+    private $isAble = true;
 
     /**
      * @return int
      */
-    public function getPrivilege() 
+    public function getPrivilege()
     {
         return $this->privilege;
     }
@@ -57,9 +57,10 @@ class User
      *
      * @return User
      */
-    public function setPrivilege(int $privilege) 
+    public function setPrivilege(int $privilege)
     {
         $this->privilege = $privilege;
+
         return $this;
     }
 
@@ -76,12 +77,12 @@ class User
      *
      * @return User
      */
-    public function setIsAble(int $isAble) 
+    public function setIsAble(int $isAble)
     {
         $this->isAble = $isAble;
+
         return $this;
     }
-
 
     /**
      * @return int

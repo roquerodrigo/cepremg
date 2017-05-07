@@ -114,7 +114,6 @@ class DataController extends Controller
 
         $results = $qb->getQuery()->getArrayResult();
         foreach ($results as $result) {
-
             $dateTime = $result['dateTime']->format('U') * 1000;
 
             if ($type == 'temp') {
