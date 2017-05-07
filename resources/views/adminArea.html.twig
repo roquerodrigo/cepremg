@@ -4,12 +4,28 @@
     {% include 'layouts/navbar.html.twig' %}
 
 <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 well well-lg">
-        <h1 class="text-center"> BEM VINDO {{session.name}} </h1>
-        <a href="/user/register">Registrar usuário</a>
-        <a href="/user/myaccount">Atualizar dados</a>
+    <div class="col-sm-12">
+        <h1 class="text-center"> Seja bem vindo, {{session.name}}! </h1>
+        <hr>
     </div>
-    <div class="col-md-4"></div>
+    <div class = "col-sm-12">
+        <div class="col-md-3 text-center ">
+            <h3>Usuários</h3>
+            <hr>
+            <ul class = "text-justify">
+            <li><a class = "mdi mdi-account-multiple-plus mdi-24px" href="/admin/register">Registrar usuário</a></li>
+            <li><a class = "mdi mdi-account-edit mdi-24px" href="/user/myaccount">Atualizar seus dados</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3 col-md-offset-1 text-center ">
+            <h3>Dados</h3>
+            <hr>
+            <ul class = "text-justify">
+                <li><a class = "mdi mdi-file-import mdi-24px" href="/import">Carregar arquivo de dados<i ></i></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+
     </div>
 {% endblock %}
