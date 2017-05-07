@@ -1,9 +1,9 @@
 <?php
 
+use App\Controllers\AdminController;
 use App\Controllers\DataController;
 use App\Controllers\ImportController;
 use App\Controllers\UserController;
-use App\Controllers\AdminController;
 
 $app->get('/', DataController::class . ':index');
 $app->get('/get-data/type/{type}/time-period/{timePeriod}/start/{start}/end/{end}', DataController::class . ':getData');
@@ -19,10 +19,11 @@ $app->post('/login', UserController::class . ':login');
  */
 
 $isLogedIn = function ($request, $response, $next) {
- 	if($_SESSION['auth']!==true){
- 		return $response->withStatus(401)->withHeader('Location', '/login');		
- 	}
+    if ($_SESSION['auth'] !== true) {
+        return $response->withStatus(401)->withHeader('Location', '/login');
+    }
     $response = $next($request, $response);
+
     return $response;
 };
 
@@ -33,11 +34,12 @@ $isLogedIn = function ($request, $response, $next) {
  * tem privilégio de nível ROOT.
  */
 
-$isRoot = function($request,$response,$next) {
-	if($_SESSION['privilege'] !== 0) {
-		return $response->withStatus(401)->withHeader('Location', '/');
-	}
-	$response = $next($request, $response);
+$isRoot = function ($request, $response, $next) {
+    if ($_SESSION['privilege'] !== 0) {
+        return $response->withStatus(401)->withHeader('Location', '/');
+    }
+    $response = $next($request, $response);
+
     return $response;
 };
 
@@ -48,12 +50,10 @@ $isRoot = function($request,$response,$next) {
  * do nível de privilégio.
  */
 
-$app->group('/import', function(){
-
-	$this->get('', ImportController::class . ':showForm');
-	$this->post('', ImportController::class . ':import');
-
-});//->add($isLogedIn);
+$app->group('/import', function () {
+    $this->get('', ImportController::class . ':showForm');
+    $this->post('', ImportController::class . ':import');
+}); //->add($isLogedIn);
 
 /***********************************************
  * Routes: /user
@@ -62,13 +62,11 @@ $app->group('/import', function(){
  * do nível de privilégio.
  */
 
-$app->group('/user', function(){
+$app->group('/user', function () {
+    $this->get('', UserController::class . ':index');
+    $this->get('/myaccount', UserController::class . ':updateForm');
 
-	$this->get('', UserController::class . ':index');
-	$this->get('/myaccount', UserController::class . ':updateForm');
-
-	$this->post('/myaccount', UserController::class . ':update');
-
+    $this->post('/myaccount', UserController::class . ':update');
 })->add($isLogedIn);
 
 $app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
@@ -80,14 +78,10 @@ $app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
  * ROOT.
  */
 
-$app->group('/admin',function(){
+$app->group('/admin', function () {
+    $this->get('/register-user', AdminController::class . ':createForm');
+    $this->get('/disable-user', AdminController::class . ':deleteForm');
 
-	$this->get('/register-user', AdminController::class . ':createForm');
-	$this->get('/disable-user',AdminController::class.':deleteForm');
-
-	$this->post('/register-user', AdminController::class . ':create');
-	$this->post('/disable-user',AdminController::class.':delete');
-
-})->add($isLogedIn)->add($isRoot);;
-
-
+    $this->post('/register-user', AdminController::class . ':create');
+    $this->post('/disable-user', AdminController::class . ':delete');
+})->add($isLogedIn)->add($isRoot);

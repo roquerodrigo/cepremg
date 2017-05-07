@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Models;
+
 /**
- * ReportData
+ * ReportData.
  *
  * @ORM\Table(name="reports_report_data",options={"engine":"MyISAM"})
  * @ORM\Entity(repositoryClass="Jac\ReportGeneratorBundle\Entity\ReportDataRepository")
