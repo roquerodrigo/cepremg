@@ -2,44 +2,40 @@
 
 {% block content %}
     {% include 'layouts/navbar.html.twig' %}
-
-<div class="container">
-    <h1> DESABILITAR USUÁRIOS </h1>
-    
-    <form method="POST">
-        <table class="table">
-            <thead>
-                <th></th>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Status</th>
-            </th ead> 
-  
-            {% for user in Enabled %}
-            <tr class="info">
-        	    <td><input type="checkbox" name="disable[]" value="{{user.id}}"></td>
-        	    <td>{{user.id}}</td>
-        	    <td>{{user.name}}</td>
-                <td>Habilitado</td> 
-            </tr>
-            {% endfor %}
-
-            {% for user in Disabled %}
-            <tr class="danger">
-            	<td><input type="checkbox" name="enable[]" value="{{user.id}}"></td>
-            	<td>{{user.id}}</td>
-        	    <td>{{user.name}}</td>
-                <td>Banido</td> 
-            </tr>
-            {% endfor %}
-
-        </table>
-        <input class="btn btn-default" type="submit" value="Aplicar">
-    </form>
-    {% if warning_message != '' %}
-    <div class="panel panel-warning">
-        <div class="panel-heading">{{warning_message}}</div>
+    <div id = "tabela">
+    {% include 'partials/deleteUsersTable.html.twig'
+        with {'Enabled': Enabled, 'Disabled': Disabled}
+    %}
     </div>
-    {% endif %}
-</div>   
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript">
+        function deletaUser () {
+            var usersToDisableId = [];
+            var usersToEnableId = [];
+            var i =0;
+            $("input[name='disable']").each(function (index) {
+                if($(this).is(":checked")) {
+                    usersToDisableId[i++] = $(this).val();
+                }
+            });
+            i = 0;
+            $("input[name='enable']").each(function (index) {
+                if($(this).is(":checked"))
+                    usersToEnableId[i++] = $(this).val();
+            });
+            $.ajax({
+                method:"POST",
+                url: "/admin/disable-user",
+                data: {'usersToDisableId': usersToDisableId, 'usersToEnableId': usersToEnableId},
+                success: function (data) {
+                    $("#tabela").html(data);
+                }
+            });
+        }
+
+    </script>
+
 {% endblock %}
