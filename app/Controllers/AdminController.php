@@ -56,68 +56,76 @@ class AdminController extends Controller
      */
     public function deleteForm(Request $request, Response $response, array $args)
     {
-        try {
+        $users = $this->getEnabledAndDisabledUsers();
+        if($users == null || count($users) == 0)
+            return $this->view->render($response, 'deleteUserForm.html.twig',
+                ['warning_message'=> 'Não há usuários cadastrados.']);
+
+        return $this->view->render($response, 'deleteUserForm.html.twig',
+            ['Enabled' => $users[0],
+             'Disabled'=> $users[1] ]);
+    }
+
+
+    private function getEnabledAndDisabledUsers(){
+        try{
             $repository = $this->db->getRepository(User::class);
             $users = $repository->findByPrivilege(1);
         } catch (Exception $e) {
             $e->getMessage();
-
-            return;
+            return null;
         }
 
-        if (count($users) === 0) {
-            return $this->view->render($response, 'deleteUserForm.html.twig',
-            ['warning_message'=> 'Não há usuários cadastrados.']);
-        }
+        if(count($users) === 0)
+            return $users;
+
 
         $enabled = [];
         $disabled = [];
         foreach ($users as $user) {
-            if ($user->getIsAble() == true) {
-                array_push($enabled, [
-                    'name'=> $user->getName(),
-                    'id'  => $user->getId(), ]);
+
+            if($user->getIsAble() == true) {
+
+                array_push($enabled,array(
+                    'name'=>$user->getName(),
+                    'id'  =>$user->getId()));
             } else {
-                array_push($disabled, [
-                    'name'=> $user->getName(),
-                    'id'  => $user->getId(), ]);
+
+                array_push($disabled,array(
+                    'name'=>$user->getName(),
+                    'id'=>$user->getId()));
             }
         }
-
-        return $this->view->render($response, 'deleteUserForm.html.twig',
-            ['Enabled' => $enabled,
-             'Disabled'=> $disabled, ]);
+        return [$enabled, $disabled];
     }
 
     /*
      * @route /admin/disable-user
      * @method POST
      */
-    public function delete(Request $request, Response $response, array $args)
-    {
-        $disable = $request->getParsedBodyParam('disable');
-        $enable = $request->getParsedBodyParam('enable');
 
-        try {
-            foreach ($disable as $userId) {
-                $user = $this->db->find(User::class, $userId);
+    public function delete(Request $request, Response $response, array $args) {
+        $postParams = $request->getParsedBody();
+        try{
+            foreach ($postParams['usersToDisableId'] as $id){
+                $user = $this->db->find(User::class, $id);
                 $user->setIsAble(false);
-                $this->db->merge($user);
+                $this->db->persist($user);
             }
 
-            foreach ($enable as $userId) {
-                $user = $this->db->find(User::class, $userId);
+            foreach ($postParams['usersToEnableId'] as $id) {
+                $user = $this->db->find(User::class, $id);
                 $user->setIsAble(true);
-                $this->db->merge($user);
+                $this->db->persist($user);
             }
-
             $this->db->flush();
         } catch (Exception $e) {
-            echo $e->getMessage();
-
-            return;
-        } finally {
-            return $response->withStatus(200)->withHeader('Location', '/admin/disable-user');
+            return "Erro: ". $e->getMessage();
         }
+        $users = $this->getEnabledAndDisabledUsers();
+        return $this->view->render($response, 'partials/deleteUsersTable.html.twig',
+            ['Enabled' => $users[0],
+              'Disabled'=> $users[1]]);
+
     }
 }

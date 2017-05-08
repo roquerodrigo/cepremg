@@ -1,0 +1,67 @@
+<div class = "row">
+    <div class = "col-xs-12">
+        <h1 class = "text-center"> Habilitar/Desabilitar Usuários </h1>
+        <hr>
+    </div>
+</div>
+<div class = "row">
+    <div class="col-xs-6">
+        <div class = "table-responsive">
+            <div class = "text-center">
+                <label class = "text-center">Usuários Habilitados</label>
+            </div>
+            <table class = "table table-bordered">
+                <thead>
+                <tr>
+                    <td>User ID</td>
+                    <td>User Name</td>
+                    <td>Disable</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in Enabled %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td><input type="checkbox" name="disable" value="{{user.id}}"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class = "col-xs-6">
+        <div class = "text-center">
+            <label class = "text-center">Usuários Desabilitados</label>
+        </div>
+        <div class = "table-responsive">
+            <table class = "table table-bordered">
+                <thead>
+                <tr>
+                    <td>User ID</td>
+                    <td>User Name</td>
+                    <td>Enable</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in Disabled %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td><input type="checkbox" name="enable" value="{{user.id}}"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-xs-12">
+        <div class = "text-right">
+            <button class = "btn btn-default" onclick="deletaUser();">
+                Enviar
+            </button>
+        </div>
+    </div>
+</div>
