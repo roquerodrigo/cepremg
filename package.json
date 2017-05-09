@@ -21,13 +21,14 @@
     "url": "https://github.com/roquerodrigo/cepremg/issues"
   },
   "homepage": "https://github.com/roquerodrigo/cepremg#readme",
-  "devDependencies": {
+  "dependencies": {
     "angular": "^1.6.4",
+    "angular-daterangepicker": "^0.2.3-alpha1",
     "bootstrap": "^3.3.7",
-    "bootstrap-datepicker": "^1.6.4",
     "highcharts": "^5.0.10",
     "highcharts-ng": "^1.1.0",
     "jquery": "^3.2.1",
-    "laravel-mix": "^0.11.0"
+    "laravel-mix": "^0.11.0",
+    "mdi": "^1.9.33"
   }
 }

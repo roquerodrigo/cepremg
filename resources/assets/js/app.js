@@ -1,3 +1,12 @@
+require('jquery');
+require('bootstrap');
+require('moment');
+require('angular');
+require('highcharts');
+require('highcharts-ng');
+require('bootstrap-daterangepicker');
+require('angular-daterangepicker');
+
 Highcharts.setOptions({
         lang: {
             loading: 'Aguarde...',
@@ -13,10 +22,6 @@ Highcharts.setOptions({
             downloadJPEG: 'Download imagem JPEG',
             downloadPDF: 'Download documento PDF',
             downloadSVG: 'Download imagem SVG'
-            // resetZoom: "Reset",
-            // resetZoomTitle: "Reset,
-            // thousandsSep: ".",
-            // decimalPoint: ','
         }
     }
 );

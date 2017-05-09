@@ -7,3 +7,7 @@
 /fonts/
 db.sqlite
 /app/config-overwrite.php
+public/mix-manifest.json
+public/mix.js
+public/css/app.less.css
+public/css/app.scss.css
