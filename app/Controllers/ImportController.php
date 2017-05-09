@@ -20,6 +20,9 @@ class ImportController extends Controller
     {
         ini_set('max_execution_time', 300);
 
+        $convert = $request->getParam('convert');
+        $overwrite = $request->getParam('overwrite');
+
         $files = $request->getUploadedFiles();
 
         foreach ($files['davis'] as $file) {
@@ -49,12 +52,17 @@ class ImportController extends Controller
                             ->setLowTemp($data[4])
                             ->setOutHum($data[5])
                             ->setDewPt($data[6])
-                            ->setWindSpeed($data[7])
                             ->setWindDir($data[8])
                             ->setBar($data[16])
                             ->setRain($data[17])
                             ->setSolarRad($data[19])
                             ->setUVIndex($data[22]);
+
+                        if ($convert) {
+                            $davis->setWindSpeed($data[7] / 3.6);
+                        } else {
+                            $davis->setWindSpeed($data[7]);
+                        }
 
                         $this->db->persist($davis);
                     } else {
