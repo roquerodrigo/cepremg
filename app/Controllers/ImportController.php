@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Davis;
 use DateTime;
+use Doctrine\ORM\Query\ResultSetMapping;
 use Exception;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -62,6 +63,7 @@ class ImportController extends Controller
                 }
 
                 $this->db->flush();
+
             } catch (Exception $e) {
                 $caught = true;
                 $messages[] = [
@@ -76,6 +78,11 @@ class ImportController extends Controller
                     ];
                 }
             }
+        }
+
+        try {
+            $this->db->createNativeQuery('CALL atualiza_tabelas()', new ResultSetMapping())->getResult();
+        } catch (Exception $e) {
         }
 
         return $this->view->render($response, 'import.html.twig', [
