@@ -19,12 +19,11 @@ $app->post('/login', UserController::class . ':login');
  */
 
 $isLogedIn = function ($request, $response, $next) {
-    if ($_SESSION['auth'] !== true) {
+    if (empty($_SESSION['auth'])) {
         return $response->withStatus(401)->withHeader('Location', '/login');
     }
-    $response = $next($request, $response);
 
-    return $response;
+    return $next($request, $response);
 };
 
 /***********************************************
@@ -38,9 +37,8 @@ $isRoot = function ($request, $response, $next) {
     if ($_SESSION['privilege'] !== 0) {
         return $response->withStatus(401)->withHeader('Location', '/');
     }
-    $response = $next($request, $response);
 
-    return $response;
+    return $next($request, $response);
 };
 
 /***********************************************
