@@ -1,12 +1,3 @@
-require('jquery');
-require('bootstrap');
-require('moment');
-require('angular');
-require('highcharts');
-require('highcharts-ng');
-require('bootstrap-daterangepicker');
-require('angular-daterangepicker');
-
 Highcharts.setOptions({
         lang: {
             loading: 'Aguarde...',

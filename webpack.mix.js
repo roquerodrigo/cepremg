@@ -13,9 +13,14 @@ mix
         './public/css/app.less.css',
         './public/css/app.scss.css'
     ], './public/css/app.css')
-    .js('./resources/assets/js/app.js', 'js')
-    .autoload({
-        'jquery': ['$', 'window.jQuery', 'jQuery'],
-        'moment': 'moment',
-        'highcharts': ['Highcharts']
-    });
+    .combine([
+        'node_modules/moment/moment.js',
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+        'node_modules/angular/angular.js',
+        'node_modules/highcharts/js/highcharts.js',
+        'node_modules/highcharts-ng/dist/highcharts-ng.js',
+        'node_modules/bootstrap-daterangepicker/daterangepicker.js',
+        'node_modules/angular-daterangepicker/js/angular-daterangepicker.js',
+        'resources/assets/js/app.js'
+    ], 'public/js/app.js');
