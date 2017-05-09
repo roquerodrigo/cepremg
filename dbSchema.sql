@@ -76,6 +76,8 @@ CREATE PROCEDURE update_table(IN tabela VARCHAR(100), IN formato VARCHAR(20))
   END;
 //
 
+DROP PROCEDURE IF EXISTS atualiza_tabelas;
+
 DELIMITER //
 CREATE PROCEDURE atualiza_tabelas()
   BEGIN
