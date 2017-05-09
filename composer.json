@@ -8,6 +8,7 @@
   ],
   "require": {
     "doctrine/orm": "^2.5",
+    "ghunti/highcharts-php": "^3.0",
     "slim/slim": "^3.8",
     "slim/twig-view": "^2.2"
   },

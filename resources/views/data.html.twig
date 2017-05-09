@@ -5,49 +5,41 @@
     {% verbatim %}
     <div class="container" ng-app="app">
         <div ng-controller="AppController">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label>Variável</label>
-                    <select class="form-control" ng-change="getData()" ng-model="chartVar">
-                        <option value="temp">Temperatura</option>
-                        <option value="outHum">Umidade do ar</option>
-                        <option value="dewPt">Temperatura do ponto de orvalho</option>
-                        <option value="windSpeed">Intensidade do vento</option>
-                        <option value="bar">Pressão atmosférica</option>
-                        <option value="rain">Preciptação</option>
-                        <option value="solarRad">Radiação solar</option>
-                        <option value="UVIndex">Índice ultra violeta</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Tipo de gráfico</label>
-                    <select class="form-control" ng-change="getData()" ng-model="chartType">
-                        <option value="hourly">Horário</option>
-                        <option value="daily">Diario</option>
-                        <option value="monthly">Mensal</option>
-                        <option value="yearly">Anual</option>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form">
+                        <div class="form-group col-sm-4">
+                            <label for="variavel">Variável</label>
+                            <select id="variavel" class="form-control" ng-change="getData()" ng-model="chartVar">
+                                <option value="temp">Temperatura</option>
+                                <option value="outHum">Umidade do ar</option>
+                                <option value="dewPt">Temperatura do ponto de orvalho</option>
+                                <option value="windSpeed">Intensidade do vento</option>
+                                <option value="bar">Pressão atmosférica</option>
+                                <option value="rain">Preciptação</option>
+                                <option value="solarRad">Radiação solar</option>
+                                <option value="UVIndex">Índice ultra violeta</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="tipo">Tipo de gráfico</label>
+                            <select id="tipo" class="form-control" ng-change="getData()" ng-model="chartType">
+                                <option value="hourly">Horário</option>
+                                <option value="daily">Diario</option>
+                                <option value="monthly">Mensal</option>
+                                <option value="yearly">Anual</option>
 
-                    </select>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="periodo">Período</label>
+                            <input id="periodo" class="form-control" date-range-picker ng-model="date" options="options">
+                        </div>
+                    </form>
+                    <hr>
+                    <highchart id="container" config="chart" style="height: 600px"></highchart>
                 </div>
-                <div class="form-group">
-                    <label>Inicio</label>
-                    <input class="form-control"
-                    data-provide="datepicker"
-                    data-date-format="yyyy-mm-dd"
-                    ng-model="start">
-                </div>
-                <div class="form-group">
-                    <label>Final</label>
-                    <input class="form-control"
-                    data-provide="datepicker"
-                    data-date-format="yyyy-mm-dd"
-                    ng-model="end">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-default" ng-click="getData()">Atualizar</button>
-                </div>
-            </form>
-            <highchart id="container" config="chart"></highchart>
+            </div>
         </div>
     </div>
     {% endverbatim %}
@@ -56,20 +48,50 @@
 {% block js %}
     <script type="text/javascript">
 
-        let app = angular.module('app', ['highcharts-ng']);
+        let app = angular.module('app', ['highcharts-ng', 'daterangepicker']);
 
         app.controller('AppController', function AppController($scope, $http) {
 
             $scope.chartVar = 'temp';
-            $scope.chartType = 'hourly';
+            $scope.chartType = 'daily';
             $scope.chart = {};
-            $scope.start = '2010-04-02';
-            $scope.end = '2010-04-03';
+
+            $scope.date = {
+                startDate: moment().subtract(1, 'month').startOf('month'),
+                endDate: moment().subtract(1, 'month').endOf('month')
+            };
+
+            $scope.options = {
+                locale: {
+                    applyLabel: "Confirmar",
+                    fromLabel: "De",
+                    format: "DD-MM-YYYY",
+                    toLabel: "Até",
+                    cancelLabel: 'Cancelar',
+                    customRangeLabel: 'Intervalo personalizado'
+                },
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Este mês': [moment().startOf('month'), moment().endOf('month')],
+                    'Este ano': [moment().startOf('year'), moment().endOf('year')]
+                },
+                eventHandlers: {
+                    'apply.daterangepicker': function () {
+                        $scope.getData();
+                    }
+                }
+            };
 
             $scope.getData = function (callback) {
-                $http.get('/get-data/type/' + $scope.chartVar + '/time-period/' + $scope.chartType + '/start/' + $scope.start + '/end/' + $scope.end + '').then(function (response) {
-                    $scope.chart = response.data;
-                });
+                $http.get(
+                    '/get-data/type/' + $scope.chartVar +
+                    '/time-period/' + $scope.chartType +
+                    '/start/' + $scope.date.startDate.format('YYYY-MM-DD') +
+                    '/end/' + $scope.date.endDate.format('YYYY-MM-DD'))
+                    .then(function (response) {
+                        $scope.chart = response.data;
+                    });
             };
 
             $scope.getData();
