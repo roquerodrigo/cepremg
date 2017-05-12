@@ -3,13 +3,7 @@
 namespace App\Models;
 
 /**
- * ReportData.
- *
- * @ORM\Table(name="reports_report_data",options={"engine":"MyISAM"})
- * @ORM\Entity(repositoryClass="Jac\ReportGeneratorBundle\Entity\ReportDataRepository")
- */
-/**
- * @Entity @Table(name="davis", options={"engine":"MyISAM"})
+ * @Entity @Table(name="davis")
  **/
 class Davis
 {

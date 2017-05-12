@@ -3,7 +3,7 @@
 namespace App\Models;
 
 /**
- * @Entity @Table(name="davis_daily",options={"engine":"MyISAM"})
+ * @Entity @Table(name="davis_daily")
  **/
 class DavisDaily extends Davis
 {
