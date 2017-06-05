@@ -25,12 +25,27 @@ class DavisMonthly extends AbstractDavis
             $this->validHiTemp = false;
             $this->validTempOut = false;
             
-            $this->amountWindDir = 0;
+            $this->amountWindDir['WNW']=0;            
+            $this->amountWindDir['NW']=0;            
+            $this->amountWindDir['NNW']=0;            
+            $this->amountWindDir['N']=0;            
+            $this->amountWindDir['NNE']=0;            
+            $this->amountWindDir['NE']=0;            
+            $this->amountWindDir['ENE']=0;            
+            $this->amountWindDir['E']=0;            
+            $this->amountWindDir['ESE']=0;            
+            $this->amountWindDir['SE']=0;            
+            $this->amountWindDir['SSE']=0;            
+            $this->amountWindDir['S']=0;            
+            $this->amountWindDir['SSW']=0;            
+            $this->amountWindDir['SW']=0;            
+            $this->amountWindDir['WSW']=0;            
+            $this->amountWindDir['W']=0;
+
             $this->amountUVIndex = 0;
             $this->amountSolarRad = 0;
             $this->amountRain = 0;
             $this->amountBar = 0;
-            $this->amountWindDir = 0;
             $this->amountWindSpeed = 0;
             $this->amountDewPt = 0;
             $this->amountOutHum = 0;
@@ -61,29 +76,91 @@ class DavisMonthly extends AbstractDavis
         $this->setSolarRad($this->getSolarRad() + $davis->getSolarRad());
         $this->setUVIndex($this->getUVIndex() + $davis->getUVIndex());
 
+        $arr = $davis->getAmountWindDir();
+        foreach ($arr as $key => $value) {
+            $this->amountWindDir[$key] += array_sum($value);
+        }
+
         $this->amountData += $davis->getAmountData();
-        $this->amountTempOut += $davis->getAmountTempOut();
-        $this->amountHiTemp += $davis->getAmountHiTemp();
-        $this->amountLowTemp += $davis->getAmountLowTemp();
-        $this->amountOutHum += $davis->getAmountOutHum();
-        $this->amountDewPt += $davis->getAmountDewPt();
-        $this->amountWindSpeed += $davis->getAmountWindSpeed();
-        $this->amountBar += $davis->getAmountBar();
-        $this->amountRain += $davis->getAmountRain();
-        $this->amountSolarRad += $davis->getAmountSolarRad();
-        $this->amountUVIndex += $davis->getAmountUVIndex();
+        $this->amountTempOut += array_sum($davis->getAmountTempOut());
+        $this->amountHiTemp += array_sum($davis->getAmountHiTemp());
+        $this->amountLowTemp += array_sum($davis->getAmountLowTemp());
+        $this->amountOutHum += array_sum($davis->getAmountOutHum());
+        $this->amountDewPt += array_sum($davis->getAmountDewPt());
+        $this->amountWindSpeed += array_sum($davis->getAmountWindSpeed());
+        $this->amountBar += array_sum($davis->getAmountBar());
+        $this->amountRain += array_sum($davis->getAmountRain());
+        $this->amountSolarRad += array_sum($davis->getAmountSolarRad());
+        $this->amountUVIndex += array_sum($davis->getAmountUVIndex());
         
     } 
 
     public function doPrepare() 
-    {
-        $this->setTempOut($this->getTempOut() / $this->amountTempOut) ;
-        $this->setOutHum($this->getOutHum() / $this->amountOutHum);
-        $this->setDewPt($this->getDewPt() / $this->amountDewPt);
-        $this->setWindSpeed($this->getWindSpeed() / $this->amountWindSpeed);
-        $this->setBar($this->getBar() / $this->amountBar);
-        $this->setSolarRad($this->getSolarRad() / $this->amountSolarRad);
-        $this->setUVIndex($this->getUVIndex() / $this->amountUVIndex);
+    {   
+        
+        if($this->amountTempOut != 0){
+            $this->setTempOut($this->getTempOut() / $this->amountTempOut) ;
+        }
+        if($this->amountOutHum != 0){
+            $this->setOutHum($this->getOutHum() / $this->amountOutHum);
+        }
+        if($this->amountDewPt != 0){
+            $this->setDewPt($this->getDewPt() / $this->amountDewPt);
+        }
+        if($this->amountWindSpeed != 0){
+            $this->setWindSpeed($this->getWindSpeed() / $this->amountWindSpeed);
+        }
+        if($this->amountBar != 0){
+            $this->setBar($this->getBar() / $this->amountBar);
+        }
+        if($this->amountSolarRad != 0){
+            $this->setSolarRad($this->getSolarRad() / $this->amountSolarRad);
+        }
+        if($this->amountUVIndex != 0){
+            $this->setUVIndex($this->getUVIndex() / $this->amountUVIndex);
+        }
+        $this->setWindDir(array_keys($this->amountWindDir, max($this->amountWindDir))[0]);
+
+        if($this->amountUVIndex >= 2880){
+            $this->validUVIndex = true;
+        }
+        if($this->amountSolarRad >= 2880){
+            $this->validSolarRad = true;
+        }
+        if($this->amountRain == $this->amountData && $this->amountRain >= 2880 ){
+            $this->validRain = true;
+        }
+        if($this->amountBar >= 2880 ){
+            $this->validBar = true;
+        }
+
+        $wdirSum = 0;
+        foreach ($this->amountWindDir as $value) {
+            $wdirSum += $value;
+        }
+        
+        if($wdirSum >= 2880){
+            $this->validWindDir = true;
+        }
+
+        if($this->amountWindSpeed >= 2880){
+            $this->validWindSpeed = true;
+        }
+        if($this->amountDewPt >= 2880){
+            $this->validDewPt = true;
+        }
+        if($this->amountOutHum >= 2880){
+            $this->validOutHum = true;
+        }
+        if($this->amountLowTemp >= 2880){
+            $this->validLowTemp = true;
+        }
+        if($this->amountHiTemp >= 2880){
+            $this->validHiTemp = true;
+        }
+        if($this->amountTempOut >= 2880){
+            $this->validTempOut = true;
+        }
         return $this;
     }
     
@@ -154,8 +231,8 @@ class DavisMonthly extends AbstractDavis
     private $validWindDir;
 
     /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_wind_dir",type="integer", nullable=false, options={"default":0})
+     * @var array ,contagem de direções do vento 
+     * @Column(name="amount_wind_dir",type="array", nullable=false)
      */
     private $amountWindDir;
 
@@ -308,7 +385,15 @@ class DavisMonthly extends AbstractDavis
     {
         return $this->amountUVIndex;
     }
-
+    public function getAmountWindDir()
+    {
+        return $this->amountWindDir;
+    }
+    public function setAmountWindDir($amount) 
+    {
+        $this->amountWindDir = $amount;
+        return $this;
+    }
     public function setAmountTempOut($amount)
     {
         $this->amountTempOut = $amount;

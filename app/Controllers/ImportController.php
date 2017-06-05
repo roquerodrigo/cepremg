@@ -7,6 +7,7 @@ use App\Models\DavisHourly;
 use App\Models\DavisDaily;
 use App\Models\DavisMonthly;
 use App\Models\DavisYearly;
+use App\Models\WindDirCount;
 use DateTime;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\DBAL\Exception\DriverException;
@@ -82,13 +83,12 @@ class ImportController extends Controller
                         #USAR REGEX
                         if($x[0] == '-'){
                             return null;
-                        } 
+                        }
                         return $x;
                     };
 
                     if ($dateTime instanceof DateTime) {
                         $davis = new Davis();
-
                         $davis->setDateTime($dateTime)
                             ->setTempOut($filter($data[2]))
                             ->setHiTemp($filter($data[3]))
@@ -119,6 +119,11 @@ class ImportController extends Controller
                 $davisMonthlyArray = $this->generateDavis__($davisDailyArray,DavisMonthly::class);
                 $davisYearlyArray = $this->generateDavis__($davisMonthlyArray,DavisYearly::class);
                 
+                /**
+                 * Agora que as instâncias já estão prontas os valores
+                 * serão preparados e persistidos no SGBD.
+                 */
+                
                 foreach ($davisArray as $instance) {
                     $this->db->persist($instance);
                 }
@@ -134,7 +139,7 @@ class ImportController extends Controller
                 foreach ($davisYearlyArray as $instance) {
                     $this->db->persist($instance->doPrepare());
                 }
-                
+                #echo '<pre>' . var_export($davisHourlyArray,true) . '</pre>';
                 $this->db->flush(); 
                 
             } catch (Exception $e) {
@@ -196,7 +201,6 @@ class ImportController extends Controller
              * $davis, se não, o valor de $davis sera usado para
              * instanciar um objeto da classe $repoClass.
              */
-
                         
             if(empty($newDavisArray[$time->format('d/m/Y H:i')])) {
                 
@@ -215,10 +219,6 @@ class ImportController extends Controller
                 $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
             }
         }
-        /**
-         * Agora que as instâncias de $repoClass já estão prontas os valores
-         * serão persistidos no SGBD.
-         */
         
         return $newDavisArray;        
     }

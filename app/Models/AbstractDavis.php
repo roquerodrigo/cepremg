@@ -23,67 +23,67 @@ class AbstractDavis
      * @var float Temperatura
      * @Column(name="temp_out", type="float", nullable=true)
      */
-    private $tempOut;
+    private $tempOut = 0.0;
 
     /**
      * @var float Maior temperatura
      * @Column(name="hi_temp", type="float", nullable=true)
      */
-    private $hiTemp;
+    private $hiTemp = 0.0;
 
     /**
      * @var float Menor temperatura
      * @Column(name="low_temp", type="float", nullable=true)
      */
-    private $lowTemp;
+    private $lowTemp = 0.0;
 
     /**
      * @var int Umidade do ar
      * @Column(name="out_hum", type="float", nullable=true)
      */
-    private $outHum;
+    private $outHum = 0.0;
 
     /**
      * @var float Temperatura de ponto de orvalho
      * @Column(name="dew_pt", type="float", nullable=true)
      */
-    private $dewPt;
+    private $dewPt = 0.0;
 
     /**
      * @var float Intensidade do vento
      * @Column(name="wind_speed", type="float", nullable=true)
      */
-    private $windSpeed;
+    private $windSpeed = 0.0;
 
     /**
      * @var float Direção do vento
      * @Column(name="wind_dir", type="string", length=3, nullable=true)
      */
-    private $windDir;
+    private $windDir = 0.0;
 
     /**
      * @var float Pressão atmosférica
      * @Column(name="bar", type="float", nullable=true)
      */
-    private $bar;
+    private $bar = 0.0;
 
     /**
      * @var float Precipitação
      * @Column(name="rain", type="float", nullable=true)
      */
-    private $rain;
+    private $rain = 0.0;
 
     /**
      * @var int Radiação solar
      * @Column(name="solar_rad", type="float", nullable=true)
      */
-    private $solarRad;
+    private $solarRad = 0.0;
 
     /**
      * @var float Índice ultra-violeta
      * @Column(name="uv_index", type="float", nullable=true)
      */
-    private $UVIndex;
+    private $UVIndex = 0.0;
 
     /**
      * @return int
