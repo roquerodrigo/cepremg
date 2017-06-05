@@ -51,7 +51,7 @@ $isRoot = function ($request, $response, $next) {
 $app->group('/import', function () {
     $this->get('', ImportController::class . ':showForm');
     $this->post('', ImportController::class . ':import');
-})->add($isLogedIn);
+});//->add($isLogedIn);
 
 /***********************************************
  * Routes: /user
@@ -79,7 +79,8 @@ $app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
 $app->group('/admin', function () {
     $this->get('/register-user[/{message}]', AdminController::class . ':createForm');
     $this->get('/disable-user', AdminController::class . ':deleteForm');
+    $this->get('/data-overview',AdminController::class.':dataOverview');
 
     $this->post('/register-user', AdminController::class . ':create');
     $this->post('/disable-user', AdminController::class . ':delete');
-})->add($isLogedIn)->add($isRoot);
+});//->add($isLogedIn)->add($isRoot);
