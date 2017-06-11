@@ -14,6 +14,7 @@ $app->post('/login', UserController::class . ':login');
 
 $app->get('/faleConosco', FaleConoscoController::class . ':index');
 $app->post('/faleConosco/enviarMensagem', FaleConoscoController::class . ':criaMensagem');
+$app->post('/faleConosco/countMsg', FaleConoscoController::class . ':listNaoLidasCount');
 
 /***********************************************
  * Middleware: islogedIn
@@ -87,4 +88,9 @@ $app->group('/admin', function () {
 
     $this->post('/register-user', AdminController::class . ':create');
     $this->post('/disable-user', AdminController::class . ':delete');
+
+    $this->get('/mensagens', FaleConoscoController::class . ':listarMensagens');
+    $this->post('/mensagens/visualizarMsg', FaleConoscoController::class . ':visualizarMensagem');
+    $this->post('/mensagens/arquivar', FaleConoscoController::class . ':arquivarMensagem');
+
 });//->add($isLogedIn)->add($isRoot);
