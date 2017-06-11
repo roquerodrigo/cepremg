@@ -11,6 +11,18 @@
             <hr>
         </div>
         <div class = "panel-body">
+            <div class = "col-sm-8">
+                {% if(message == 'arquivado') %}
+                    <div class="col-sm-4">
+                        <label class="alert-success">Mensagem Arquivada</label>
+                    </div>
+                {% endif %}
+                {% if(message == 'desarquivado') %}
+                    <div class="col-sm-4">
+                        <label class="alert-success">Mensagem Desarquivada</label>
+                    </div>
+                {% endif %}
+            </div>
             {% for msg in mensagens %}
             <div class = "col-sm-6">
                 <div class = "tex-center">

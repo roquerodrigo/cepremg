@@ -49,18 +49,24 @@ class FaleConoscoController extends Controller {
         $this->db->persist($msg);
         $this->db->flush($msg);
 
-        return $this->view->render($response, "lerMensagem.html.twig", ["msg"=>$msg]);
+        return $this->view->render($response, "lerMensagem.html.twig", ["msg"=>$msg, "isArquivada" => ($msg->isArquivado() == true ? true : false)]);
 
     }
     public function arquivarMensagem(Request $request, Response $response, array $args){
         $msg = $this->db->find(FaleConosco::class, $request->getParsedBody()['msgId']);
-        $msg->setIsArquivado(true);
+        $isArquivado = false;
+        if($msg->isArquivado() == false) {
+            $msg->setIsArquivado(true);
+        }else{
+            $msg->setIsArquivado(false);
+            $isArquivado = true;
+        }
 
         $this->db->persist($msg);
         $this->db->flush($msg);
 
-        $mensagens = $this->db->getRepository(FaleConosco::class)->findByIsArquivado(false);
-        return $this->view->render($response, "visualizarTodasMensagens.html.twig",['message'=>'success',"mensagens"=>$mensagens]);
+        $mensagens = $this->db->getRepository(FaleConosco::class)->findByIsArquivado($isArquivado);
+        return $this->view->render($response, "visualizarTodasMensagens.html.twig",['message'=>($isArquivado == false ? "arquivado" : "desarquivado"),"mensagens"=>$mensagens]);
 
     }
 
