@@ -1,0 +1,144 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {% include 'layouts/navbar.html.twig' %}
+
+    {% verbatim %}
+    <div class="container" ng-app="app">
+        <div ng-controller="AppController">
+            <div class="panel panel-default">
+                <div class = "col-sm-12">
+                    <div class="text-center">
+                        <h2>Fale Conosco!</h2>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="panel-body">
+                     <form action="/faleConosco/enviarMensagem" method="POST">
+                        <div class = "col-sm-12 col-md-8 col-md-offset-2">
+                            <div class = "form-group">
+                                <label for="nome" class = "control-label">
+                                    Nome* :
+                                </label>
+                                <input id="nome" class = "form-control" required="required" name = "nome" />
+                            </div>
+                        </div>
+                        <div class = "col-sm-12 col-md-8 col-md-offset-2">
+                            <div class = "row">
+                                 <div class = "col-sm-6">
+                                     <div class = "form-group">
+                                         <label for = "insituicao" class = "control-label">
+                                             Instituição* :
+                                         </label>
+                                         <input class = "form-control" required="required" name = "instituicao" id="instituicao" />
+                                     </div>
+                                 </div>
+                                <div class = "col-sm-6">
+                                    <div class = "form-group">
+                                        <label for = "email" class = "control-label">
+                                            Email* :
+                                        </label>
+                                        <input class = "form-control" required="required" name = "email" id="email" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "col-sm-12 col-md-8 col-md-offset-2">
+                            <div class = "form-group">
+                                <label for = "motivoUso" class = "control-label">
+                                    Finalidade de uso dos dados* :
+                                </label>
+                                <textarea class = "form-control" required="required" name = "motivoUso" id="motivoUso" aria-multiline="true" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class = "col-sm-12 col-md-8 col-md-offset-2">
+                            <div class = "row">
+                                <div class = "col-sm-6">
+                                    <div class = "form-group">
+                                        <label for="periodo">Período</label>
+                                        <input id="periodo" name = "periodo" class="form-control" date-range-picker ng-model="date" options="options">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-sm-12 col-md-8 col-md-offset-2">
+                            <div class = "text-right">
+                                <button type="submit" class = "btn btn-default">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endverbatim %}
+
+        {% if message == 'failure' %}
+            <div class="panel panel-danger">
+                <div class="panel-heading">Erro: Tente novamente</div>
+            </div>
+        {% endif %}
+
+        {% if message == 'success' %}
+            <div class="panel panel-success">
+                <div class="panel-heading">Sucesso: Menssagem enviada</div>
+            </div>
+        {% endif %}
+
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+
+        let app = angular.module('app', ['highcharts-ng', 'daterangepicker']);
+
+        app.controller('AppController', function AppController($scope, $http) {
+
+            $scope.chartVar = 'temp';
+            $scope.chartType = 'daily';
+            $scope.chart = {};
+
+            $scope.date = {
+                startDate: moment().subtract(1, 'month').startOf('month'),
+                endDate: moment().subtract(1, 'month').endOf('month')
+            };
+
+            $scope.options = {
+                locale: {
+                    applyLabel: "Confirmar",
+                    fromLabel: "De",
+                    format: "DD-MM-YYYY",
+                    toLabel: "Até",
+                    cancelLabel: 'Cancelar',
+                    customRangeLabel: 'Intervalo personalizado'
+                },
+                ranges: {
+                    'Hoje': [moment(), moment()],
+                    'Últimos 7 dias': [moment().subtract(6, 'days'), moment()],
+                    'Este mês': [moment().startOf('month'), moment().endOf('month')],
+                    'Este ano': [moment().startOf('year'), moment().endOf('year')]
+                },
+                eventHandlers: {
+                    'apply.daterangepicker': function () {
+                        $scope.getData();
+                    }
+                }
+            };
+
+            $scope.getData = function (callback) {
+                $http.get(
+                    '/get-data/type/' + $scope.chartVar +
+                    '/time-period/' + $scope.chartType +
+                    '/start/' + $scope.date.startDate.format('YYYY-MM-DD') +
+                    '/end/' + $scope.date.endDate.format('YYYY-MM-DD'))
+                    .then(function (response) {
+                        $scope.chart = response.data;
+                    });
+            };
+
+            $scope.getData();
+        });
+    </script>
+{% endblock %}

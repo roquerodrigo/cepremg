@@ -2,6 +2,7 @@
 
 use App\Controllers\AdminController;
 use App\Controllers\DataController;
+use App\Controllers\FaleConoscoController;
 use App\Controllers\ImportController;
 use App\Controllers\UserController;
 
@@ -10,6 +11,9 @@ $app->get('/get-data/type/{type}/time-period/{timePeriod}/start/{start}/end/{end
 
 $app->get('/login', UserController::class . ':loginForm');
 $app->post('/login', UserController::class . ':login');
+
+$app->get('/faleConosco', FaleConoscoController::class . ':index');
+$app->post('/faleConosco/enviarMensagem', FaleConoscoController::class . ':criaMensagem');
 
 /***********************************************
  * Middleware: islogedIn
