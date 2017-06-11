@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lfaria
- * Date: 10/06/17
- * Time: 22:56
- */
+
 
 namespace app\Models;
 
@@ -49,19 +44,77 @@ class FaleConosco {
     private $periodo;
 
     /**
+     * @var bool Se foi lida ou nao
+     * @Column(name="lida",type="boolean", nullable=false, options={"default":false})
+     */
+    private $lida = false;
+
+    /**
+     * @param int $id
+     * @return FaleConosco
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @param string $nome
+     *  @return FaleConosco
+     */
+    public function setNome(string $nome)
+    {
+        $this->nome = $nome;
+        return $this;
+    }
+
+    /**
+     * @param string $instituicao
+     *  @return FaleConosco
+     */
+    public function setInstituicao(string $instituicao)
+    {
+        $this->instituicao = $instituicao;
+        return $this;
+    }
+
+    /**
+     * @param string $finalidade
+     *  @return FaleConosco
+     */
+    public function setFinalidade(string $finalidade)
+    {
+        $this->finalidade = $finalidade;
+        return $this;
+    }
+
+    /**
+     * @param bool $isArquivado
+     *  @return FaleConosco
+     */
+    public function setIsArquivado(bool $isArquivado)
+    {
+        $this->isArquivado = $isArquivado;
+        return $this;
+    }
+
+    /**
+     * @param string $periodo
+     *  @return FaleConosco
+     */
+    public function setPeriodo(string $periodo)
+    {
+        $this->periodo = $periodo;
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getId(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 
     /**
@@ -73,27 +126,11 @@ class FaleConosco {
     }
 
     /**
-     * @param string $nome
-     */
-    public function setNome(string $nome)
-    {
-        $this->nome = $nome;
-    }
-
-    /**
      * @return string
      */
     public function getInstituicao(): string
     {
         return $this->instituicao;
-    }
-
-    /**
-     * @param string $instituicao
-     */
-    public function setInstituicao(string $instituicao)
-    {
-        $this->instituicao = $instituicao;
     }
 
     /**
@@ -105,27 +142,11 @@ class FaleConosco {
     }
 
     /**
-     * @param string $finalidade
-     */
-    public function setFinalidade(string $finalidade)
-    {
-        $this->finalidade = $finalidade;
-    }
-
-    /**
      * @return bool
      */
     public function isArquivado(): bool
     {
         return $this->isArquivado;
-    }
-
-    /**
-     * @param bool $isArquivado
-     */
-    public function setIsArquivado(bool $isArquivado)
-    {
-        $this->isArquivado = $isArquivado;
     }
 
     /**
@@ -137,12 +158,23 @@ class FaleConosco {
     }
 
     /**
-     * @param string $periodo
+     * @return bool
      */
-    public function setPeriodo(string $periodo)
+    public function isLida(): bool
     {
-        $this->periodo = $periodo;
+        return $this->lida;
     }
+
+    /**
+     * @param bool $lida
+     * @return FaleConosco
+     */
+    public function setLida(bool $lida)
+    {
+        $this->lida = $lida;
+        return $this;
+    }
+
 
 
 

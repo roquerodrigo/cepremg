@@ -10,7 +10,9 @@
                 <div class = "col-sm-12">
                     <div class="text-center">
                         <h2>Fale Conosco!</h2>
+                        <h5>*Observação: Agradecer ao CepreMG pelos dados, onde for usar</h5>
                     </div>
+
                     <hr/>
                 </div>
                 <div class="panel-body">
@@ -46,10 +48,10 @@
 
                         <div class = "col-sm-12 col-md-8 col-md-offset-2">
                             <div class = "form-group">
-                                <label for = "motivoUso" class = "control-label">
+                                <label for = "finalidade" class = "control-label">
                                     Finalidade de uso dos dados* :
                                 </label>
-                                <textarea class = "form-control" required="required" name = "motivoUso" id="motivoUso" aria-multiline="true" rows="5"></textarea>
+                                <textarea class = "form-control" required="required" name = "finalidade" id="finalidade" aria-multiline="true" rows="5"></textarea>
                             </div>
                         </div>
                         <div class = "col-sm-12 col-md-8 col-md-offset-2">
@@ -127,18 +129,6 @@
                 }
             };
 
-            $scope.getData = function (callback) {
-                $http.get(
-                    '/get-data/type/' + $scope.chartVar +
-                    '/time-period/' + $scope.chartType +
-                    '/start/' + $scope.date.startDate.format('YYYY-MM-DD') +
-                    '/end/' + $scope.date.endDate.format('YYYY-MM-DD'))
-                    .then(function (response) {
-                        $scope.chart = response.data;
-                    });
-            };
-
-            $scope.getData();
         });
     </script>
 {% endblock %}
