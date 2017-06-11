@@ -1,0 +1,16 @@
+id 
+nome    
+razao    
+cnpj    
+cpf    
+endereco    
+numero    
+bairro    
+complemento    
+telefone    
+celular    
+cidade    
+estado    
+login 
+senha 
+email  

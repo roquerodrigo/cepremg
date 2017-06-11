@@ -1,0 +1,30 @@
+Sistema de Login Com PHP Mysql e Ajax
+-------------------------------------
+Este script foi criado para pessoas que precisam de um sistema de login. 
+
+O script funciona da seguinte forma: 
+
+O usuario se cadastra, e recebe um e-mail dizendo que se cadastrou. 
+
+O admin ve na lista de usuarios os usuarios pendentes e altera clicando no status para aprovado ou rejeitado.
+
+O admin coloca a mensagem no campo e quando clica em alterar é enviado um e-mail dizendo o motivo. 
+
+Quando o usuário loga-se ele verifica se o status é aprovado e deixa passar se não retorna a tela de login.
+
+Se for Administrador ja cai na tela de administração de usuários. 
+
+
+Gostaria de quem fosse implementando postassem aqui o código ou enviassem para meu e-mail.
+
+tiago@paranapoker.com
+
+Meu msn é tiago@atualcs.com.br
+
+Quem gostar do script deixe uma mensagem aqui no phpbrasil.
+
+Quem não gostar diga o porque não gostou. 
+
+Qualquer duvida pode enviar e-mail.
+
+Abraço a todos façam bom proveito.

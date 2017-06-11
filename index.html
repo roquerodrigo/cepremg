@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="ISO-8859-1">
+<title>Centro de Estudos e Previsao de Tempo e Clima de Minas Gerais (CEPreMG/UNIFEI)</title>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link href="style1.css" rel="stylesheet" type="text/css">
+<if IE>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/canvasie.js"></script>
+<endif>
+
+<script type="text/javascript">
+			function Formatadata(Campo, teclapres)
+			{
+				var tecla = teclapres.keyCode;
+				var vr = new String(Campo.value);
+				vr = vr.replace("/", "");
+				vr = vr.replace("/", "");
+				vr = vr.replace("/", "");
+				tam = vr.length + 1;
+				if (tecla != 8 && tecla != 8)
+				{
+					if (tam > 0 && tam < 2)
+						Campo.value = vr.substr(0, 2) ;
+					if (tam > 2 && tam < 4)
+						Campo.value = vr.substr(0, 2) + '/' + vr.substr(2, 2);
+					if (tam > 4 && tam < 7)
+						Campo.value = vr.substr(0, 2) + '/' + vr.substr(2, 2) + '/' + vr.substr(4, 7);
+				}
+			}
+		</script>
+
+<script language="javascript" type="text/javascript"src="js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+
+function carrega(page) {
+
+		scroll(0,0);
+
+	if (window.XMLHttpRequest)
+
+		ajax = new XMLHttpRequest();
+
+	else
+
+		ajax = new ActiveXObject("Microsoft.XMLHTTP");
+
+	ajax.open("GET", page, true);
+
+	ajax.onreadystatechange=function() {
+
+		if (ajax.readyState == 1)
+
+			document.getElementById("centro").innerHTML = "<img src='images/loading.gif'><br><br><center>Por favor, aguarde!</center>";
+
+		if (ajax.readyState == 4) {
+
+			document.getElementById("centro").innerHTML = ajax.responseText;
+			execScript(ajax.responseText);
+			newTag();
+
+		}
+
+	}
+
+	ajax.send(null);
+
+}
+
+function execScript(codigoHTMLcomScript)
+{
+    var scriptObj = document.createElement('script');
+   tmpScriptCode = codigoHTMLcomScript.split('<script language="javascript" type="text/javascript">');
+   scriptCode = tmpScriptCode[1].split('<'+'/'+'script>');
+   scriptObj.setAttribute('language', 'javascript');
+   scriptObj.text = scriptCode[0];
+   document.body.appendChild(scriptObj);
+}
+</script>
+
+
+<!-- customize labels of htmlcommentbox.com -->
+<script>
+// This code goes ABOVE the main HTML Comment Box code!
+// replace the text in the single quotes below to customize labels.
+hcb_user = {
+    //L10N
+    comments_header : ' ',
+    name_label : 'Nome',
+    content_label: ' ',
+    submit : 'Enviar',
+    logout_link : '<img src="http://www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="http://www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    no_comments_msg: '<p>Sem comentários ainda! Seja o primeiro!</p>',
+    add:'Add your comment',
+    again: 'Post another comment',
+    rss:'<img src="http://www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    said:'Disse:',
+    prev_page:'<img src="http://www.htmlcommentbox.com/static/images/arrow_left.png" class="hcb-icon" alt="[prev]"/>',
+    next_page:'<img src="http://www.htmlcommentbox.com/static/images/arrow_right.png" class="hcb-icon" alt="[next]"/>',
+    showing:'exibindo',
+    to:'para',
+    website_label:'website (optional)',
+    email_label:'email',
+    anonymous:'Anonymous',
+    mod_label:'(mod)',
+    subscribe:'email me replies',
+    are_you_sure:'Do you want to flag this comment as inappropriate?',
+    
+    reply:'<img src="http://www.htmlcommentbox.com/static/images/reply.png"/> reply',
+    flag:'<img src="http://www.htmlcommentbox.com/static/images/flag.png"/> flag',
+    like:'<img src="http://www.htmlcommentbox.com/static/images/like.png"/> like',
+
+    msg_thankyou:'<b>Obrigado pela mensagem!</b>',
+    msg_approval:'(this comment is not published until you approve it)',
+    msg_approval_required:'<b>Thank you for commenting! Your comment will appear once approved by a moderator.</b>',
+    
+    err_bad_html:'Your comment contained bad html.',
+    err_bad_email:'Please enter a valid email address.',
+    err_too_frequent:'Aguarde alguns minutos para comentar novamente.',
+    err_comment_empty:'Your comment was not posted because it was empty!',
+    
+    //SETTINGS
+    MAX_CHARS: 2048,
+    PAGE:'', // ID of the webpage to show comments for. defaults to the webpage the user is currently visiting.
+    RELATIVE_DATES:true // show dates in the form "X hours ago." etc.
+};
+</script>
+<!-- done customizing labels of htmlcommentbox.com -->
+
+</head>
+
+<body>
+<div id="wrap">
+<section id="left">
+	<header id="mainheader">
+	<img src="images/logo.jpg" width="250" height="120" alt="CleanRed | Free CSS Template"> 
+
+    </header>
+    <nav id="mainnav">
+		<ul>
+        	<li class="current"><a href="index.html">Home</a></li>
+            <li><a href="javascript:carrega('frame_forum.php')">Fórum</a></li>
+            <li><a href="javascript:carrega('frame_login.php')">Area Restrita </a></li>
+            <li><a href="javascript:carrega('contatos.php')">Contato</a></li>
+        </ul>
+	</nav>
+
+	
+    <section id="sidebar">
+<div class="sb-block">
+      <object width="180" height="130"><param name="movie" value="http://www.wunderground.com/swf/pws_mini_rf_nc.swf?station=IMINASGE10&freq=&units=metric&lang=BR" /><embed src="http://www.wunderground.com/swf/pws_mini_rf_nc.swf?station=IMINASGE10&freq=&units=metric&lang=BR" type="application/x-shockwave-flash" width="180" height="130" /></object> 
+    </div> 
+    <div class="sb-block">
+    <h2>Menu</h2>
+    <ul>
+    	<li><a href="index.html">Home</a></li>
+		<li><a href="javascript:carrega('estacao.html')">A Estação</a></li>
+		<li><a href="javascript:carrega('dados.php')">Resumo Diário</a></li>
+		<li><a href="javascript:carrega('frame_graficos.php')">Gráficos</a></li>
+		<li><a href="javascript:carrega('medias_semanais.php')">Médias Semanais</a></li>
+		<li><a href="javascript:carrega('meteogramas.php')">Meteogramas</a></li>
+		<li><a href="javascript:carrega('frame_login.php')">Banco de Dados</a></li>
+                <li><a href="javascript:carrega('artigos.html')">Artigos Acadêmicos </a></li>
+		<li><a href="javascript:carrega('links.php')">Links Úteis </a></li>
+    </ul>
+    </div>
+    
+    
+    
+    <div id="sociallinks"> <a href="#"><img src="images/fb-icon.jpg" width="33" height="32" alt="facebook"></a> <a href="#"><img src="images/twt-icon.jpg" width="33" height="32" alt="twitter"></a> <a href="#"><img src="images/flkr-icon.jpg" width="33" height="32" alt="flickr"></a> <a href="#"><img src="images/be-icon.jpg" width="33" height="32" alt="behance"></a> </div>
+    </section>
+</section>
+
+<section id="right">
+	<header id="pageheader">
+   		<div id="intro">
+        	<div id="introwrap">
+            
+            </div>
+               
+
+        </div>
+    </header>
+    
+    <section id="contents">
+    <section id="homemain">
+   <article>
+
+    <article class="post">
+
+<br><br>
+    
+<div id="centro">
+
+
+    <h1>Bem Vindos a Página da Estação Meteorológica</h1>   
+
+    <br><br>
+    <p><center><object width="438" height="300"><param name="movie" value="http://www.wunderground.com/swf/Rapid_Fire.swf?units=metric&station=IMINASGE10" /><embed src="http://www.wunderground.com/swf/Rapid_Fire.swf?units=metric&station=IMINASGE10" type="application/x-shockwave-flash" width="438" height="300" /></object></center></p>
+    
+    <p>Este portal tem como objetivo integrar e apresentar, de uma forma concisa, objetiva e dinâmica dados relacionados a temperatura, umidade relativa do ar, índices pluviométricos, direção e intensidade dos ventos, bem como índices de radiação solar e raios ultra-violeta. Dados estes captados pela Estação Meteorológica gerenciada pelo Centro de Previsão e Estudos de Tempo e Clima de Minas Gerais - CEPreMG, situado na Universidade Federal de Itajubá.
+       Neste site, você encontrará dados atualizados em tempo real, e exibidos por meio de relatórios e gráficos, e poderá também:
+
+		<ul>
+		<li>Realizar consultas por filtros como: tipo de informação procurada e intervalo de datas</li>
+		<li>Visualizar meteograma do dia atual, hora a hora</li>
+	        <li>Visualizar meteogramas com as médias da semana dia a dia, com comparativo dia, mês e ano.</li>
+		<li>Encontrar informações técnicas a respeito da Estação, como localização e equipamentos que a compõem.</li>
+		<li>Participar de fóruns e dicussões.</li>
+		<li>Cadastrar-se para baixar dados brutos captados pela estação.</li></ul>
+		
+</div></article>
+
+    </section>
+    <section id="dir">
+ 
+    <h2 class="subhead">A estação</h2>
+   
+<img src="img/estacao-small.jpg">
+<p align="justify"><font size="2">A estação, uma Davis Vantage Pro 2 Plus, está equipada com vários sensores, bem como um anemómetro e um pluviómetro.</p>
+<br>
+<b>Nome:</b> CEPreMG/UNIFEI<br>
+<b>Lat:</b> S 22 ° 24 ' 49 '' (-22.414°)<br>
+<b>Long:</b> W 45 ° 27 ' 7 '' (-45.452°)<br>
+<b>Altitude(pés):</b> 2785 </font><br>
+
+    <a href="javascript:carrega('estacao.html')"><img src="images/viewmorebtn.jpg" width="135" height="36" alt="A estação"></a> 
+<br><br><br>
+<h2 class="subhead">Comentários</h2>
+   
+<!-- begin htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
+ <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%249Vs3N2c79H0o5pUbywOsB/"+"&opts=476&num=5");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end htmlcommentbox.com -->
+</section>
+
+    </section>
+
+
+</section>
+<div class="clear"></div>
+</div>
+<footer id="pagefooter">
+
+<div id="footerwrap">
+
+<div id="about">
+
+<h2>Sobre</h2>
+
+<div class="about-text"><meta charset="ISO 8859-1">
+<p>
+
+Este portal tem como objetivo integrar e apresentar, de uma forma concisa, objetiva e dinâmica dados relacionados a temperatura, umidade relativa do ar, índices pluviométricos, direção e intensidade dos ventos, bem como índices de radiação solar e raios ultra-violeta. Dados estes captados pela Estação Meteorológica.... <a href="index.html"> Saiba mais </a></p>
+
+</div>
+</div>
+<div id="services">
+<h2>Serviços</h2>
+<ul>
+
+	<li>Relatórios</li>
+	<li>Meteogramas</li>
+	<li>Médias semanais</li>
+	<li>Fórum</li>
+	<li>Gráficos comparativos</li>
+	<li>Contato</li>
+</ul>
+</div>
+<div id="tools">
+<h2>Dados</h2>
+<ul>
+    <li>Temperatura.</li>
+    <li>Umidade relativa do ar</li>
+    <li>Velocidade e direção dos ventos</li>
+    <li>Precipitação</li>
+    <li>Radiação solar</li>
+    <li>índices ultra violeta</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<div id="credits">
+2012 &copy; unifei.edu.br | Developed by Matheus Mendes - SIN2012  | CEPreMG - UNIFEI </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+PARA INSTALAR:
+
+----------------
+
+Abra o SQL.php e coloque os dados do seu servidor.
+
+Abra o navegador vá até a pasta com este sistema e coloque 
+
+http://www.seusite.com.br/install.php
+
+Será criado a tabela do Banco de dados
+
+Será adicionado o usuário admin
+
+Usuario: admin
+Senha: admin
+
+Obrigado.

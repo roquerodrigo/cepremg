@@ -1,0 +1,501 @@
+2014-03-31 10:12:15 E. South America Standard Time|2014-03-31 13:12:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:12:15 E. South America Standard Time|2014-03-31 13:12:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:12:15&winddir=72&winddir_avg2m=72&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=71&tempf=77.3&dewptf=67.2&rainin=0.00&solarradiation=258&UV=3.1&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:14:16 E. South America Standard Time|2014-03-31 13:14:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.956305 v:-0.292370 avg_u:-0.956305 avg_v:-0.292370 dir:73
+||
+2014-03-31 10:14:16 E. South America Standard Time|2014-03-31 13:14:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:14:16 E. South America Standard Time|2014-03-31 13:14:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:14:16&winddir=73&winddir_avg2m=73&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=71&tempf=77.2&dewptf=67.1&rainin=0.00&solarradiation=272&UV=3.1&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:16:20 E. South America Standard Time|2014-03-31 13:16:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.453993 v:-0.891006 avg_u:-0.453993 avg_v:-0.891006 dir:27
+||
+2014-03-31 10:16:20 E. South America Standard Time|2014-03-31 13:16:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:16:21 E. South America Standard Time|2014-03-31 13:16:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:16:20&winddir=27&winddir_avg2m=27&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=72&tempf=77.0&dewptf=67.3&rainin=0.00&solarradiation=302&UV=3.2&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:18:21 E. South America Standard Time|2014-03-31 13:18:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.999391 v:0.034901 avg_u:0.999391 avg_v:0.034901 dir:267
+||
+2014-03-31 10:18:21 E. South America Standard Time|2014-03-31 13:18:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:18:21 E. South America Standard Time|2014-03-31 13:18:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:18:21&winddir=268&winddir_avg2m=267&windspeedmph=1&windgustmph=4&windgustmph_10m=4&windgustdir_10m=268&humidity=72&tempf=76.9&dewptf=67.2&rainin=0.00&solarradiation=466&UV=3.7&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:20:05 E. South America Standard Time|2014-03-31 13:20:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.997564 v:-0.069755 avg_u:0.997564 avg_v:-0.069755 dir:273
+||
+2014-03-31 10:20:05 E. South America Standard Time|2014-03-31 13:20:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:20:05 E. South America Standard Time|2014-03-31 13:20:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:20:05&winddir=274&winddir_avg2m=273&windspeedmph=1&windgustmph=5&windgustmph_10m=5&windgustdir_10m=274&humidity=73&tempf=76.9&dewptf=67.6&rainin=0.00&solarradiation=977&UV=5.9&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:22:05 E. South America Standard Time|2014-03-31 13:22:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.997564 v:0.069758 avg_u:0.997564 avg_v:0.069758 dir:265
+||
+2014-03-31 10:22:05 E. South America Standard Time|2014-03-31 13:22:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:22:06 E. South America Standard Time|2014-03-31 13:22:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:22:05&winddir=266&winddir_avg2m=265&windspeedmph=1&windgustmph=5&windgustmph_10m=5&windgustdir_10m=274&humidity=72&tempf=77.0&dewptf=67.3&rainin=0.00&solarradiation=977&UV=4.4&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:25:09 E. South America Standard Time|2014-03-31 13:25:09 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.000003 v:-1.000000 avg_u:-0.000003 avg_v:-1.000000 dir:360
+||
+2014-03-31 10:25:09 E. South America Standard Time|2014-03-31 13:25:09 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.000000 *1.27:0.000000|
+2014-03-31 10:25:10 E. South America Standard Time|2014-03-31 13:25:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|success
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:25:09&winddir=0&winddir_avg2m=360&windspeedmph=0&windgustmph=5&windgustmph_10m=5&windgustdir_10m=274&humidity=0&tempf=0.0&dewptf=-32768.0&rainin=0.00&soiltempf=-90&soilmoisture=0&leafwetness=0&solarradiation=0&UV=0.0&dailyrainin=0.00&baromin=0.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:26:13 E. South America Standard Time|2014-03-31 13:26:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.515040 v:-0.857166 avg_u:0.257519 avg_v:-0.928583 dir:344
+||
+2014-03-31 10:26:13 E. South America Standard Time|2014-03-31 13:26:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:26:13 E. South America Standard Time|2014-03-31 13:26:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:26:13&winddir=329&winddir_avg2m=344&windspeedmph=2&windgustmph=5&windgustmph_10m=5&windgustdir_10m=274&humidity=71&tempf=76.9&dewptf=66.8&rainin=0.00&solarradiation=338&UV=3.5&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:28:13 E. South America Standard Time|2014-03-31 13:28:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.156437 v:-0.987688 avg_u:0.179302 avg_v:-0.922427 dir:349
+||
+2014-03-31 10:28:13 E. South America Standard Time|2014-03-31 13:28:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:28:17 E. South America Standard Time|2014-03-31 13:28:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:28:13&winddir=9&winddir_avg2m=349&windspeedmph=1&windgustmph=5&windgustmph_10m=5&windgustdir_10m=274&humidity=71&tempf=76.8&dewptf=66.7&rainin=0.00&solarradiation=390&UV=4.2&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:30:21 E. South America Standard Time|2014-03-31 13:30:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.156437 v:-0.987688 avg_u:-0.156437 avg_v:-0.987688 dir:9
+||
+2014-03-31 10:30:21 E. South America Standard Time|2014-03-31 13:30:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:30:21 E. South America Standard Time|2014-03-31 13:30:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:30:21&winddir=9&winddir_avg2m=9&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=71&tempf=76.8&dewptf=66.7&rainin=0.00&solarradiation=853&UV=6.4&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:32:22 E. South America Standard Time|2014-03-31 13:32:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.156437 v:-0.987688 avg_u:-0.156437 avg_v:-0.987688 dir:9
+||
+2014-03-31 10:32:22 E. South America Standard Time|2014-03-31 13:32:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:32:22 E. South America Standard Time|2014-03-31 13:32:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:32:22&winddir=9&winddir_avg2m=9&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=72&tempf=76.9&dewptf=67.2&rainin=0.00&solarradiation=823&UV=6.6&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:34:06 E. South America Standard Time|2014-03-31 13:34:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.694660 v:-0.719338 avg_u:-0.425548 avg_v:-0.853513 dir:26
+||
+2014-03-31 10:34:06 E. South America Standard Time|2014-03-31 13:34:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:34:07 E. South America Standard Time|2014-03-31 13:34:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:34:06&winddir=44&winddir_avg2m=26&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=71&tempf=77.2&dewptf=67.1&rainin=0.00&solarradiation=773&UV=6.4&dailyrainin=0.02&baromin=30.04&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:36:07 E. South America Standard Time|2014-03-31 13:36:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.788010 v:0.615662 avg_u:-0.741335 avg_v:-0.051838 dir:86
+||
+2014-03-31 10:36:07 E. South America Standard Time|2014-03-31 13:36:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:36:07 E. South America Standard Time|2014-03-31 13:36:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:36:07&winddir=128&winddir_avg2m=86&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=71&tempf=77.4&dewptf=67.3&rainin=0.00&solarradiation=773&UV=6.3&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:38:11 E. South America Standard Time|2014-03-31 13:38:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.788010 v:0.615662 avg_u:-0.788010 avg_v:0.615662 dir:127
+||
+2014-03-31 10:38:11 E. South America Standard Time|2014-03-31 13:38:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:38:13 E. South America Standard Time|2014-03-31 13:38:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:38:11&winddir=128&winddir_avg2m=127&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=70&tempf=77.7&dewptf=67.1&rainin=0.00&solarradiation=765&UV=5.4&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:40:16 E. South America Standard Time|2014-03-31 13:40:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.777146 v:0.629321 avg_u:-0.782578 avg_v:0.622492 dir:128
+||
+2014-03-31 10:40:16 E. South America Standard Time|2014-03-31 13:40:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:40:17 E. South America Standard Time|2014-03-31 13:40:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:40:16&winddir=129&winddir_avg2m=128&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=129&humidity=70&tempf=77.9&dewptf=67.3&rainin=0.00&solarradiation=656&UV=7.0&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:42:16 E. South America Standard Time|2014-03-31 13:42:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.777146 v:0.629321 avg_u:-0.777146 avg_v:0.629321 dir:128
+||
+2014-03-31 10:42:16 E. South America Standard Time|2014-03-31 13:42:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:42:17 E. South America Standard Time|2014-03-31 13:42:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:42:16&winddir=129&winddir_avg2m=128&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=129&humidity=71&tempf=78.0&dewptf=67.8&rainin=0.00&solarradiation=974&UV=7.2&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:44:21 E. South America Standard Time|2014-03-31 13:44:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.707106 v:0.707107 avg_u:-0.707106 avg_v:0.707107 dir:134
+||
+2014-03-31 10:44:21 E. South America Standard Time|2014-03-31 13:44:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:44:21 E. South America Standard Time|2014-03-31 13:44:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:44:21&winddir=135&winddir_avg2m=134&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=135&humidity=69&tempf=78.2&dewptf=67.2&rainin=0.00&solarradiation=909&UV=6.2&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:46:21 E. South America Standard Time|2014-03-31 13:46:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.933581 v:-0.358366 avg_u:-0.933581 avg_v:-0.358366 dir:69
+||
+2014-03-31 10:46:21 E. South America Standard Time|2014-03-31 13:46:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:46:22 E. South America Standard Time|2014-03-31 13:46:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:46:21&winddir=69&winddir_avg2m=69&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=135&humidity=70&tempf=78.4&dewptf=67.8&rainin=0.00&solarradiation=731&UV=5.1&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:48:05 E. South America Standard Time|2014-03-31 13:48:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.939693 v:-0.342019 avg_u:-0.939693 avg_v:-0.342019 dir:70
+||
+2014-03-31 10:48:05 E. South America Standard Time|2014-03-31 13:48:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:48:06 E. South America Standard Time|2014-03-31 13:48:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:48:05&winddir=70&winddir_avg2m=70&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=135&humidity=69&tempf=78.4&dewptf=67.4&rainin=0.00&solarradiation=731&UV=5.1&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:50:05 E. South America Standard Time|2014-03-31 13:50:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.406739 v:-0.913545 avg_u:-0.406739 avg_v:-0.913545 dir:24
+||
+2014-03-31 10:50:05 E. South America Standard Time|2014-03-31 13:50:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:50:06 E. South America Standard Time|2014-03-31 13:50:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:50:05&winddir=24&winddir_avg2m=24&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=24&humidity=69&tempf=78.6&dewptf=67.6&rainin=0.00&solarradiation=884&UV=7.0&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:52:10 E. South America Standard Time|2014-03-31 13:52:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.898795 v:-0.438370 avg_u:-0.898795 avg_v:-0.438370 dir:64
+||
+2014-03-31 10:52:10 E. South America Standard Time|2014-03-31 13:52:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:52:10 E. South America Standard Time|2014-03-31 13:52:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:52:10&winddir=64&winddir_avg2m=64&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=68&tempf=78.8&dewptf=67.3&rainin=0.00&solarradiation=969&UV=6.2&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:54:11 E. South America Standard Time|2014-03-31 13:54:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.669132 v:-0.743143 avg_u:-0.669132 avg_v:-0.743143 dir:42
+||
+2014-03-31 10:54:11 E. South America Standard Time|2014-03-31 13:54:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:54:11 E. South America Standard Time|2014-03-31 13:54:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:54:11&winddir=42&winddir_avg2m=42&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=69&tempf=78.9&dewptf=67.9&rainin=0.00&solarradiation=969&UV=5.1&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:56:15 E. South America Standard Time|2014-03-31 13:56:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.390733 v:-0.920504 avg_u:0.390733 avg_v:-0.920504 dir:336
+||
+2014-03-31 10:56:15 E. South America Standard Time|2014-03-31 13:56:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:56:16 E. South America Standard Time|2014-03-31 13:56:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:56:15&winddir=337&winddir_avg2m=336&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=68&tempf=79.0&dewptf=67.5&rainin=0.00&solarradiation=944&UV=7.3&dailyrainin=0.02&baromin=30.03&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 10:58:16 E. South America Standard Time|2014-03-31 13:58:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.390733 v:-0.920504 avg_u:0.390733 avg_v:-0.920504 dir:336
+||
+2014-03-31 10:58:16 E. South America Standard Time|2014-03-31 13:58:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 10:58:16 E. South America Standard Time|2014-03-31 13:58:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 13:58:16&winddir=337&winddir_avg2m=336&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=69&tempf=79.1&dewptf=68.1&rainin=0.00&solarradiation=942&UV=7.3&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:00:57 E. South America Standard Time|2014-03-31 14:00:57 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.754711 v:-0.656058 avg_u:-0.754711 avg_v:-0.656058 dir:49
+||
+2014-03-31 11:00:57 E. South America Standard Time|2014-03-31 14:00:57 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:00:57 E. South America Standard Time|2014-03-31 14:00:57 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:00:57&winddir=49&winddir_avg2m=49&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=49&humidity=68&tempf=79.2&dewptf=67.7&rainin=0.00&solarradiation=960&UV=3.8&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:02:05 E. South America Standard Time|2014-03-31 14:02:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.754711 v:-0.656058 avg_u:-0.754711 avg_v:-0.656058 dir:49
+||
+2014-03-31 11:02:05 E. South America Standard Time|2014-03-31 14:02:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:02:06 E. South America Standard Time|2014-03-31 14:02:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:02:05&winddir=49&winddir_avg2m=49&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=49&humidity=67&tempf=79.1&dewptf=67.2&rainin=0.00&solarradiation=248&UV=3.6&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:04:06 E. South America Standard Time|2014-03-31 14:04:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.754711 v:-0.656058 avg_u:-0.754711 avg_v:-0.656058 dir:49
+||
+2014-03-31 11:04:06 E. South America Standard Time|2014-03-31 14:04:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:04:06 E. South America Standard Time|2014-03-31 14:04:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:04:06&winddir=49&winddir_avg2m=49&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=49&humidity=68&tempf=79.1&dewptf=67.6&rainin=0.00&solarradiation=227&UV=3.3&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:06:11 E. South America Standard Time|2014-03-31 14:06:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.754711 v:-0.656058 avg_u:-0.754711 avg_v:-0.656058 dir:49
+||
+2014-03-31 11:06:11 E. South America Standard Time|2014-03-31 14:06:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:06:14 E. South America Standard Time|2014-03-31 14:06:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:06:11&winddir=49&winddir_avg2m=49&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=49&humidity=67&tempf=79.0&dewptf=67.1&rainin=0.00&solarradiation=241&UV=3.3&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:08:14 E. South America Standard Time|2014-03-31 14:08:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.453993 v:-0.891006 avg_u:-0.604352 avg_v:-0.773532 dir:38
+||
+2014-03-31 11:08:14 E. South America Standard Time|2014-03-31 14:08:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:08:15 E. South America Standard Time|2014-03-31 14:08:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:08:14&winddir=27&winddir_avg2m=38&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=49&humidity=66&tempf=79.0&dewptf=66.7&rainin=0.00&solarradiation=258&UV=3.3&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:10:19 E. South America Standard Time|2014-03-31 14:10:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374609 v:-0.927183 avg_u:-0.039692 avg_v:-0.909094 dir:2
+||
+2014-03-31 11:10:19 E. South America Standard Time|2014-03-31 14:10:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:10:20 E. South America Standard Time|2014-03-31 14:10:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:10:19&winddir=338&winddir_avg2m=2&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=338&humidity=67&tempf=78.9&dewptf=67.0&rainin=0.00&solarradiation=281&UV=3.5&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:12:19 E. South America Standard Time|2014-03-31 14:12:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374609 v:-0.927183 avg_u:0.374609 avg_v:-0.927183 dir:337
+||
+2014-03-31 11:12:19 E. South America Standard Time|2014-03-31 14:12:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:12:20 E. South America Standard Time|2014-03-31 14:12:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:12:19&winddir=338&winddir_avg2m=337&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=338&humidity=66&tempf=78.8&dewptf=66.5&rainin=0.00&solarradiation=299&UV=3.6&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:14:03 E. South America Standard Time|2014-03-31 14:14:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374609 v:-0.927183 avg_u:0.374609 avg_v:-0.927183 dir:337
+||
+2014-03-31 11:14:03 E. South America Standard Time|2014-03-31 14:14:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:14:04 E. South America Standard Time|2014-03-31 14:14:04 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:14:03&winddir=338&winddir_avg2m=337&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=338&humidity=67&tempf=78.7&dewptf=66.8&rainin=0.00&solarradiation=295&UV=3.5&dailyrainin=0.02&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:16:03 E. South America Standard Time|2014-03-31 14:16:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.829039 v:-0.559191 avg_u:0.829039 avg_v:-0.559191 dir:303
+||
+2014-03-31 11:16:03 E. South America Standard Time|2014-03-31 14:16:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:16:04 E. South America Standard Time|2014-03-31 14:16:04 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:16:03&winddir=304&winddir_avg2m=303&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=338&humidity=66&tempf=78.7&dewptf=66.4&rainin=0.00&solarradiation=304&UV=3.5&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:18:08 E. South America Standard Time|2014-03-31 14:18:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.906307 v:0.422619 avg_u:0.906307 avg_v:0.422619 dir:244
+||
+2014-03-31 11:18:08 E. South America Standard Time|2014-03-31 14:18:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:18:08 E. South America Standard Time|2014-03-31 14:18:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:18:08&winddir=245&winddir_avg2m=244&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=245&humidity=67&tempf=78.7&dewptf=66.8&rainin=0.00&solarradiation=285&UV=3.3&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:20:12 E. South America Standard Time|2014-03-31 14:20:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.906307 v:0.422619 avg_u:0.906307 avg_v:0.422619 dir:244
+||
+2014-03-31 11:20:12 E. South America Standard Time|2014-03-31 14:20:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:20:12 E. South America Standard Time|2014-03-31 14:20:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:20:12&winddir=245&winddir_avg2m=244&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=245&humidity=67&tempf=78.6&dewptf=66.7&rainin=0.00&solarradiation=269&UV=3.2&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:22:12 E. South America Standard Time|2014-03-31 14:22:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.544641 v:-0.838669 avg_u:0.544641 avg_v:-0.838669 dir:326
+||
+2014-03-31 11:22:12 E. South America Standard Time|2014-03-31 14:22:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:22:12 E. South America Standard Time|2014-03-31 14:22:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:22:12&winddir=327&winddir_avg2m=326&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=327&humidity=69&tempf=78.6&dewptf=67.6&rainin=0.00&solarradiation=287&UV=3.4&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:24:17 E. South America Standard Time|2014-03-31 14:24:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.629322 v:-0.777145 avg_u:0.629322 avg_v:-0.777145 dir:320
+||
+2014-03-31 11:24:17 E. South America Standard Time|2014-03-31 14:24:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:24:17 E. South America Standard Time|2014-03-31 14:24:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:24:17&winddir=321&winddir_avg2m=320&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=327&humidity=68&tempf=78.7&dewptf=67.2&rainin=0.00&solarradiation=313&UV=6.3&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:27:17 E. South America Standard Time|2014-03-31 14:27:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.000003 v:-1.000000 avg_u:-0.000003 avg_v:-1.000000 dir:360
+||
+2014-03-31 11:27:17 E. South America Standard Time|2014-03-31 14:27:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.000000 *1.27:0.000000|
+2014-03-31 11:27:17 E. South America Standard Time|2014-03-31 14:27:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|success
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:27:17&winddir=0&winddir_avg2m=360&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=327&humidity=0&tempf=0.0&dewptf=-32768.0&rainin=0.00&soiltempf=-90&soilmoisture=0&leafwetness=0&solarradiation=0&UV=0.0&dailyrainin=0.00&baromin=0.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:28:20 E. South America Standard Time|2014-03-31 14:28:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.992546 v:-0.121868 avg_u:0.496272 avg_v:-0.560934 dir:318
+||
+2014-03-31 11:28:20 E. South America Standard Time|2014-03-31 14:28:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:28:21 E. South America Standard Time|2014-03-31 14:28:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:28:20&winddir=277&winddir_avg2m=318&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=327&humidity=68&tempf=79.2&dewptf=67.7&rainin=0.00&solarradiation=905&UV=4.3&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:30:05 E. South America Standard Time|2014-03-31 14:30:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.731355 v:-0.681997 avg_u:0.087063 avg_v:-0.601288 dir:351
+||
+2014-03-31 11:30:05 E. South America Standard Time|2014-03-31 14:30:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:30:05 E. South America Standard Time|2014-03-31 14:30:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:30:05&winddir=47&winddir_avg2m=351&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=47&humidity=67&tempf=79.4&dewptf=67.5&rainin=0.00&solarradiation=272&UV=3.6&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:32:05 E. South America Standard Time|2014-03-31 14:32:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.951057 v:-0.309015 avg_u:-0.841206 avg_v:-0.495506 dir:59
+||
+2014-03-31 11:32:05 E. South America Standard Time|2014-03-31 14:32:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:32:06 E. South America Standard Time|2014-03-31 14:32:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:32:05&winddir=72&winddir_avg2m=59&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=47&humidity=67&tempf=79.6&dewptf=67.7&rainin=0.00&solarradiation=265&UV=3.4&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:34:10 E. South America Standard Time|2014-03-31 14:34:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.999848 v:0.017454 avg_u:-0.975452 avg_v:-0.145781 dir:81
+||
+2014-03-31 11:34:10 E. South America Standard Time|2014-03-31 14:34:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:34:10 E. South America Standard Time|2014-03-31 14:34:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:34:10&winddir=91&winddir_avg2m=81&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=79.6&dewptf=67.2&rainin=0.00&solarradiation=260&UV=3.3&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:36:10 E. South America Standard Time|2014-03-31 14:36:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.999391 v:-0.034898 avg_u:-0.999619 avg_v:-0.008722 dir:89
+||
+2014-03-31 11:36:10 E. South America Standard Time|2014-03-31 14:36:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:36:11 E. South America Standard Time|2014-03-31 14:36:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:36:10&winddir=88&winddir_avg2m=89&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=79.4&dewptf=67.0&rainin=0.00&solarradiation=274&UV=3.2&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:38:14 E. South America Standard Time|2014-03-31 14:38:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.974370 v:-0.224950 avg_u:-0.986881 avg_v:-0.129924 dir:82
+||
+2014-03-31 11:38:14 E. South America Standard Time|2014-03-31 14:38:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:38:15 E. South America Standard Time|2014-03-31 14:38:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:38:14&winddir=77&winddir_avg2m=82&windspeedmph=1&windgustmph=4&windgustmph_10m=4&windgustdir_10m=77&humidity=66&tempf=79.2&dewptf=66.9&rainin=0.00&solarradiation=278&UV=3.2&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:40:15 E. South America Standard Time|2014-03-31 14:40:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.874621 v:-0.484808 avg_u:-0.924495 avg_v:-0.354879 dir:69
+||
+2014-03-31 11:40:15 E. South America Standard Time|2014-03-31 14:40:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:40:15 E. South America Standard Time|2014-03-31 14:40:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:40:15&winddir=61&winddir_avg2m=69&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=65&tempf=78.9&dewptf=66.1&rainin=0.00&solarradiation=288&UV=3.3&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:42:20 E. South America Standard Time|2014-03-31 14:42:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.898795 v:-0.438370 avg_u:0.012087 avg_v:-0.461589 dir:358
+||
+2014-03-31 11:42:20 E. South America Standard Time|2014-03-31 14:42:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:42:20 E. South America Standard Time|2014-03-31 14:42:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:42:20&winddir=296&winddir_avg2m=358&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.9&dewptf=66.6&rainin=0.00&solarradiation=262&UV=3.1&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:44:20 E. South America Standard Time|2014-03-31 14:44:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.999848 v:0.017454 avg_u:0.949321 avg_v:-0.210458 dir:282
+||
+2014-03-31 11:44:20 E. South America Standard Time|2014-03-31 14:44:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:44:21 E. South America Standard Time|2014-03-31 14:44:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:44:20&winddir=269&winddir_avg2m=282&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.8&dewptf=66.5&rainin=0.00&solarradiation=255&UV=3.1&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:46:05 E. South America Standard Time|2014-03-31 14:46:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.992546 v:0.121871 avg_u:0.996197 avg_v:0.069662 dir:265
+||
+2014-03-31 11:46:05 E. South America Standard Time|2014-03-31 14:46:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:46:05 E. South America Standard Time|2014-03-31 14:46:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:46:05&winddir=263&winddir_avg2m=265&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.7&dewptf=66.4&rainin=0.00&solarradiation=269&UV=3.2&dailyrainin=0.02&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:48:05 E. South America Standard Time|2014-03-31 14:48:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.913546 v:-0.406735 avg_u:0.913546 avg_v:-0.406735 dir:293
+||
+2014-03-31 11:48:05 E. South America Standard Time|2014-03-31 14:48:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:48:06 E. South America Standard Time|2014-03-31 14:48:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:48:05&winddir=294&winddir_avg2m=293&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.7&dewptf=66.4&rainin=0.00&solarradiation=269&UV=3.2&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:50:10 E. South America Standard Time|2014-03-31 14:50:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.682000 v:-0.731352 avg_u:0.682000 avg_v:-0.731352 dir:316
+||
+2014-03-31 11:50:10 E. South America Standard Time|2014-03-31 14:50:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:50:10 E. South America Standard Time|2014-03-31 14:50:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:50:10&winddir=317&winddir_avg2m=316&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.7&dewptf=66.4&rainin=0.00&solarradiation=287&UV=3.3&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:52:13 E. South America Standard Time|2014-03-31 14:52:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.970296 v:-0.241920 avg_u:0.970296 avg_v:-0.241920 dir:283
+||
+2014-03-31 11:52:13 E. South America Standard Time|2014-03-31 14:52:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:52:14 E. South America Standard Time|2014-03-31 14:52:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:52:13&winddir=284&winddir_avg2m=283&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=67&tempf=78.8&dewptf=66.9&rainin=0.00&solarradiation=332&UV=3.9&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:54:14 E. South America Standard Time|2014-03-31 14:54:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.970296 v:-0.241920 avg_u:0.970296 avg_v:-0.241920 dir:283
+||
+2014-03-31 11:54:14 E. South America Standard Time|2014-03-31 14:54:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:54:14 E. South America Standard Time|2014-03-31 14:54:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:54:14&winddir=284&winddir_avg2m=283&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=67&tempf=78.8&dewptf=66.9&rainin=0.00&solarradiation=450&UV=5.1&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:56:18 E. South America Standard Time|2014-03-31 14:56:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.970296 v:-0.241920 avg_u:0.970296 avg_v:-0.241920 dir:283
+||
+2014-03-31 11:56:18 E. South America Standard Time|2014-03-31 14:56:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:56:19 E. South America Standard Time|2014-03-31 14:56:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:56:18&winddir=284&winddir_avg2m=283&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.9&dewptf=66.6&rainin=0.00&solarradiation=353&UV=4.2&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 11:58:19 E. South America Standard Time|2014-03-31 14:58:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.017452 v:0.999848 avg_u:-0.017452 avg_v:0.999848 dir:178
+||
+2014-03-31 11:58:19 E. South America Standard Time|2014-03-31 14:58:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 11:58:19 E. South America Standard Time|2014-03-31 14:58:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 14:58:19&winddir=179&winddir_avg2m=178&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=66&tempf=78.9&dewptf=66.6&rainin=0.00&solarradiation=292&UV=3.5&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:00:41 E. South America Standard Time|2014-03-31 15:00:41 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.017452 v:0.999848 avg_u:-0.017452 avg_v:0.999848 dir:178
+||
+2014-03-31 12:00:41 E. South America Standard Time|2014-03-31 15:00:41 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:00:42 E. South America Standard Time|2014-03-31 15:00:42 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:00:41&winddir=179&winddir_avg2m=178&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=179&humidity=66&tempf=79.0&dewptf=66.7&rainin=0.00&solarradiation=276&UV=3.4&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:02:07 E. South America Standard Time|2014-03-31 15:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.258819 v:0.965926 avg_u:0.120683 avg_v:0.982887 dir:186
+||
+2014-03-31 12:02:07 E. South America Standard Time|2014-03-31 15:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:02:07 E. South America Standard Time|2014-03-31 15:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:02:07&winddir=195&winddir_avg2m=186&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=179&humidity=67&tempf=79.1&dewptf=67.2&rainin=0.00&solarradiation=279&UV=3.3&dailyrainin=0.02&baromin=30.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:04:11 E. South America Standard Time|2014-03-31 15:04:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.258819 v:0.965926 avg_u:0.258819 avg_v:0.965926 dir:194
+||
+2014-03-31 12:04:11 E. South America Standard Time|2014-03-31 15:04:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:04:11 E. South America Standard Time|2014-03-31 15:04:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:04:11&winddir=195&winddir_avg2m=194&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=179&humidity=66&tempf=79.3&dewptf=67.0&rainin=0.00&solarradiation=301&UV=3.5&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:06:11 E. South America Standard Time|2014-03-31 15:06:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.258819 v:0.965926 avg_u:0.258819 avg_v:0.965926 dir:194
+||
+2014-03-31 12:06:11 E. South America Standard Time|2014-03-31 15:06:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:06:12 E. South America Standard Time|2014-03-31 15:06:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:06:11&winddir=195&winddir_avg2m=194&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=195&humidity=66&tempf=79.4&dewptf=67.0&rainin=0.00&solarradiation=304&UV=3.5&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:08:15 E. South America Standard Time|2014-03-31 15:08:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.258819 v:0.965926 avg_u:0.258819 avg_v:0.965926 dir:194
+||
+2014-03-31 12:08:15 E. South America Standard Time|2014-03-31 15:08:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:08:16 E. South America Standard Time|2014-03-31 15:08:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:08:15&winddir=195&winddir_avg2m=194&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=195&humidity=65&tempf=79.4&dewptf=66.6&rainin=0.00&solarradiation=288&UV=3.3&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:10:16 E. South America Standard Time|2014-03-31 15:10:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.121872 v:-0.992546 avg_u:0.068473 avg_v:-0.013310 dir:281
+||
+2014-03-31 12:10:16 E. South America Standard Time|2014-03-31 15:10:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:10:16 E. South America Standard Time|2014-03-31 15:10:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:10:16&winddir=7&winddir_avg2m=281&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=7&humidity=66&tempf=79.5&dewptf=67.1&rainin=0.00&solarradiation=304&UV=3.3&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:12:21 E. South America Standard Time|2014-03-31 15:12:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.207914 v:-0.978147 avg_u:-0.164893 avg_v:-0.985346 dir:9
+||
+2014-03-31 12:12:21 E. South America Standard Time|2014-03-31 15:12:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:12:21 E. South America Standard Time|2014-03-31 15:12:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:12:21&winddir=12&winddir_avg2m=9&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=7&humidity=66&tempf=79.5&dewptf=67.1&rainin=0.00&solarradiation=316&UV=3.4&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:14:05 E. South America Standard Time|2014-03-31 15:14:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.173651 v:-0.984807 avg_u:-0.190782 avg_v:-0.981477 dir:11
+||
+2014-03-31 12:14:05 E. South America Standard Time|2014-03-31 15:14:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:14:05 E. South America Standard Time|2014-03-31 15:14:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:14:05&winddir=10&winddir_avg2m=11&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=7&humidity=66&tempf=79.6&dewptf=67.2&rainin=0.00&solarradiation=350&UV=3.7&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:16:06 E. South America Standard Time|2014-03-31 15:16:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.190811 v:-0.981627 avg_u:-0.190811 avg_v:-0.981627 dir:11
+||
+2014-03-31 12:16:06 E. South America Standard Time|2014-03-31 15:16:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:16:06 E. South America Standard Time|2014-03-31 15:16:06 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:16:06&winddir=11&winddir_avg2m=11&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=7&humidity=65&tempf=79.6&dewptf=66.8&rainin=0.00&solarradiation=473&UV=4.4&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:18:10 E. South America Standard Time|2014-03-31 15:18:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.601817 v:-0.798634 avg_u:0.601817 avg_v:-0.798634 dir:322
+||
+2014-03-31 12:18:10 E. South America Standard Time|2014-03-31 15:18:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:18:10 E. South America Standard Time|2014-03-31 15:18:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:18:10&winddir=323&winddir_avg2m=322&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=7&humidity=66&tempf=79.7&dewptf=67.3&rainin=0.00&solarradiation=399&UV=4.2&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:20:10 E. South America Standard Time|2014-03-31 15:20:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:1.000000 v:0.000001 avg_u:1.000000 avg_v:0.000001 dir:269
+||
+2014-03-31 12:20:10 E. South America Standard Time|2014-03-31 15:20:10 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:20:11 E. South America Standard Time|2014-03-31 15:20:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:20:10&winddir=270&winddir_avg2m=269&windspeedmph=1&windgustmph=2&windgustmph_10m=2&windgustdir_10m=270&humidity=66&tempf=79.7&dewptf=67.3&rainin=0.00&solarradiation=390&UV=4.6&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:23:14 E. South America Standard Time|2014-03-31 15:23:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.000003 v:-1.000000 avg_u:-0.000003 avg_v:-1.000000 dir:360
+||
+2014-03-31 12:23:14 E. South America Standard Time|2014-03-31 15:23:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.000000 *1.27:0.000000|
+2014-03-31 12:23:15 E. South America Standard Time|2014-03-31 15:23:15 E. South America Standard Time|YOURSTATIONID|PASSWORD|success
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:23:14&winddir=0&winddir_avg2m=360&windspeedmph=0&windgustmph=2&windgustmph_10m=2&windgustdir_10m=270&humidity=0&tempf=0.0&dewptf=-32768.0&rainin=0.00&soiltempf=-90&soilmoisture=0&leafwetness=0&solarradiation=0&UV=0.0&dailyrainin=0.00&baromin=0.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:24:18 E. South America Standard Time|2014-03-31 15:24:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.017455 v:-0.999848 avg_u:-0.008729 avg_v:-0.999924 dir:360
+||
+2014-03-31 12:24:18 E. South America Standard Time|2014-03-31 15:24:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:24:19 E. South America Standard Time|2014-03-31 15:24:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:24:18&winddir=1&winddir_avg2m=360&windspeedmph=2&windgustmph=3&windgustmph_10m=3&windgustdir_10m=1&humidity=67&tempf=79.7&dewptf=67.8&rainin=0.00&solarradiation=410&UV=4.9&dailyrainin=0.02&baromin=29.99&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:26:18 E. South America Standard Time|2014-03-31 15:26:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.406739 v:-0.913545 avg_u:0.406739 avg_v:-0.913545 dir:335
+||
+2014-03-31 12:26:18 E. South America Standard Time|2014-03-31 15:26:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:26:19 E. South America Standard Time|2014-03-31 15:26:19 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:26:18&winddir=336&winddir_avg2m=335&windspeedmph=2&windgustmph=3&windgustmph_10m=3&windgustdir_10m=1&humidity=66&tempf=79.7&dewptf=67.3&rainin=0.00&solarradiation=341&UV=4.5&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:28:23 E. South America Standard Time|2014-03-31 15:28:23 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.970295 v:0.241923 avg_u:0.970295 avg_v:0.241923 dir:255
+||
+2014-03-31 12:28:23 E. South America Standard Time|2014-03-31 15:28:23 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:28:23 E. South America Standard Time|2014-03-31 15:28:23 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:28:23&winddir=256&winddir_avg2m=255&windspeedmph=2&windgustmph=3&windgustmph_10m=3&windgustdir_10m=1&humidity=65&tempf=79.7&dewptf=66.9&rainin=0.00&solarradiation=353&UV=4.8&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:30:03 E. South America Standard Time|2014-03-31 15:30:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.998629 v:0.052337 avg_u:0.998629 avg_v:0.052337 dir:266
+||
+2014-03-31 12:30:03 E. South America Standard Time|2014-03-31 15:30:03 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:30:04 E. South America Standard Time|2014-03-31 15:30:04 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:30:03&winddir=267&winddir_avg2m=266&windspeedmph=2&windgustmph=2&windgustmph_10m=2&windgustdir_10m=-999&humidity=65&tempf=79.7&dewptf=66.9&rainin=0.00&solarradiation=441&UV=5.1&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:32:08 E. South America Standard Time|2014-03-31 15:32:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.898795 v:-0.438370 avg_u:-0.898795 avg_v:-0.438370 dir:64
+||
+2014-03-31 12:32:08 E. South America Standard Time|2014-03-31 15:32:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:32:08 E. South America Standard Time|2014-03-31 15:32:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:32:08&winddir=64&winddir_avg2m=64&windspeedmph=1&windgustmph=2&windgustmph_10m=2&windgustdir_10m=-999&humidity=65&tempf=79.8&dewptf=67.0&rainin=0.00&solarradiation=357&UV=4.8&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:34:08 E. South America Standard Time|2014-03-31 15:34:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.898794 v:0.438372 avg_u:-0.000001 avg_v:0.000001 dir:154
+||
+2014-03-31 12:34:08 E. South America Standard Time|2014-03-31 15:34:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:34:09 E. South America Standard Time|2014-03-31 15:34:09 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:34:08&winddir=244&winddir_avg2m=154&windspeedmph=1&windgustmph=3&windgustmph_10m=3&windgustdir_10m=244&humidity=65&tempf=79.8&dewptf=67.0&rainin=0.00&solarradiation=357&UV=8.4&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:36:12 E. South America Standard Time|2014-03-31 15:36:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.933580 v:0.358369 avg_u:0.916187 avg_v:0.398370 dir:246
+||
+2014-03-31 12:36:12 E. South America Standard Time|2014-03-31 15:36:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:36:13 E. South America Standard Time|2014-03-31 15:36:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:36:12&winddir=249&winddir_avg2m=246&windspeedmph=1&windgustmph=3&windgustmph_10m=3&windgustdir_10m=244&humidity=66&tempf=79.9&dewptf=67.5&rainin=0.00&solarradiation=926&UV=5.5&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:38:13 E. South America Standard Time|2014-03-31 15:38:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.573578 v:-0.819151 avg_u:0.753579 avg_v:-0.230391 dir:286
+||
+2014-03-31 12:38:13 E. South America Standard Time|2014-03-31 15:38:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:38:14 E. South America Standard Time|2014-03-31 15:38:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:38:13&winddir=325&winddir_avg2m=286&windspeedmph=1&windgustmph=3&windgustmph_10m=3&windgustdir_10m=244&humidity=64&tempf=80.1&dewptf=66.8&rainin=0.00&solarradiation=1034&UV=8.5&dailyrainin=0.02&baromin=29.98&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:40:17 E. South America Standard Time|2014-03-31 15:40:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.573578 v:-0.819151 avg_u:0.573578 avg_v:-0.819151 dir:324
+||
+2014-03-31 12:40:17 E. South America Standard Time|2014-03-31 15:40:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:40:18 E. South America Standard Time|2014-03-31 15:40:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:40:17&winddir=325&winddir_avg2m=324&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=64&tempf=80.3&dewptf=67.0&rainin=0.00&solarradiation=1016&UV=8.3&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:42:17 E. South America Standard Time|2014-03-31 15:42:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.906309 v:-0.422617 avg_u:0.739943 avg_v:-0.620884 dir:309
+||
+2014-03-31 12:42:17 E. South America Standard Time|2014-03-31 15:42:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:42:18 E. South America Standard Time|2014-03-31 15:42:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:42:17&winddir=295&winddir_avg2m=309&windspeedmph=1&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=62&tempf=80.7&dewptf=66.5&rainin=0.00&solarradiation=1028&UV=8.4&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:44:22 E. South America Standard Time|2014-03-31 15:44:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.781184 avg_v:0.166047 dir:257
+||
+2014-03-31 12:44:22 E. South America Standard Time|2014-03-31 15:44:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:44:23 E. South America Standard Time|2014-03-31 15:44:23 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:44:22&winddir=221&winddir_avg2m=257&windspeedmph=0&windgustmph=1&windgustmph_10m=1&windgustdir_10m=-999&humidity=63&tempf=81.0&dewptf=67.2&rainin=0.00&solarradiation=1041&UV=8.3&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:46:07 E. South America Standard Time|2014-03-31 15:46:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.933581 v:-0.358366 avg_u:-0.138761 avg_v:0.198172 dir:144
+||
+2014-03-31 12:46:07 E. South America Standard Time|2014-03-31 15:46:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:46:07 E. South America Standard Time|2014-03-31 15:46:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:46:07&winddir=69&winddir_avg2m=144&windspeedmph=0&windgustmph=3&windgustmph_10m=3&windgustdir_10m=69&humidity=63&tempf=81.3&dewptf=67.5&rainin=0.00&solarradiation=1041&UV=4.8&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:48:08 E. South America Standard Time|2014-03-31 15:48:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.777146 v:0.629321 avg_u:-0.777146 avg_v:0.629321 dir:128
+||
+2014-03-31 12:48:08 E. South America Standard Time|2014-03-31 15:48:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:48:08 E. South America Standard Time|2014-03-31 15:48:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:48:08&winddir=129&winddir_avg2m=128&windspeedmph=1&windgustmph=3&windgustmph_10m=3&windgustdir_10m=69&humidity=62&tempf=81.3&dewptf=67.0&rainin=0.00&solarradiation=304&UV=4.2&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:50:11 E. South America Standard Time|2014-03-31 15:50:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.965926 v:-0.258818 avg_u:-0.965926 avg_v:-0.258818 dir:75
+||
+2014-03-31 12:50:11 E. South America Standard Time|2014-03-31 15:50:11 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:50:12 E. South America Standard Time|2014-03-31 15:50:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:50:11&winddir=75&winddir_avg2m=75&windspeedmph=1&windgustmph=4&windgustmph_10m=4&windgustdir_10m=75&humidity=63&tempf=81.3&dewptf=67.5&rainin=0.00&solarradiation=1000&UV=7.9&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:52:12 E. South America Standard Time|2014-03-31 15:52:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.913546 v:-0.406735 avg_u:-0.913546 avg_v:-0.406735 dir:66
+||
+2014-03-31 12:52:12 E. South America Standard Time|2014-03-31 15:52:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:52:12 E. South America Standard Time|2014-03-31 15:52:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:52:12&winddir=66&winddir_avg2m=66&windspeedmph=2&windgustmph=4&windgustmph_10m=4&windgustdir_10m=75&humidity=63&tempf=81.2&dewptf=67.4&rainin=0.00&solarradiation=1034&UV=4.4&dailyrainin=0.02&baromin=29.97&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:55:16 E. South America Standard Time|2014-03-31 15:55:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.000003 v:-1.000000 avg_u:-0.000003 avg_v:-1.000000 dir:360
+||
+2014-03-31 12:55:16 E. South America Standard Time|2014-03-31 15:55:16 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.000000 *1.27:0.000000|
+2014-03-31 12:55:17 E. South America Standard Time|2014-03-31 15:55:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|success
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:55:16&winddir=0&winddir_avg2m=360&windspeedmph=0&windgustmph=4&windgustmph_10m=4&windgustdir_10m=75&humidity=0&tempf=0.0&dewptf=-32768.0&rainin=0.00&soiltempf=-90&soilmoisture=0&leafwetness=0&solarradiation=0&UV=0.0&dailyrainin=0.00&baromin=0.00&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:56:20 E. South America Standard Time|2014-03-31 15:56:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.961262 v:-0.275636 avg_u:-0.480632 avg_v:-0.637818 dir:37
+||
+2014-03-31 12:56:20 E. South America Standard Time|2014-03-31 15:56:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:56:20 E. South America Standard Time|2014-03-31 15:56:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:56:20&winddir=74&winddir_avg2m=37&windspeedmph=2&windgustmph=4&windgustmph_10m=4&windgustdir_10m=75&humidity=64&tempf=81.3&dewptf=68.0&rainin=0.00&solarradiation=1060&UV=8.3&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 12:58:20 E. South America Standard Time|2014-03-31 15:58:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.838672 v:-0.544638 avg_u:-0.838672 avg_v:-0.544638 dir:57
+||
+2014-03-31 12:58:20 E. South America Standard Time|2014-03-31 15:58:20 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 12:58:21 E. South America Standard Time|2014-03-31 15:58:21 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 15:58:20&winddir=57&winddir_avg2m=57&windspeedmph=3&windgustmph=6&windgustmph_10m=6&windgustdir_10m=57&humidity=63&tempf=81.5&dewptf=67.7&rainin=0.00&solarradiation=983&UV=8.0&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:00:41 E. South America Standard Time|2014-03-31 16:00:41 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.777147 v:-0.629319 avg_u:-0.777147 avg_v:-0.629319 dir:51
+||
+2014-03-31 13:00:41 E. South America Standard Time|2014-03-31 16:00:41 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:00:42 E. South America Standard Time|2014-03-31 16:00:42 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:00:41&winddir=51&winddir_avg2m=51&windspeedmph=3&windgustmph=3&windgustmph_10m=3&windgustdir_10m=-999&humidity=63&tempf=81.6&dewptf=67.8&rainin=0.00&solarradiation=986&UV=7.9&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:02:07 E. South America Standard Time|2014-03-31 16:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.719341 v:-0.694657 avg_u:-0.719341 avg_v:-0.694657 dir:46
+||
+2014-03-31 13:02:07 E. South America Standard Time|2014-03-31 16:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:02:07 E. South America Standard Time|2014-03-31 16:02:07 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:02:07&winddir=46&winddir_avg2m=46&windspeedmph=3&windgustmph=3&windgustmph_10m=3&windgustdir_10m=-999&humidity=61&tempf=81.7&dewptf=66.9&rainin=0.00&solarradiation=998&UV=8.0&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:04:12 E. South America Standard Time|2014-03-31 16:04:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.719341 v:-0.694657 avg_u:-0.719341 avg_v:-0.694657 dir:46
+||
+2014-03-31 13:04:12 E. South America Standard Time|2014-03-31 16:04:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:04:12 E. South America Standard Time|2014-03-31 16:04:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:04:12&winddir=46&winddir_avg2m=46&windspeedmph=2&windgustmph=3&windgustmph_10m=3&windgustdir_10m=-999&humidity=61&tempf=81.8&dewptf=67.0&rainin=0.00&solarradiation=1044&UV=8.1&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:06:12 E. South America Standard Time|2014-03-31 16:06:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.139176 v:-0.990268 avg_u:-0.429258 avg_v:-0.842462 dir:27
+||
+2014-03-31 13:06:12 E. South America Standard Time|2014-03-31 16:06:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:06:13 E. South America Standard Time|2014-03-31 16:06:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:06:12&winddir=8&winddir_avg2m=27&windspeedmph=2&windgustmph=4&windgustmph_10m=4&windgustdir_10m=8&humidity=62&tempf=82.0&dewptf=67.7&rainin=0.00&solarradiation=1032&UV=8.1&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:08:17 E. South America Standard Time|2014-03-31 16:08:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.224953 v:-0.974370 avg_u:-0.182065 avg_v:-0.982319 dir:10
+||
+2014-03-31 13:08:17 E. South America Standard Time|2014-03-31 16:08:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:08:17 E. South America Standard Time|2014-03-31 16:08:17 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:08:17&winddir=13&winddir_avg2m=10&windspeedmph=2&windgustmph=6&windgustmph_10m=6&windgustdir_10m=13&humidity=61&tempf=82.2&dewptf=67.4&rainin=0.00&solarradiation=1071&UV=8.1&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:10:18 E. South America Standard Time|2014-03-31 16:10:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.694660 v:-0.719338 avg_u:-0.459807 avg_v:-0.846854 dir:28
+||
+2014-03-31 13:10:18 E. South America Standard Time|2014-03-31 16:10:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:10:18 E. South America Standard Time|2014-03-31 16:10:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:10:18&winddir=44&winddir_avg2m=28&windspeedmph=2&windgustmph=4&windgustmph_10m=4&windgustdir_10m=44&humidity=61&tempf=82.3&dewptf=67.5&rainin=0.00&solarradiation=1035&UV=7.7&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-03-31 13:12:22 E. South America Standard Time|2014-03-31 16:12:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.669132 v:-0.743143 avg_u:-0.681896 avg_v:-0.731241 dir:43
+||
+2014-03-31 13:12:22 E. South America Standard Time|2014-03-31 16:12:22 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.020000 *1.27:0.015748|
+2014-03-31 13:12:23 E. South America Standard Time|2014-03-31 16:12:23 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-03-31 16:12:22&winddir=42&winddir_avg2m=43&windspeedmph=2&windgustmph=4&windgustmph_10m=4&windgustdir_10m=44&humidity=61&tempf=82.4&dewptf=67.6&rainin=0.00&solarradiation=1025&UV=7.6&dailyrainin=0.02&baromin=29.96&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 09:56:13 E. South America Standard Time|2014-04-22 12:56:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:-0.104528 v:0.994522 avg_u:-0.104528 avg_v:0.994522 dir:173
+||
+2014-04-22 09:56:13 E. South America Standard Time|2014-04-22 12:56:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 09:56:14 E. South America Standard Time|2014-04-22 12:56:14 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 12:56:13&winddir=174&winddir_avg2m=173&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=174&humidity=71&tempf=70.3&dewptf=60.4&rainin=0.00&solarradiation=403&UV=2.6&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 09:58:18 E. South America Standard Time|2014-04-22 12:58:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374606 v:0.927184 avg_u:0.135039 avg_v:0.960853 dir:187
+||
+2014-04-22 09:58:18 E. South America Standard Time|2014-04-22 12:58:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 09:58:18 E. South America Standard Time|2014-04-22 12:58:18 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 12:58:18&winddir=202&winddir_avg2m=187&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=174&humidity=72&tempf=70.5&dewptf=61.0&rainin=0.00&solarradiation=392&UV=2.8&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:00:56 E. South America Standard Time|2014-04-22 13:00:56 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374606 v:0.927184 avg_u:0.374606 avg_v:0.927184 dir:201
+||
+2014-04-22 10:00:56 E. South America Standard Time|2014-04-22 13:00:56 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:00:57 E. South America Standard Time|2014-04-22 13:00:57 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:00:56&winddir=202&winddir_avg2m=201&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=202&humidity=71&tempf=70.7&dewptf=60.8&rainin=0.00&solarradiation=353&UV=2.9&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:02:05 E. South America Standard Time|2014-04-22 13:02:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.374606 v:0.927184 avg_u:0.374606 avg_v:0.927184 dir:201
+||
+2014-04-22 10:02:05 E. South America Standard Time|2014-04-22 13:02:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:02:05 E. South America Standard Time|2014-04-22 13:02:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:02:05&winddir=202&winddir_avg2m=201&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=202&humidity=71&tempf=70.7&dewptf=60.8&rainin=0.00&solarradiation=315&UV=2.3&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:04:05 E. South America Standard Time|2014-04-22 13:04:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.515332 avg_v:0.840947 dir:211
+||
+2014-04-22 10:04:05 E. South America Standard Time|2014-04-22 13:04:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:04:05 E. South America Standard Time|2014-04-22 13:04:05 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:04:05&winddir=221&winddir_avg2m=211&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=202&humidity=72&tempf=70.9&dewptf=61.4&rainin=0.00&solarradiation=255&UV=1.9&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:06:08 E. South America Standard Time|2014-04-22 13:06:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.656059 avg_v:0.754710 dir:220
+||
+2014-04-22 10:06:08 E. South America Standard Time|2014-04-22 13:06:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:06:08 E. South America Standard Time|2014-04-22 13:06:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:06:08&winddir=221&winddir_avg2m=220&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=202&humidity=70&tempf=71.0&dewptf=60.7&rainin=0.00&solarradiation=214&UV=1.8&dailyrainin=0.01&baromin=30.01&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:08:08 E. South America Standard Time|2014-04-22 13:08:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.656059 avg_v:0.754710 dir:220
+||
+2014-04-22 10:08:08 E. South America Standard Time|2014-04-22 13:08:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:08:08 E. South America Standard Time|2014-04-22 13:08:08 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:08:08&winddir=221&winddir_avg2m=220&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=202&humidity=69&tempf=71.0&dewptf=60.3&rainin=0.00&solarradiation=202&UV=1.6&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:10:12 E. South America Standard Time|2014-04-22 13:10:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.656059 avg_v:0.754710 dir:220
+||
+2014-04-22 10:10:12 E. South America Standard Time|2014-04-22 13:10:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:10:13 E. South America Standard Time|2014-04-22 13:10:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:10:12&winddir=221&winddir_avg2m=220&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=221&humidity=70&tempf=71.1&dewptf=60.8&rainin=0.00&solarradiation=243&UV=1.7&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:12:12 E. South America Standard Time|2014-04-22 13:12:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.656059 avg_v:0.754710 dir:220
+||
+2014-04-22 10:12:12 E. South America Standard Time|2014-04-22 13:12:12 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|
+2014-04-22 10:12:13 E. South America Standard Time|2014-04-22 13:12:13 E. South America Standard Time|YOURSTATIONID|PASSWORD|INVALIDPASSWORDID|Password and/or id are incorrect
+|http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=YOURSTATIONID&PASSWORD=PASSWORD&dateutc=2014-04-22 13:12:12&winddir=221&winddir_avg2m=220&windspeedmph=0&windgustmph=0&windgustmph_10m=0&windgustdir_10m=221&humidity=72&tempf=71.2&dewptf=61.7&rainin=0.00&solarradiation=241&UV=1.7&dailyrainin=0.01&baromin=30.02&softwaretype=Wunderground v.1.15 PWSDec 27 2007|
+2014-04-22 10:14:32 E. South America Standard Time|2014-04-22 13:14:32 E. South America Standard Time|YOURSTATIONID|PASSWORD|u:0.656059 v:0.754710 avg_u:0.656059 avg_v:0.754710 dir:220
+||
+2014-04-22 10:14:38 E. South America Standard Time|2014-04-22 13:14:38 E. South America Standard Time|YOURSTATIONID|PASSWORD|DAILYRAINUNIT BUG|Original: 0.010000 *1.27:0.007874|

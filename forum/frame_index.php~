@@ -1,0 +1,15 @@
+<html>
+<head>
+
+  </head>
+  <body>
+
+<div id="container"><iframe id="frame" width="650px" height="1250px" frameborder="0"  marginheight="-40px" marginwidth="0px" src="index.php"></iframe> </div>
+    <!--[if IE]>
+    <script type="text/javascript" src="/static/lib/FlashCanvas/bin/flashcanvas.js"></script>
+    <![endif]-->
+
+
+   
+  </body>
+</html>
