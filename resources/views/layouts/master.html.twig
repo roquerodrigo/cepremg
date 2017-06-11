@@ -11,6 +11,29 @@
 <body>
 {% block content %}{% endblock %}
 <script src="/js/app.js"></script>
-{% block js %}{% endblock %}
+{% block js %}
+{% endblock %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        setInterval(function(){
+            $.ajax({
+                 method:"GET",
+                 url:"/admin/mensagens/countNaoLidas",
+                 success: function (data) {
+                     console.log(data);
+                     if(data > 0) {
+                         $("#mensagens").attr('class', "mdi mdi-message-alert alert-danger mdi-12px");
+                     }
+                     else {
+                         $("#mensagens").attr('class', "mdi mdi-message-bulleted mdi-12px");
+                    }
+                 }
+             });
+
+
+        }, 10000);
+    });
+
+</script>
 </body>
 </html>

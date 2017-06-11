@@ -34,7 +34,7 @@ class FaleConoscoController extends Controller {
     public function listNaoLidasCount(Request $request, Response $response, array $args){
         $qb = $this->db->getRepository(FaleConosco::class);
         $qb = $qb->findByLida(false);
-        return count($qb);
+        echo count($qb);
     }
 
     public function listarMensagens(Request $request, Response $response, array $args){
@@ -62,5 +62,10 @@ class FaleConoscoController extends Controller {
         $mensagens = $this->db->getRepository(FaleConosco::class)->findByIsArquivado(false);
         return $this->view->render($response, "visualizarTodasMensagens.html.twig",['message'=>'success',"mensagens"=>$mensagens]);
 
+    }
+
+    public function mensagensArquivadas(Request $request, Response $response, array $args){
+        $mensagens = $this->db->getRepository(FaleConosco::class)->findByIsArquivado(true);
+        return $this->view->render($response, "visualizarTodasMensagens.html.twig", ["mensagens"=>$mensagens]);
     }
 }

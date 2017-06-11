@@ -92,5 +92,6 @@ $app->group('/admin', function () {
     $this->get('/mensagens', FaleConoscoController::class . ':listarMensagens');
     $this->post('/mensagens/visualizarMsg', FaleConoscoController::class . ':visualizarMensagem');
     $this->post('/mensagens/arquivar', FaleConoscoController::class . ':arquivarMensagem');
+    $this->get('/mensagens/countNaoLidas', FaleConoscoController::class . ':listNaoLidasCount');
 
 });//->add($isLogedIn)->add($isRoot);
