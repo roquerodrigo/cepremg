@@ -84,7 +84,6 @@ $app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
 $app->group('/admin', function () {
     $this->get('/register-user[/{message}]', AdminController::class . ':createForm');
     $this->get('/disable-user', AdminController::class . ':deleteForm');
-    $this->get('/data-overview',AdminController::class.':dataOverview');
 
     $this->post('/register-user', AdminController::class . ':create');
     $this->post('/disable-user', AdminController::class . ':delete');
@@ -94,5 +93,12 @@ $app->group('/admin', function () {
     $this->post('/mensagens/arquivar', FaleConoscoController::class . ':arquivarMensagem');
     $this->get('/mensagens/countNaoLidas', FaleConoscoController::class . ':listNaoLidasCount');
     $this->get('/mensagens/arquivadas', FaleConoscoController::class . ':mensagensArquivadas');
+
+
+    $this->get('/dataOverview',\App\Controllers\OverviewController::class.':index');
+    $this->get('/dataOverview/hourly',\App\Controllers\OverviewController::class.':getOverview');
+    $this->get('/dataOverview/daily',\App\Controllers\OverviewController::class.':getOverview');
+    $this->get('/dataOverview/monthly',\App\Controllers\OverviewController::class.':getOverview');
+    $this->get('/dataOverview/yearly',\App\Controllers\OverviewController::class.':getOverview');
 
 });//->add($isLogedIn)->add($isRoot);
