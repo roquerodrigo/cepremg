@@ -49,6 +49,14 @@ class FaleConosco
     private $lida = false;
 
     /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @param int $id
      *
      * @return FaleConosco
@@ -58,6 +66,14 @@ class FaleConosco
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
     }
 
     /**
@@ -73,6 +89,14 @@ class FaleConosco
     }
 
     /**
+     * @return string
+     */
+    public function getInstituicao()
+    {
+        return $this->instituicao;
+    }
+
+    /**
      * @param string $instituicao
      *
      * @return FaleConosco
@@ -82,6 +106,14 @@ class FaleConosco
         $this->instituicao = $instituicao;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFinalidade()
+    {
+        return $this->finalidade;
     }
 
     /**
@@ -97,6 +129,14 @@ class FaleConosco
     }
 
     /**
+     * @return bool
+     */
+    public function isArquivado()
+    {
+        return $this->isArquivado;
+    }
+
+    /**
      * @param bool $isArquivado
      *
      * @return FaleConosco
@@ -109,6 +149,14 @@ class FaleConosco
     }
 
     /**
+     * @return string
+     */
+    public function getPeriodo()
+    {
+        return $this->periodo;
+    }
+
+    /**
      * @param string $periodo
      *
      * @return FaleConosco
@@ -118,54 +166,6 @@ class FaleConosco
         $this->periodo = $periodo;
 
         return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInstituicao()
-    {
-        return $this->instituicao;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFinalidade()
-    {
-        return $this->finalidade;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isArquivado()
-    {
-        return $this->isArquivado;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPeriodo()
-    {
-        return $this->periodo;
     }
 
     /**
