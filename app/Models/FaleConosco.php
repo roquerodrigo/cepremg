@@ -7,7 +7,8 @@ namespace App\Models;
 /**
  * @Entity @Table(name="mensagens")
  **/
-class FaleConosco {
+class FaleConosco
+{
     /**
      * @var int Chave de implementação
      * @Id @Column(type="integer",options={"unsigned":true}) @GeneratedValue
@@ -51,68 +52,80 @@ class FaleConosco {
 
     /**
      * @param int $id
+     *
      * @return FaleConosco
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
      * @param string $nome
-     *  @return FaleConosco
+     *
+     * @return FaleConosco
      */
-    public function setNome(string $nome)
+    public function setNome($nome)
     {
         $this->nome = $nome;
+
         return $this;
     }
 
     /**
      * @param string $instituicao
-     *  @return FaleConosco
+     *
+     * @return FaleConosco
      */
-    public function setInstituicao(string $instituicao)
+    public function setInstituicao($instituicao)
     {
         $this->instituicao = $instituicao;
+
         return $this;
     }
 
     /**
      * @param string $finalidade
-     *  @return FaleConosco
+     *
+     * @return FaleConosco
      */
-    public function setFinalidade(string $finalidade)
+    public function setFinalidade($finalidade)
     {
         $this->finalidade = $finalidade;
+
         return $this;
     }
 
     /**
      * @param bool $isArquivado
-     *  @return FaleConosco
+     *
+     * @return FaleConosco
      */
-    public function setIsArquivado(bool $isArquivado)
+    public function setIsArquivado($isArquivado)
     {
         $this->isArquivado = $isArquivado;
+
         return $this;
     }
 
     /**
      * @param string $periodo
-     *  @return FaleConosco
+     *
+     * @return FaleConosco
      */
-    public function setPeriodo(string $periodo)
+    public function setPeriodo($periodo)
     {
         $this->periodo = $periodo;
+
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -120,7 +133,7 @@ class FaleConosco {
     /**
      * @return string
      */
-    public function getNome(): string
+    public function getNome()
     {
         return $this->nome;
     }
@@ -128,7 +141,7 @@ class FaleConosco {
     /**
      * @return string
      */
-    public function getInstituicao(): string
+    public function getInstituicao()
     {
         return $this->instituicao;
     }
@@ -136,7 +149,7 @@ class FaleConosco {
     /**
      * @return string
      */
-    public function getFinalidade(): string
+    public function getFinalidade()
     {
         return $this->finalidade;
     }
@@ -144,7 +157,7 @@ class FaleConosco {
     /**
      * @return bool
      */
-    public function isArquivado(): bool
+    public function isArquivado()
     {
         return $this->isArquivado;
     }
@@ -152,7 +165,7 @@ class FaleConosco {
     /**
      * @return string
      */
-    public function getPeriodo(): string
+    public function getPeriodo()
     {
         return $this->periodo;
     }
@@ -160,23 +173,22 @@ class FaleConosco {
     /**
      * @return bool
      */
-    public function isLida(): bool
+    public function isLida()
     {
         return $this->lida;
     }
 
     /**
      * @param bool $lida
+     *
      * @return FaleConosco
      */
-    public function setLida(bool $lida)
+    public function setLida($lida)
     {
         $this->lida = $lida;
+
         return $this;
     }
-
-
-
 
 
 }
