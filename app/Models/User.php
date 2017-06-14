@@ -48,46 +48,6 @@ class User
     /**
      * @return int
      */
-    public function getPrivilege()
-    {
-        return $this->privilege;
-    }
-
-    /**
-     * @param int $privilege
-     *
-     * @return User
-     */
-    public function setPrivilege(int $privilege)
-    {
-        $this->privilege = $privilege;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIsAble()
-    {
-        return $this->isAble;
-    }
-
-    /**
-     * @param int $isAble
-     *
-     * @return User
-     */
-    public function setIsAble(int $isAble)
-    {
-        $this->isAble = $isAble;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
     public function getId()
     {
         return $this->id;
@@ -108,19 +68,19 @@ class User
     /**
      * @return string
      */
-    public function getUserName()
+    public function getUsername()
     {
         return $this->username;
     }
 
     /**
-     * @param string $userName
+     * @param string $username
      *
      * @return User
      */
-    public function setUserName($userName)
+    public function setUsername($username)
     {
-        $this->username = $userName;
+        $this->username = $username;
 
         return $this;
     }
@@ -161,6 +121,46 @@ class User
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrivilege()
+    {
+        return $this->privilege;
+    }
+
+    /**
+     * @param int $privilege
+     *
+     * @return User
+     */
+    public function setPrivilege($privilege)
+    {
+        $this->privilege = $privilege;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAble()
+    {
+        return $this->isAble;
+    }
+
+    /**
+     * @param bool $isAble
+     *
+     * @return User
+     */
+    public function setIsAble($isAble)
+    {
+        $this->isAble = $isAble;
 
         return $this;
     }
