@@ -3,13 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\Davis;
-use App\Models\DavisHourly;
 use App\Models\DavisDaily;
+use App\Models\DavisHourly;
 use App\Models\DavisMonthly;
 use App\Models\DavisYearly;
-use App\Models\WindDirCount;
 use DateTime;
-use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\DBAL\Exception\DriverException;
 use Exception;
 use Slim\Http\Request;
@@ -42,12 +40,12 @@ class ImportController extends Controller
 
                 $lines = explode("\n", $file->getStream());
 
-                /**
+                /*
                  * Apagar as 2 primeiras linhas por serem cabeçalhos e a
-                 * última por estar sempre vazia. Durante a varredura 
+                 * última por estar sempre vazia. Durante a varredura
                  * do arquivo as linhas que ja tiverem os valores extraídos
                  * serão removidas para economia de memória. As instâncias do
-                 * model davis após persistidas, serão clonadas para um array, 
+                 * model davis após persistidas, serão clonadas para um array,
                  * futuramente usado para geração de models DavisHourly, DavisDaily,
                  * DavisMonnthly e DavisYearly.
                  */
@@ -55,7 +53,7 @@ class ImportController extends Controller
                 unset($lines[1]);
 
                 $lines = array_values($lines);
-                $length = count($lines)-1;
+                $length = count($lines) - 1;
                 unset($lines[$length]);
 
                 $davisArray = [];
@@ -64,12 +62,12 @@ class ImportController extends Controller
                     $dateTime = DateTime::createFromFormat('d/m/y H:i', $data[0] . ' ' . $data[1]);
                     /**
                      * A aplicação não ira usar todos dados presentes no arquivo,
-                     * os dados utilizados serão: 
+                     * os dados utilizados serão:
                      * 1) Data e Hora
-                     * 2) Temperatura Média 
+                     * 2) Temperatura Média
                      * 3) Maior Temperatura
                      * 4) Menor Temperatura
-                     * 5) Umidade do Ar 
+                     * 5) Umidade do Ar
                      * 6) Temperatura do ponto de orvalho
                      * 7) Direção do vento
                      * 8) Pressão atmosférica
@@ -79,11 +77,12 @@ class ImportController extends Controller
                      * 12) Velocidade do Vento
                      * Estão sendo atribuidos na mesma ordem.
                      */
-                    $filter = function($x) {
-                        #USAR REGEX
-                        if($x[0] == '-'){
-                            return null;
+                    $filter = function ($x) {
+                        //USAR REGEX
+                        if ($x[0] == '-') {
+                            return;
                         }
+
                         return $x;
                     };
 
@@ -106,24 +105,24 @@ class ImportController extends Controller
                         } else {
                             $davis->setWindSpeed($data[7]);
                         }
-                        
+
                         unset($lines[$i]);
                         $davisArray[] = clone $davis;
                     } else {
                         throw new Exception('Erro na linha ' . ($i + 4));
                     }
                 }
-              
-                $davisHourlyArray = $this->generateDavis__($davisArray,DavisHourly::class);
-                $davisDailyArray = $this->generateDavis__($davisHourlyArray,DavisDaily::class);
-                $davisMonthlyArray = $this->generateDavis__($davisDailyArray,DavisMonthly::class);
-                $davisYearlyArray = $this->generateDavis__($davisMonthlyArray,DavisYearly::class);
-                
-                /**
+
+                $davisHourlyArray = $this->generateDavis__($davisArray, DavisHourly::class);
+                $davisDailyArray = $this->generateDavis__($davisHourlyArray, DavisDaily::class);
+                $davisMonthlyArray = $this->generateDavis__($davisDailyArray, DavisMonthly::class);
+                $davisYearlyArray = $this->generateDavis__($davisMonthlyArray, DavisYearly::class);
+
+                /*
                  * Agora que as instâncias já estão prontas os valores
                  * serão preparados e persistidos no SGBD.
                  */
-                
+
                 foreach ($davisArray as $instance) {
                     $this->db->persist($instance);
                 }
@@ -139,22 +138,21 @@ class ImportController extends Controller
                 foreach ($davisYearlyArray as $instance) {
                     $this->db->persist($instance->doPrepare());
                 }
-                #echo '<pre>' . var_export($davisHourlyArray,true) . '</pre>';
-                $this->db->flush(); 
-                
+                //echo '<pre>' . var_export($davisHourlyArray,true) . '</pre>';
+                $this->db->flush();
             } catch (Exception $e) {
-                if($e instanceof DriverException) {
+                if ($e instanceof DriverException) {
                     $errorCode = $e->getErrorCode();
-                    if($errorCode === 1062 && $overwrite == 1) { #DUPLICATA
+                    if ($errorCode === 1062 && $overwrite == 1) { //DUPLICATA
                         $caught = true;
                         $messages[] = [
                         'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui uma entrada já existente no Banco.\n" . $e->getMessage(),
                         'type'    => 'danger',
                         ];
-                    } elseif($errorCode === 1265) { #TRUNCATE
+                    } elseif ($errorCode === 1265) { //TRUNCATE
                         $caught = true;
                         $messages[] = [
-                            'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui valores com tipos errados.\n" . $e->getMessage() ,
+                            'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui valores com tipos errados.\n" . $e->getMessage(),
                             'type'    => 'danger',
                         ];
                     }
@@ -164,8 +162,7 @@ class ImportController extends Controller
                         'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\n" . $e->getMessage() . "\n",
                         'type'    => 'danger',
                     ];
-                }    
-                
+                }
             } finally {
                 if (empty($caught)) {
                     $messages[] = [
@@ -182,45 +179,43 @@ class ImportController extends Controller
     }
 
     /**
-     * @param Array $davisArray as intâncias irão variar de acordo com a chamada
-     * @param String $repoClass classe a ser criada nos objetos do array retornado
-     * @return Array $newDavisArray
+     * @param array  $davisArray as intâncias irão variar de acordo com a chamada
+     * @param string $repoClass  classe a ser criada nos objetos do array retornado
+     *
+     * @return array $newDavisArray
      */
-    private function generateDavis__(&$davisArray,$repoClass) {
+    private function generateDavis__(&$davisArray, $repoClass)
+    {
         $newDavisArray = [];
-        $newDavisObject = NULL;
+        $newDavisObject = null;
         $repository = $this->db->getRepository($repoClass);
         foreach ($davisArray as $i => $davis) {
             $time = new $repoClass($davis);
             $time = $time->getDateTime();
-            /**
+            /*
              * Checando se a posição do vetor contém algum valor,
              * caso tenha mesclar os valores de $davis, caso
-             * contrário procurar um registro no banco de $repoClass.  
-             * Se encontrado sera usado como base, mesclando-o com 
+             * contrário procurar um registro no banco de $repoClass.
+             * Se encontrado sera usado como base, mesclando-o com
              * $davis, se não, o valor de $davis sera usado para
              * instanciar um objeto da classe $repoClass.
              */
-                        
-            if(empty($newDavisArray[$time->format('d/m/Y H:i')])) {
-                
+
+            if (empty($newDavisArray[$time->format('d/m/Y H:i')])) {
                 $newDavisObject = $repository->findOneByDateTime($time);
-                if($newDavisObject instanceof $repoClass) {
+                if ($newDavisObject instanceof $repoClass) {
                     $newDavisArray[$time->format('d/m/Y H:i')] = $newDavisObject->undoPrepare();
                     $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
                     $newDavisObject = null;
-
                 } else {
                     $newDavisArray[$time->format('d/m/Y H:i')] = new $repoClass($davis);
                     $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
                 }
-
             } else {
                 $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
             }
         }
-        
-        return $newDavisArray;        
-    }
 
+        return $newDavisArray;
+    }
 }

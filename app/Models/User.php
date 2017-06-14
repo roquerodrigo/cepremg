@@ -32,7 +32,7 @@ class User
     private $name;
 
     /**
-     * @var int Nível de privilégio do usuário 
+     * @var int Nível de privilégio do usuário
      *          [0]ROOT       : pode desativar usuários;
      *          [1]COMMOM USER: pode apenas popular o banco.
      * @Column(name="privilege",type="smallint", nullable=false, options={"default":1, "unsigned":true})
@@ -44,7 +44,6 @@ class User
      * @Column(name="isAble",type="boolean", nullable=false, options={"default":true})
      */
     private $isAble = true;
-
 
     /**
      * @return int

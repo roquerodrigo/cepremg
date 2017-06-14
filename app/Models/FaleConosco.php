@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Models;
-
 
 /**
  * @Entity @Table(name="mensagens")
@@ -189,6 +187,4 @@ class FaleConosco
 
         return $this;
     }
-
-
 }
