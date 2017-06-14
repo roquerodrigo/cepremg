@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Models;
-use DateTime;
 
 /**
- * @Entity @Table(name="davis_hourly") 
+ * @Entity @Table(name="davis_hourly")
  **/
 class DavisHourly extends AbstractDavis
 {
-
-    public function __construct(Davis $davis = null) {
-        if($davis !== null) {
+    public function __construct(Davis $davis = null)
+    {
+        if ($davis !== null) {
             $dateTime = clone $davis->getDateTime();
-            $dateTime->setTime($dateTime->format('H'),0);
+            $dateTime->setTime($dateTime->format('H'), 0);
             $this->setDateTime($dateTime);
-        
+
             $this->validUVIndex = false;
             $this->validSolarRad = false;
             $this->validRain = false;
@@ -26,24 +25,24 @@ class DavisHourly extends AbstractDavis
             $this->validLowTemp = false;
             $this->validHiTemp = false;
             $this->validTempOut = false;
-            
-            $this->amountWindDir['WNW']=0;            
-            $this->amountWindDir['NW']=0;            
-            $this->amountWindDir['NNW']=0;            
-            $this->amountWindDir['N']=0;            
-            $this->amountWindDir['NNE']=0;            
-            $this->amountWindDir['NE']=0;            
-            $this->amountWindDir['ENE']=0;            
-            $this->amountWindDir['E']=0;            
-            $this->amountWindDir['ESE']=0;            
-            $this->amountWindDir['SE']=0;            
-            $this->amountWindDir['SSE']=0;            
-            $this->amountWindDir['S']=0;            
-            $this->amountWindDir['SSW']=0;            
-            $this->amountWindDir['SW']=0;            
-            $this->amountWindDir['WSW']=0;            
-            $this->amountWindDir['W']=0;            
-            
+
+            $this->amountWindDir['WNW'] = 0;
+            $this->amountWindDir['NW'] = 0;
+            $this->amountWindDir['NNW'] = 0;
+            $this->amountWindDir['N'] = 0;
+            $this->amountWindDir['NNE'] = 0;
+            $this->amountWindDir['NE'] = 0;
+            $this->amountWindDir['ENE'] = 0;
+            $this->amountWindDir['E'] = 0;
+            $this->amountWindDir['ESE'] = 0;
+            $this->amountWindDir['SE'] = 0;
+            $this->amountWindDir['SSE'] = 0;
+            $this->amountWindDir['S'] = 0;
+            $this->amountWindDir['SSW'] = 0;
+            $this->amountWindDir['SW'] = 0;
+            $this->amountWindDir['WSW'] = 0;
+            $this->amountWindDir['W'] = 0;
+
             $this->amountUVIndex = 0;
             $this->amountSolarRad = 0;
             $this->amountRain = 0;
@@ -61,12 +60,12 @@ class DavisHourly extends AbstractDavis
     public function mergeDavis($davis)
     {
         $this->setTempOut($this->getTempOut() + floatval($davis->getTempOut()));
-        $this->setHiTemp(max($this->getHiTemp(), floatval($davis->getHiTemp()))) ;
+        $this->setHiTemp(max($this->getHiTemp(), floatval($davis->getHiTemp())));
 
         $has_value = $davis->getLowTemp() !== null;
-        if($this->getLowTemp() === null && $has_value) {
+        if ($this->getLowTemp() === null && $has_value) {
             $this->setlowTemp($davis->getLowTemp());
-        } elseif($has_value) {
+        } elseif ($has_value) {
             $this->setLowTemp(min($this->getLowTemp(), $davis->getLowTemp()));
         }
 
@@ -80,7 +79,7 @@ class DavisHourly extends AbstractDavis
 
         $this->amountData++;
         $davis->getWindDir();
-        if($davis->getWindDir() !== null) {
+        if ($davis->getWindDir() !== null) {
             $this->amountWindDir[$davis->getWindDir()]++;
         }
 
@@ -94,44 +93,43 @@ class DavisHourly extends AbstractDavis
         $this->amountRain += floatval($davis->getRain() !== null);
         $this->amountSolarRad += floatval($davis->getSolarRad() !== null);
         $this->amountUVIndex += floatval($davis->getUVIndex() !== null);
+    }
 
-    } 
-
-    public function doPrepare() 
+    public function doPrepare()
     {
-        if($this->amountTempOut != 0){
+        if ($this->amountTempOut != 0) {
             $this->setTempOut($this->getTempOut() / $this->amountTempOut);
         }
-        if($this->amountOutHum != 0){
+        if ($this->amountOutHum != 0) {
             $this->setOutHum($this->getOutHum() / $this->amountOutHum);
         }
-        if($this->amountDewPt != 0){
+        if ($this->amountDewPt != 0) {
             $this->setDewPt($this->getDewPt() / $this->amountDewPt);
         }
-        if($this->amountWindSpeed != 0){
+        if ($this->amountWindSpeed != 0) {
             $this->setWindSpeed($this->getWindSpeed() / $this->amountWindSpeed);
         }
-        if($this->amountBar != 0){
+        if ($this->amountBar != 0) {
             $this->setBar($this->getBar() / $this->amountBar);
         }
-        if($this->amountSolarRad != 0){
+        if ($this->amountSolarRad != 0) {
             $this->setSolarRad($this->getSolarRad() / $this->amountSolarRad);
         }
-        if($this->amountUVIndex != 0){
+        if ($this->amountUVIndex != 0) {
             $this->setUVIndex($this->getUVIndex() / $this->amountUVIndex);
         }
         $this->setWindDir(array_keys($this->amountWindDir, max($this->amountWindDir))[0]);
 
-        if($this->amountUVIndex >= 2){
+        if ($this->amountUVIndex >= 2) {
             $this->validUVIndex = true;
         }
-        if($this->amountSolarRad >= 2){
+        if ($this->amountSolarRad >= 2) {
             $this->validSolarRad = true;
         }
-        if($this->amountRain >= 2){
+        if ($this->amountRain >= 2) {
             $this->validRain = true;
         }
-        if($this->amountBar >= 2){
+        if ($this->amountBar >= 2) {
             $this->validBar = true;
         }
 
@@ -139,44 +137,45 @@ class DavisHourly extends AbstractDavis
         foreach ($this->amountWindDir as $value) {
             $wdirSum += $value;
         }
-        
-        if($wdirSum >= 2){
+
+        if ($wdirSum >= 2) {
             $this->validWindDir = true;
         }
 
-        if($this->amountWindSpeed >= 2){
+        if ($this->amountWindSpeed >= 2) {
             $this->validWindSpeed = true;
         }
-        if($this->amountDewPt >= 2){
+        if ($this->amountDewPt >= 2) {
             $this->validDewPt = true;
         }
-        if($this->amountOutHum >= 2){
+        if ($this->amountOutHum >= 2) {
             $this->validOutHum = true;
         }
-        if($this->amountLowTemp >= 2){
+        if ($this->amountLowTemp >= 2) {
             $this->validLowTemp = true;
         }
-        if($this->amountHiTemp >= 2){
+        if ($this->amountHiTemp >= 2) {
             $this->validHiTemp = true;
         }
-        if($this->amountTempOut >= 2){
+        if ($this->amountTempOut >= 2) {
             $this->validTempOut = true;
         }
 
         return $this;
     }
-    
-    public function undoPrepare() 
+
+    public function undoPrepare()
     {
-        $this->setTempOut($this->getTempOut() * $this->amountTempOut) ;
+        $this->setTempOut($this->getTempOut() * $this->amountTempOut);
         $this->setOutHum($this->getOutHum() * $this->amountOutHum);
         $this->setDewPt($this->getDewPt() * $this->amountDewPt);
         $this->setWindSpeed($this->getWindSpeed() * $this->amountWindSpeed);
         $this->setBar($this->getBar() * $this->amountBar);
         $this->setSolarRad($this->getSolarRad() * $this->amountSolarRad);
         $this->setUVIndex($this->getUVIndex() * $this->amountUVIndex);
+
         return $this;
-    } 
+    }
 
     /**
      * @var bool dado é valido para exibição
@@ -233,7 +232,7 @@ class DavisHourly extends AbstractDavis
     private $validWindDir;
 
     /**
-     * @var array ,contagem de direções do vento 
+     * @var array ,contagem de direções do vento
      * @Column(name="amount_wind_dir",type="array", nullable=false)
      */
     private $amountWindDir;
@@ -304,7 +303,7 @@ class DavisHourly extends AbstractDavis
      */
     private $validTempOut;
 
-	/**
+    /**
      * @var int Quantidade de dados usados para produzir o valor
      * @Column(name="amount_temp_out",type="integer", nullable=false, options={"default":0})
      */
@@ -322,6 +321,7 @@ class DavisHourly extends AbstractDavis
     public function setMinRequirement()
     {
         $this->minRequirement = $minRequirement;
+
         return $this;
     }
 
@@ -349,109 +349,139 @@ class DavisHourly extends AbstractDavis
     public function setAmountData($amountData)
     {
         $this->amountData = $amountData;
+
         return $this;
     }
 
-    
     public function getAmountTempOut()
     {
-        return $this->amountTempOut;     
+        return $this->amountTempOut;
     }
+
     public function getAmountHiTemp()
     {
         return $this->amountHiTemp;
     }
+
     public function getAmountLowTemp()
     {
         return $this->amountLowTemp;
     }
+
     public function getAmountOutHum()
     {
         return $this->amountOutHum;
     }
+
     public function getAmountDewPt()
     {
         return $this->amountDewPt;
     }
+
     public function getAmountWindSpeed()
     {
         return $this->amountWindSpeed;
     }
+
     public function getAmountBar()
     {
         return $this->amountBar;
     }
+
     public function getAmountRain()
     {
         return $this->amountRain;
     }
+
     public function getAmountSolarRad()
     {
         return $this->amountSolarRad;
     }
+
     public function getAmountUVIndex()
     {
         return $this->amountUVIndex;
-    } 
+    }
+
     public function getAmountWindDir()
     {
         return $this->amountWindDir;
     }
-    public function setAmountWindDir($amount) 
+
+    public function setAmountWindDir($amount)
     {
         $this->amountWindDir = $amount;
+
         return $this;
     }
+
     public function setAmountTempOut($amount)
     {
         $this->amountTempOut = $amount;
-        return $this;        
+
+        return $this;
     }
+
     public function setAmountHiTemp($amount)
     {
         $this->amountHiTemp = $amount;
+
         return $this;
     }
+
     public function setAmountLowTemp($amount)
     {
         $this->amountLowTemp = $amount;
+
         return $this;
     }
+
     public function setAmountOutHum($amount)
     {
         $this->amountOutHum = $amount;
+
         return $this;
     }
+
     public function setAmountDewPt($amount)
     {
         $this->amountDewPt = $amount;
+
         return $this;
     }
+
     public function setAmountWindSpeed($amount)
     {
         $this->amountWindSpeed = $amount;
+
         return $this;
     }
+
     public function setAmountBar($amount)
     {
         $this->amountBar = $amount;
+
         return $this;
     }
+
     public function setAmountRain($amount)
     {
         $this->amountRain = $amount;
+
         return $this;
     }
+
     public function setAmountSolarRad($amount)
     {
         $this->amountSolarRad = $amount;
+
         return $this;
     }
+
     public function setAmountUVIndex($amount)
     {
         $this->amountUVIndex = $amount;
+
         return $this;
     }
-
-
 }
