@@ -31,7 +31,7 @@ class ImportController extends Controller
 
         foreach ($files['davis'] as $file) {
             try {
-                if (!$this->db->isOpen()) {
+                if (! $this->db->isOpen()) {
                     $this->db = $this->db->create(
                         $this->db->getConnection(),
                         $this->db->getConfiguration()
@@ -80,7 +80,7 @@ class ImportController extends Controller
                     $filter = function ($x) {
                         //USAR REGEX
                         if ($x[0] == '-') {
-                            return;
+                            return null;
                         }
 
                         return $x;
@@ -138,18 +138,19 @@ class ImportController extends Controller
                 foreach ($davisYearlyArray as $instance) {
                     $this->db->persist($instance->doPrepare());
                 }
-                //echo '<pre>' . var_export($davisHourlyArray,true) . '</pre>';
+
                 $this->db->flush();
+
             } catch (Exception $e) {
                 if ($e instanceof DriverException) {
                     $errorCode = $e->getErrorCode();
                     if ($errorCode === 1062 && $overwrite == 1) { //DUPLICATA
                         $caught = true;
                         $messages[] = [
-                        'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui uma entrada já existente no Banco.\n" . $e->getMessage(),
-                        'type'    => 'danger',
+                            'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui uma entrada já existente no Banco.\n" . $e->getMessage(),
+                            'type'    => 'danger',
                         ];
-                    } elseif ($errorCode === 1265) { //TRUNCATE
+                    } else if ($errorCode === 1265) { //TRUNCATE
                         $caught = true;
                         $messages[] = [
                             'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui valores com tipos errados.\n" . $e->getMessage(),
@@ -189,6 +190,7 @@ class ImportController extends Controller
         $newDavisArray = [];
         $newDavisObject = null;
         $repository = $this->db->getRepository($repoClass);
+
         foreach ($davisArray as $i => $davis) {
             $time = new $repoClass($davis);
             $time = $time->getDateTime();
@@ -202,7 +204,9 @@ class ImportController extends Controller
              */
 
             if (empty($newDavisArray[$time->format('d/m/Y H:i')])) {
+
                 $newDavisObject = $repository->findOneByDateTime($time);
+
                 if ($newDavisObject instanceof $repoClass) {
                     $newDavisArray[$time->format('d/m/Y H:i')] = $newDavisObject->undoPrepare();
                     $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
@@ -211,6 +215,7 @@ class ImportController extends Controller
                     $newDavisArray[$time->format('d/m/Y H:i')] = new $repoClass($davis);
                     $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
                 }
+
             } else {
                 $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
             }

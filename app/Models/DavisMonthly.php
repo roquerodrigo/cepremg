@@ -5,8 +5,10 @@ namespace App\Models;
 /**
  * @Entity @Table(name="davis_monthly")
  **/
-class DavisMonthly extends AbstractDavis
+class DavisMonthly extends DavisBase
 {
+    use DavisCompiled;
+
     public function __construct(DavisDaily $davis = null)
     {
         if ($davis !== null) {
@@ -26,22 +28,25 @@ class DavisMonthly extends AbstractDavis
             $this->validHiTemp = false;
             $this->validTempOut = false;
 
-            $this->amountWindDir['WNW'] = 0;
-            $this->amountWindDir['NW'] = 0;
-            $this->amountWindDir['NNW'] = 0;
-            $this->amountWindDir['N'] = 0;
-            $this->amountWindDir['NNE'] = 0;
-            $this->amountWindDir['NE'] = 0;
-            $this->amountWindDir['ENE'] = 0;
-            $this->amountWindDir['E'] = 0;
-            $this->amountWindDir['ESE'] = 0;
-            $this->amountWindDir['SE'] = 0;
-            $this->amountWindDir['SSE'] = 0;
-            $this->amountWindDir['S'] = 0;
-            $this->amountWindDir['SSW'] = 0;
-            $this->amountWindDir['SW'] = 0;
-            $this->amountWindDir['WSW'] = 0;
-            $this->amountWindDir['W'] = 0;
+            $this->amountWindDir = [
+                'WNW' => 0,
+                'NW'  => 0,
+                'NNW' => 0,
+                'N'   => 0,
+                'NNE' => 0,
+                'NE'  => 0,
+                'ENE' => 0,
+                'E'   => 0,
+                'ESE' => 0,
+                'SE'  => 0,
+                'SSE' => 0,
+                'S'   => 0,
+                'SSW' => 0,
+                'SW'  => 0,
+                'WSW' => 0,
+                'W'   => 0,
+
+            ];
 
             $this->amountUVIndex = 0;
             $this->amountSolarRad = 0;
@@ -62,11 +67,14 @@ class DavisMonthly extends AbstractDavis
         $this->setTempOut($this->getTempOut() + $davis->getTempOut());
         $this->setHiTemp(max($this->getHiTemp(), $davis->getHiTemp()));
 
-        $has_value = $davis->getLowTemp() !== null;
-        if ($this->getLowTemp() === null && $has_value) {
-            $this->setlowTemp($davis->getLowTemp());
-        } elseif ($has_value) {
-            $this->setLowTemp(min($this->getLowTemp(), $davis->getLowTemp()));
+        $hasLowTemp = $davis->getLowTemp() !== null;
+
+        if ($hasLowTemp) {
+            if ($this->getLowTemp() === null) {
+                $this->setlowTemp($davis->getLowTemp());
+            } else {
+                $this->setLowTemp(min($this->getLowTemp(), $davis->getLowTemp()));
+            }
         }
 
         $this->setOutHum($this->getOutHum() + $davis->getOutHum());
@@ -177,297 +185,4 @@ class DavisMonthly extends AbstractDavis
         return $this;
     }
 
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_uv_index",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validUVIndex;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_uv_index",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountUVIndex;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_solar_rad",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validSolarRad;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_solar_rad",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountSolarRad;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_rain",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validRain;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_rain",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountRain;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_bar",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validBar;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_bar",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountBar;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_wind_dir",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validWindDir;
-
-    /**
-     * @var array ,contagem de direções do vento
-     * @Column(name="amount_wind_dir",type="array", nullable=false)
-     */
-    private $amountWindDir;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_wind_speed",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validWindSpeed;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_wind_speed",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountWindSpeed;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_dew_pt",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validDewPt;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_dew_pt",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountDewPt;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_out_hum",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validOutHum;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_out_hum",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountOutHum;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_low_temp",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validLowTemp;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_low_temp",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountLowTemp;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_hi_temp",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validHiTemp;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_hi_temp",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountHiTemp;
-
-    /**
-     * @var bool dado é valido para exibição
-     * @Column(name="valid_temp_out",type="boolean", nullable=false, options={"default":false})
-     */
-    private $validTempOut;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor
-     * @Column(name="amount_temp_out",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountTempOut;
-
-    /**
-     * @var int Quantidade de dados usados para produzir o valor dessa coluna
-     * @Column(name="amount_data",type="integer", nullable=false, options={"default":0})
-     */
-    private $amountData;
-
-    public function setMinRequirement()
-    {
-        $this->minRequirement = $minRequirement;
-
-        return $this;
-    }
-
-    public function getMinRequirement()
-    {
-        return $this->minRequirement;
-    }
-
-    public function getAmountData()
-    {
-        return $this->amountData;
-    }
-
-    public function setAmountData($amountData)
-    {
-        $this->amountData = $amountData;
-
-        return $this;
-    }
-
-    public function getAmountTempOut()
-    {
-        return $this->amountTempOut;
-    }
-
-    public function getAmountHiTemp()
-    {
-        return $this->amountHiTemp;
-    }
-
-    public function getAmountLowTemp()
-    {
-        return $this->amountLowTemp;
-    }
-
-    public function getAmountOutHum()
-    {
-        return $this->amountOutHum;
-    }
-
-    public function getAmountDewPt()
-    {
-        return $this->amountDewPt;
-    }
-
-    public function getAmountWindSpeed()
-    {
-        return $this->amountWindSpeed;
-    }
-
-    public function getAmountBar()
-    {
-        return $this->amountBar;
-    }
-
-    public function getAmountRain()
-    {
-        return $this->amountRain;
-    }
-
-    public function getAmountSolarRad()
-    {
-        return $this->amountSolarRad;
-    }
-
-    public function getAmountUVIndex()
-    {
-        return $this->amountUVIndex;
-    }
-
-    public function getAmountWindDir()
-    {
-        return $this->amountWindDir;
-    }
-
-    public function setAmountWindDir($amount)
-    {
-        $this->amountWindDir = $amount;
-
-        return $this;
-    }
-
-    public function setAmountTempOut($amount)
-    {
-        $this->amountTempOut = $amount;
-
-        return $this;
-    }
-
-    public function setAmountHiTemp($amount)
-    {
-        $this->amountHiTemp = $amount;
-
-        return $this;
-    }
-
-    public function setAmountLowTemp($amount)
-    {
-        $this->amountLowTemp = $amount;
-
-        return $this;
-    }
-
-    public function setAmountOutHum($amount)
-    {
-        $this->amountOutHum = $amount;
-
-        return $this;
-    }
-
-    public function setAmountDewPt($amount)
-    {
-        $this->amountDewPt = $amount;
-
-        return $this;
-    }
-
-    public function setAmountWindSpeed($amount)
-    {
-        $this->amountWindSpeed = $amount;
-
-        return $this;
-    }
-
-    public function setAmountBar($amount)
-    {
-        $this->amountBar = $amount;
-
-        return $this;
-    }
-
-    public function setAmountRain($amount)
-    {
-        $this->amountRain = $amount;
-
-        return $this;
-    }
-
-    public function setAmountSolarRad($amount)
-    {
-        $this->amountSolarRad = $amount;
-
-        return $this;
-    }
-
-    public function setAmountUVIndex($amount)
-    {
-        $this->amountUVIndex = $amount;
-
-        return $this;
-    }
 }

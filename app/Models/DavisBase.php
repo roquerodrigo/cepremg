@@ -5,85 +5,85 @@ namespace App\Models;
 /**
  * @MappedSuperclass
  **/
-class AbstractDavis
+class DavisBase
 {
     /**
      * @var int Chave de implementação
      * @Id @Column(name="id", type="integer") @GeneratedValue
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime Hora do registro
      * @Column(name="date_time", type="datetime", unique=true)
      */
-    private $dateTime;
+    protected $dateTime;
 
     /**
      * @var float Temperatura
      * @Column(name="temp_out", type="float", nullable=true)
      */
-    private $tempOut = 0.0;
+    protected $tempOut = null;
 
     /**
      * @var float Maior temperatura
      * @Column(name="hi_temp", type="float", nullable=true)
      */
-    private $hiTemp = 0.0;
+    protected $hiTemp = null;
 
     /**
      * @var float Menor temperatura
      * @Column(name="low_temp", type="float", nullable=true)
      */
-    private $lowTemp = 0.0;
+    protected $lowTemp = null;
 
     /**
      * @var int Umidade do ar
      * @Column(name="out_hum", type="float", nullable=true)
      */
-    private $outHum = 0.0;
+    protected $outHum = null;
 
     /**
      * @var float Temperatura de ponto de orvalho
      * @Column(name="dew_pt", type="float", nullable=true)
      */
-    private $dewPt = 0.0;
+    protected $dewPt = null;
 
     /**
      * @var float Intensidade do vento
      * @Column(name="wind_speed", type="float", nullable=true)
      */
-    private $windSpeed = 0.0;
+    protected $windSpeed = null;
 
     /**
      * @var float Direção do vento
      * @Column(name="wind_dir", type="string", length=3, nullable=true)
      */
-    private $windDir = 0.0;
+    protected $windDir = null;
 
     /**
      * @var float Pressão atmosférica
      * @Column(name="bar", type="float", nullable=true)
      */
-    private $bar = 0.0;
+    protected $bar = null;
 
     /**
      * @var float Precipitação
      * @Column(name="rain", type="float", nullable=true)
      */
-    private $rain = 0.0;
+    protected $rain = null;
 
     /**
      * @var int Radiação solar
      * @Column(name="solar_rad", type="float", nullable=true)
      */
-    private $solarRad = 0.0;
+    protected $solarRad = null;
 
     /**
      * @var float Índice ultra-violeta
      * @Column(name="uv_index", type="float", nullable=true)
      */
-    private $UVIndex = 0.0;
+    protected $UVIndex = null;
 
     /**
      * @return int
@@ -96,7 +96,7 @@ class AbstractDavis
     /**
      * @param int $id
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setId($id)
     {
@@ -116,7 +116,7 @@ class AbstractDavis
     /**
      * @param \DateTime $dateTime
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setDateTime($dateTime)
     {
@@ -136,7 +136,7 @@ class AbstractDavis
     /**
      * @param float $tempOut
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setTempOut($tempOut)
     {
@@ -156,7 +156,7 @@ class AbstractDavis
     /**
      * @param float $hiTemp
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setHiTemp($hiTemp)
     {
@@ -176,7 +176,7 @@ class AbstractDavis
     /**
      * @param float $lowTemp
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setLowTemp($lowTemp)
     {
@@ -196,7 +196,7 @@ class AbstractDavis
     /**
      * @param int $outHum
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setOutHum($outHum)
     {
@@ -216,7 +216,7 @@ class AbstractDavis
     /**
      * @param float $dewPt
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setDewPt($dewPt)
     {
@@ -236,7 +236,7 @@ class AbstractDavis
     /**
      * @param float $windSpeed
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setWindSpeed($windSpeed)
     {
@@ -256,7 +256,7 @@ class AbstractDavis
     /**
      * @param float $windDir
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setWindDir($windDir)
     {
@@ -276,7 +276,7 @@ class AbstractDavis
     /**
      * @param float $bar
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setBar($bar)
     {
@@ -296,7 +296,7 @@ class AbstractDavis
     /**
      * @param float $rain
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setRain($rain)
     {
@@ -316,7 +316,7 @@ class AbstractDavis
     /**
      * @param int $solarRad
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setSolarRad($solarRad)
     {
@@ -336,7 +336,7 @@ class AbstractDavis
     /**
      * @param float $UVIndex
      *
-     * @return Davis
+     * @return DavisBase
      */
     public function setUVIndex($UVIndex)
     {
