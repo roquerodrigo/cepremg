@@ -55,6 +55,14 @@ class DataController extends Controller
 
                 break;
 
+            case 'dewPtTemp':
+                $chart->title->text = 'Temperatura média e de ponto de orvalho';
+                $chart->yAxis['title']['text'] = 'Temperatura (ºC)';
+
+                $chart->series['dewPt']->name = 'Temperatura de ponto de orvalho';
+                $chart->series['tempOut']->name = 'Temperatura média';
+                break;
+
             case 'windSpeed':
                 $chart->title->text = 'Intensidade do vento';
                 $chart->yAxis['title']['text'] = 'Intensidade do vento (km/h)';
@@ -134,6 +142,11 @@ class DataController extends Controller
                 ->andWhere('d.validLowTemp = 1')
                 ->addSelect('d.tempOut')
                 ->andWhere('d.validTempOut = 1');
+        } else if ($type == 'dewPtTemp') {
+            $qb->addSelect('d.tempOut')
+                ->andWhere('d.validTempOut = 1')
+                ->addSelect('d.dewPt')
+                ->andWhere('d.validDewPt = 1');
         } else {
             $qb->addSelect('d.' . $type);
             $qb->andWhere('d.valid' . ucfirst($type) . ' = 1');
@@ -148,6 +161,9 @@ class DataController extends Controller
                 $chart->series['hiTemp']->data[] = [$dateTime, (float) $result['hiTemp']];
                 $chart->series['lowTemp']->data[] = [$dateTime, (float) $result['lowTemp']];
                 $chart->series['tempOut']->data[] = [$dateTime, (float) $result['tempOut']];
+            } else if ($type == 'dewPtTemp') {
+                $chart->series['tempOut']->data[] = [$dateTime, (float) $result['tempOut']];
+                $chart->series['dewPt']->data[] = [$dateTime, (float) $result['dewPt']];
             } else {
                 $chart->series[$type]->data[] = [$dateTime, (float) $result[$type]];
                 $chart->series[$type]->gapSize = 1;
