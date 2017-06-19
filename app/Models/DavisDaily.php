@@ -9,6 +9,8 @@ class DavisDaily extends DavisBase
 {
     use DavisCompiled;
 
+    const MIN_DATA_COUNT = 3;
+
     public function __construct(DavisHourly $davis = null)
     {
         if ($davis !== null) {
@@ -122,82 +124,88 @@ class DavisDaily extends DavisBase
         $cd1 = 0;
         $cd2 = 0;
         $cd3 = 0;
+
         foreach ($this->amountWindDir as $value) {
             $cd1 += $value['0-9'];
             $cd2 += $value['10-14'];
             $cd3 += $value['15-23'];
         }
-        if ($cd1 >= 3 && $cd2 >= 3 && $cd3 >= 3) {
+
+        if ($cd1 >= self::MIN_DATA_COUNT &&
+            $cd2 >= self::MIN_DATA_COUNT &&
+            $cd3 >= self::MIN_DATA_COUNT
+        ) {
             $this->validWindDir = true;
         }
+
         unset($cd1, $cd2, $cd3);
 
-        if ($this->amountTempOut['0-9'] >= 3 &&
-            $this->amountTempOut['10-14'] >= 3 &&
-            $this->amountTempOut['15-23'] >= 3
+        if ($this->amountTempOut['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validTempOut = true;
         }
 
-        if ($this->amountHiTemp['0-9'] >= 3 &&
-            $this->amountHiTemp['10-14'] >= 3 &&
-            $this->amountHiTemp['15-23'] >= 3
+        if ($this->amountHiTemp['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountHiTemp['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountHiTemp['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validHiTemp = true;
         }
 
-        if ($this->amountLowTemp['0-9'] >= 3 &&
-            $this->amountLowTemp['10-14'] >= 3 &&
-            $this->amountLowTemp['15-23'] >= 3
+        if ($this->amountLowTemp['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountLowTemp['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountLowTemp['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validLowTemp = true;
         }
 
-        if ($this->amountOutHum['0-9'] >= 3 &&
-            $this->amountOutHum['10-14'] >= 3 &&
-            $this->amountOutHum['15-23'] >= 3
+        if ($this->amountOutHum['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountOutHum['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountOutHum['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validOutHum = true;
         }
 
-        if ($this->amountDewPt['0-9'] >= 3 &&
-            $this->amountDewPt['10-14'] >= 3 &&
-            $this->amountDewPt['15-23'] >= 3
+        if ($this->amountDewPt['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountDewPt['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountDewPt['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validDewPt = true;
         }
 
-        if ($this->amountWindSpeed['0-9'] >= 3 &&
-            $this->amountWindSpeed['10-14'] >= 3 &&
-            $this->amountWindSpeed['15-23'] >= 3
+        if ($this->amountWindSpeed['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountWindSpeed['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountWindSpeed['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validWindSpeed = true;
         }
 
-        if ($this->amountBar['0-9'] >= 3 &&
-            $this->amountBar['10-14'] >= 3 &&
-            $this->amountBar['15-23'] >= 3
+        if ($this->amountBar['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountBar['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountBar['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validBar = true;
         }
 
-        if ($this->amountRain['0-9'] >= 3 &&
-            $this->amountRain['10-14'] >= 3 &&
-            $this->amountRain['15-23'] >= 3
+        if ($this->amountRain['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountRain['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountRain['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validRain = true;
         }
 
-        if ($this->amountSolarRad['0-9'] >= 3 &&
-            $this->amountSolarRad['10-14'] >= 3 &&
-            $this->amountSolarRad['15-23'] >= 3
+        if ($this->amountSolarRad['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountSolarRad['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountSolarRad['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validSolarRad = true;
         }
 
-        if ($this->amountUVIndex['0-9'] >= 3 &&
-            $this->amountUVIndex['10-14'] >= 3 &&
-            $this->amountUVIndex['15-23'] >= 3
+        if ($this->amountUVIndex['0-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountUVIndex['10-14'] >= self::MIN_DATA_COUNT &&
+            $this->amountUVIndex['15-23'] >= self::MIN_DATA_COUNT
         ) {
             $this->validUVIndex = true;
         }
@@ -240,6 +248,7 @@ class DavisDaily extends DavisBase
         }
 
         $this->setWindDir(array_keys($aWindDir, max($aWindDir))[0]);
+
         unset($aWindDir);
 
         return $this;

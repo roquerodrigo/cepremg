@@ -9,6 +9,8 @@ class DavisYearly extends DavisBase
 {
     use DavisCompiled;
 
+    const MIN_DATA_COUNT = 8640;
+
     public function __construct(DavisMonthly $davis = null)
     {
         if ($davis !== null) {
@@ -28,35 +30,37 @@ class DavisYearly extends DavisBase
             $this->validHiTemp = false;
             $this->validTempOut = false;
 
+            $arrayMeses = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
+
             $this->amountWindDir = [
-                'WNW' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'NW'  => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'NNW' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'N'   => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'NNE' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'NE'  => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'ENE' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'E'   => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'ESE' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'SE'  => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'SSE' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'S'   => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'SSW' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'SW'  => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'WSW' => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
-                'W'   => ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0],
+                'WNW' => $arrayMeses,
+                'NW'  => $arrayMeses,
+                'NNW' => $arrayMeses,
+                'N'   => $arrayMeses,
+                'NNE' => $arrayMeses,
+                'NE'  => $arrayMeses,
+                'ENE' => $arrayMeses,
+                'E'   => $arrayMeses,
+                'ESE' => $arrayMeses,
+                'SE'  => $arrayMeses,
+                'SSE' => $arrayMeses,
+                'S'   => $arrayMeses,
+                'SSW' => $arrayMeses,
+                'SW'  => $arrayMeses,
+                'WSW' => $arrayMeses,
+                'W'   => $arrayMeses,
             ];
 
-            $this->amountUVIndex = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountSolarRad = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountRain = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountBar = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountWindSpeed = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountDewPt = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountOutHum = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountLowTemp = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountHiTemp = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
-            $this->amountTempOut = ['1-3' => 0, '4-6' => 0, '7-9' => 0, '10-12' => 0];
+            $this->amountUVIndex = $arrayMeses;
+            $this->amountSolarRad = $arrayMeses;
+            $this->amountRain = $arrayMeses;
+            $this->amountBar = $arrayMeses;
+            $this->amountWindSpeed = $arrayMeses;
+            $this->amountDewPt = $arrayMeses;
+            $this->amountOutHum = $arrayMeses;
+            $this->amountLowTemp = $arrayMeses;
+            $this->amountHiTemp = $arrayMeses;
+            $this->amountTempOut = $arrayMeses;
 
             $this->amountData = 0;
         }
@@ -133,87 +137,93 @@ class DavisYearly extends DavisBase
             $cd3 += $value['7-9'];
             $cd4 += $value['10-12'];
         }
-        if ($cd1 >= 8640 && $cd2 >= 8640 && $cd3 >= 8640 && $cd4 >= 8640) {
+
+        if ($cd1 >= self::MIN_DATA_COUNT &&
+            $cd2 >= self::MIN_DATA_COUNT &&
+            $cd3 >= self::MIN_DATA_COUNT &&
+            $cd4 >= self::MIN_DATA_COUNT
+        ) {
             $this->validWindDir = true;
         }
+
         unset($cd1, $cd2, $cd3, $cd4);
 
-        if ($this->amountTempOut['1-3'] >= 8640 &&
-            $this->amountTempOut['4-6'] >= 8640 &&
-            $this->amountTempOut['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountTempOut['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validTempOut = true;
         }
 
-        if ($this->amountHiTemp['1-3'] >= 8640 &&
-            $this->amountHiTemp['4-6'] >= 8640 &&
-            $this->amountHiTemp['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountHiTemp['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountHiTemp['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountHiTemp['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validHiTemp = true;
         }
 
-        if ($this->amountLowTemp['1-3'] >= 8640 &&
-            $this->amountLowTemp['4-6'] >= 8640 &&
-            $this->amountLowTemp['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountLowTemp['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountLowTemp['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountLowTemp['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validLowTemp = true;
         }
 
-        if ($this->amountOutHum['1-3'] >= 8640 &&
-            $this->amountOutHum['4-6'] >= 8640 &&
-            $this->amountOutHum['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountOutHum['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountOutHum['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountOutHum['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validOutHum = true;
         }
 
-        if ($this->amountDewPt['1-3'] >= 8640 &&
-            $this->amountDewPt['4-6'] >= 8640 &&
-            $this->amountDewPt['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountDewPt['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountDewPt['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountDewPt['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validDewPt = true;
         }
 
-        if ($this->amountWindSpeed['1-3'] >= 8640 &&
-            $this->amountWindSpeed['4-6'] >= 8640 &&
-            $this->amountWindSpeed['7-9'] >= 8640 &&
+        if ($this->amountWindSpeed['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountWindSpeed['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountWindSpeed['7-9'] >= self::MIN_DATA_COUNT &&
             $this->amountTempOut['10-12']
         ) {
             $this->validWindSpeed = true;
         }
 
-        if ($this->amountBar['1-3'] >= 8640 &&
-            $this->amountBar['4-6'] >= 8640 &&
-            $this->amountBar['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountBar['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountBar['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountBar['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validBar = true;
         }
 
-        if ($this->amountRain['1-3'] >= 8640 &&
-            $this->amountRain['4-6'] >= 8640 &&
-            $this->amountRain['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountRain['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountRain['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountRain['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validRain = true;
         }
 
-        if ($this->amountSolarRad['1-3'] >= 8640 &&
-            $this->amountSolarRad['4-6'] >= 8640 &&
-            $this->amountSolarRad['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountSolarRad['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountSolarRad['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountSolarRad['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validSolarRad = true;
         }
 
-        if ($this->amountUVIndex['1-3'] >= 8640 &&
-            $this->amountUVIndex['4-6'] >= 8640 &&
-            $this->amountUVIndex['7-9'] >= 8640 &&
-            $this->amountTempOut['10-12'] >= 8640
+        if ($this->amountUVIndex['1-3'] >= self::MIN_DATA_COUNT &&
+            $this->amountUVIndex['4-6'] >= self::MIN_DATA_COUNT &&
+            $this->amountUVIndex['7-9'] >= self::MIN_DATA_COUNT &&
+            $this->amountTempOut['10-12'] >= self::MIN_DATA_COUNT
         ) {
             $this->validUVIndex = true;
         }

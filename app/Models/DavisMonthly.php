@@ -9,6 +9,8 @@ class DavisMonthly extends DavisBase
 {
     use DavisCompiled;
 
+    const MIN_DATA_COUNT = 2880;
+
     public function __construct(DavisDaily $davis = null)
     {
         if ($davis !== null) {
@@ -45,7 +47,6 @@ class DavisMonthly extends DavisBase
                 'SW'  => 0,
                 'WSW' => 0,
                 'W'   => 0,
-
             ];
 
             $this->amountUVIndex = 0;
@@ -108,36 +109,46 @@ class DavisMonthly extends DavisBase
         if ($this->amountTempOut != 0) {
             $this->setTempOut($this->getTempOut() / $this->amountTempOut);
         }
+
         if ($this->amountOutHum != 0) {
             $this->setOutHum($this->getOutHum() / $this->amountOutHum);
         }
+
         if ($this->amountDewPt != 0) {
             $this->setDewPt($this->getDewPt() / $this->amountDewPt);
         }
+
         if ($this->amountWindSpeed != 0) {
             $this->setWindSpeed($this->getWindSpeed() / $this->amountWindSpeed);
         }
+
         if ($this->amountBar != 0) {
             $this->setBar($this->getBar() / $this->amountBar);
         }
+
         if ($this->amountSolarRad != 0) {
             $this->setSolarRad($this->getSolarRad() / $this->amountSolarRad);
         }
+
         if ($this->amountUVIndex != 0) {
             $this->setUVIndex($this->getUVIndex() / $this->amountUVIndex);
         }
+
         $this->setWindDir(array_keys($this->amountWindDir, max($this->amountWindDir))[0]);
 
-        if ($this->amountUVIndex >= 2880) {
+        if ($this->amountUVIndex >= self::MIN_DATA_COUNT) {
             $this->validUVIndex = true;
         }
-        if ($this->amountSolarRad >= 2880) {
+
+        if ($this->amountSolarRad >= self::MIN_DATA_COUNT) {
             $this->validSolarRad = true;
         }
-        if ($this->amountRain == $this->amountData && $this->amountRain >= 2880) {
+
+        if ($this->amountRain == $this->amountData && $this->amountRain >= self::MIN_DATA_COUNT) {
             $this->validRain = true;
         }
-        if ($this->amountBar >= 2880) {
+
+        if ($this->amountBar >= self::MIN_DATA_COUNT) {
             $this->validBar = true;
         }
 
@@ -146,26 +157,27 @@ class DavisMonthly extends DavisBase
             $wdirSum += $value;
         }
 
-        if ($wdirSum >= 2880) {
+        if ($wdirSum >= self::MIN_DATA_COUNT) {
             $this->validWindDir = true;
         }
 
-        if ($this->amountWindSpeed >= 2880) {
+        if ($this->amountWindSpeed >= self::MIN_DATA_COUNT) {
             $this->validWindSpeed = true;
         }
-        if ($this->amountDewPt >= 2880) {
+
+        if ($this->amountDewPt >= self::MIN_DATA_COUNT) {
             $this->validDewPt = true;
         }
-        if ($this->amountOutHum >= 2880) {
+        if ($this->amountOutHum >= self::MIN_DATA_COUNT) {
             $this->validOutHum = true;
         }
-        if ($this->amountLowTemp >= 2880) {
+        if ($this->amountLowTemp >= self::MIN_DATA_COUNT) {
             $this->validLowTemp = true;
         }
-        if ($this->amountHiTemp >= 2880) {
+        if ($this->amountHiTemp >= self::MIN_DATA_COUNT) {
             $this->validHiTemp = true;
         }
-        if ($this->amountTempOut >= 2880) {
+        if ($this->amountTempOut >= self::MIN_DATA_COUNT) {
             $this->validTempOut = true;
         }
 
@@ -184,5 +196,4 @@ class DavisMonthly extends DavisBase
 
         return $this;
     }
-
 }
