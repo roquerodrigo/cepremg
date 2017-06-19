@@ -129,10 +129,14 @@ class DataController extends Controller
 
         if ($type == 'temp') {
             $qb->addSelect('d.hiTemp')
+                ->andWhere('d.validHiTemp = 1')
                 ->addSelect('d.lowTemp')
-                ->addSelect('d.tempOut');
+                ->andWhere('d.validLowTemp = 1')
+                ->addSelect('d.tempOut')
+                ->andWhere('d.validTempOut = 1');
         } else {
             $qb->addSelect('d.' . $type);
+            $qb->andWhere('d.valid' . ucfirst($type) . ' = 1');
         }
 
         $results = $qb->getQuery()->getArrayResult();
