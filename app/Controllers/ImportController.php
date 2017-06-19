@@ -31,7 +31,7 @@ class ImportController extends Controller
 
         foreach ($files['davis'] as $file) {
             try {
-                if (! $this->db->isOpen()) {
+                if (!$this->db->isOpen()) {
                     $this->db = $this->db->create(
                         $this->db->getConnection(),
                         $this->db->getConfiguration()
@@ -80,7 +80,7 @@ class ImportController extends Controller
                     $filter = function ($x) {
                         //USAR REGEX
                         if ($x[0] == '-') {
-                            return null;
+                            return;
                         }
 
                         return $x;
@@ -140,7 +140,6 @@ class ImportController extends Controller
                 }
 
                 $this->db->flush();
-
             } catch (Exception $e) {
                 if ($e instanceof DriverException) {
                     $errorCode = $e->getErrorCode();
@@ -150,7 +149,7 @@ class ImportController extends Controller
                             'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui uma entrada já existente no Banco.\n" . $e->getMessage(),
                             'type'    => 'danger',
                         ];
-                    } else if ($errorCode === 1265) { //TRUNCATE
+                    } elseif ($errorCode === 1265) { //TRUNCATE
                         $caught = true;
                         $messages[] = [
                             'message' => 'Erro no arquivo ' . $file->getClientFilename() . ":\nO arquivo possui valores com tipos errados.\n" . $e->getMessage(),
@@ -204,7 +203,6 @@ class ImportController extends Controller
              */
 
             if (empty($newDavisArray[$time->format('d/m/Y H:i')])) {
-
                 $newDavisObject = $repository->findOneByDateTime($time);
 
                 if ($newDavisObject instanceof $repoClass) {
@@ -215,7 +213,6 @@ class ImportController extends Controller
                     $newDavisArray[$time->format('d/m/Y H:i')] = new $repoClass($davis);
                     $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
                 }
-
             } else {
                 $newDavisArray[$time->format('d/m/Y H:i')]->mergeDavis($davis);
             }
