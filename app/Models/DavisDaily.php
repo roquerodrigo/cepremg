@@ -93,12 +93,11 @@ class DavisDaily extends DavisBase
 
         if ($hora <= 9) {
             $interval = '0-9';
-        } else if ($hora > 9 && $hora <= 14) {
+        } elseif ($hora > 9 && $hora <= 14) {
             $interval = '10-14';
         } else {
             $interval = '15-23';
         }
-
 
         $arr = $davis->getAmountWindDir();
         foreach ($arr as $key => $value) {

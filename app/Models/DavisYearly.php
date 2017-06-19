@@ -94,12 +94,11 @@ class DavisYearly extends DavisBase
 
         $month = $davis->getDateTime()->format('m');
 
-
         if ($month <= 3) {
             $interval = '1-3';
-        } else if ($month > 3 && $month <= 6) {
+        } elseif ($month > 3 && $month <= 6) {
             $interval = '4-6';
-        } else if ($month > 6 && $month <= 9) {
+        } elseif ($month > 6 && $month <= 9) {
             $interval = '7-9';
         } else {
             $interval = '10-12';
@@ -120,7 +119,6 @@ class DavisYearly extends DavisBase
         $this->amountRain[$interval] += $davis->getAmountRain();
         $this->amountSolarRad[$interval] += $davis->getAmountSolarRad();
         $this->amountUVIndex[$interval] += $davis->getAmountUVIndex();
-
 
         $this->amountData += $davis->getAmountData();
     }
