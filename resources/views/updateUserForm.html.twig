@@ -1,46 +1,44 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 well well-lg">
 
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 well well-lg">
+            <h1 class="text-center">Atualizar Informações</h1>
 
-  		<h1 class="text-center">Atualizar Informações</h1>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="name-id">Nome Completo:</label>
+                    <input id="name-id" class="form-control" name="newName" placeholder="Nome Completo" type="text" value="{{ session.name }}">
+                </div>
 
-    	<form method="POST">
-    		<div class="form-group">
-    			<label for="name-id">Nome Completo:</label>
-    			<input id="name-id" class="form-control" name="newName" placeholder="Nome Completo" type="text" value="{{session.name}}">
-    		</div>
 
-    		
-    		<div class="form-group">
-    			<label for="pwd-id">Nova senha:</label>
-    			<input id="pwd-id" class="form-control" name="newPwd" placeholder="Senha" type="password">
-    		</div>
-    		<div class="form-group">
-    			<label for="pwdconfirm-id">Confirmar senha:</label>
-    			<input id="pwdconfirm-id" class="form-control" name="newPwdConfirm" placeholder="Senha" type="password">
-    		</div>
+                <div class="form-group">
+                    <label for="pwd-id">Nova senha:</label>
+                    <input id="pwd-id" class="form-control" name="newPwd" placeholder="Senha" type="password">
+                </div>
+                <div class="form-group">
+                    <label for="pwdconfirm-id">Confirmar senha:</label>
+                    <input id="pwdconfirm-id" class="form-control" name="newPwdConfirm" placeholder="Senha" type="password">
+                </div>
 
-    		<div class="form-group">
-    			<input class="btn btn-primary" value="Atualizar" type="submit">
-    			<input class="btn btn-default" type="reset">
-    		</div>
-    	</form>
-    	{% if failure == true %}
-    		<div class="panel panel-danger">
-    			<div class="panel-heading">Erro {{message}}</div>
-			</div>
-    	{% endif %}
-    	{% if success == true %}
-    		<div class="panel panel-success">
-    			<div class="panel-heading">Sucesso: Dados Atualizados.</div>
-			</div>
-    	{% endif %}
-    	</div>
-    <div class="col-md-4"></div>
+                <div class="form-group">
+                    <input class="btn btn-primary" value="Atualizar" type="submit">
+                    <input class="btn btn-default" type="reset">
+                </div>
+            </form>
+            {% if failure == true %}
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Erro {{ message }}</div>
+                </div>
+            {% endif %}
+            {% if success == true %}
+                <div class="panel panel-success">
+                    <div class="panel-heading">Sucesso: Dados Atualizados.</div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4"></div>
     </div>
 {% endblock %}

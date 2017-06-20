@@ -1,53 +1,51 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
-
-    <div class = "panel panel-default">
-        <div class = "col-sm-12">
-            <div class = "text-center">
+    <div class="panel panel-default">
+        <div class="col-sm-12">
+            <div class="text-center">
                 <h2>Ler mensagem</h2>
             </div>
             <hr>
         </div>
-        <div class = "panel-body">
-            <div class = "col-sm-8 col-sm-offset-2">
-                <div class = "form-group">
+        <div class="panel-body">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="form-group">
                     <label>Nome: </label>
-                    <input class="form-control" disabled="disabled" value="{{ msg.nome }}" />
+                    <input class="form-control" disabled="disabled" value="{{ msg.nome }}"/>
                 </div>
-                <div class = "form-group">
+                <div class="form-group">
                     <label>Intituicao: </label>
-                    <input class="form-control" disabled="disabled" value="{{ msg.instituicao }}" />
+                    <input class="form-control" disabled="disabled" value="{{ msg.instituicao }}"/>
                 </div>
-                <div class = "form-group">
+                <div class="form-group">
                     <label>Finalidade de uso: </label>
-                    <textarea class="form-control" disabled="disabled"  >{{ msg.finalidade }}</textarea>
+                    <textarea class="form-control" disabled="disabled">{{ msg.finalidade }}</textarea>
                 </div>
-                <div class = "form-group">
+                <div class="form-group">
                     <label>Periodo: </label>
-                    <input class="form-control" disabled="disabled" value="{{ msg.periodo }}" />
+                    <input class="form-control" disabled="disabled" value="{{ msg.periodo }}"/>
                 </div>
             </div>
-            <div class = "col-sm-8 col-sm-offset-2">
-                <div class = "row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="row">
                     {% if(isArquivada == true) %}
-                        <a href="/admin/mensagens/arquivadas" class = "btn btn-success pull-left">Voltar</a>
+                        <a href="/admin/mensagens/arquivadas" class="btn btn-success pull-left">Voltar</a>
                         <form action="/admin/mensagens/arquivar" method="POST">
-                            <button class = "btn btn-danger pull-right">Desarquivar</button>
-                            <input type="hidden" name="msgId" value="{{ msg.id }}" >
+                            <button class="btn btn-danger pull-right">Desarquivar</button>
+                            <input type="hidden" name="msgId" value="{{ msg.id }}">
                         </form>
                     {% else %}
-                        <a href="/admin/mensagens" class = "btn btn-success pull-left">Voltar</a>
+                        <a href="/admin/mensagens" class="btn btn-success pull-left">Voltar</a>
                         <form action="/admin/mensagens/arquivar" method="POST">
-                            <button class = "btn btn-danger pull-right">Arquivar</button>
-                            <input type="hidden" name="msgId" value="{{ msg.id }}" >
+                            <button class="btn btn-danger pull-right">Arquivar</button>
+                            <input type="hidden" name="msgId" value="{{ msg.id }}">
                         </form>
                     {% endif %}
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     </div>
 
 

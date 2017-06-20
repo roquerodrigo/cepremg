@@ -1,53 +1,51 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 well well-lg">
 
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 well well-lg">
+            <h1 class="text-center">Cadastrar Novo Usuário</h1>
 
-  		<h1 class="text-center">Cadastrar Novo Usuário</h1>
+            <form method="POST" action="/admin/register-user">
+                <div class="form-group">
+                    <label for="name-id">Nome Completo:</label>
+                    <input id="name-id" class="form-control" name="name" placeholder="Nome Completo" type="text">
+                </div>
 
-    	<form method="POST" action="/admin/register-user">
-    		<div class="form-group">
-    			<label for="name-id">Nome Completo:</label>
-    			<input id="name-id" class="form-control" name="name" placeholder="Nome Completo" type="text">
-    		</div>
+                <div class="form-group">
+                    <label for="uname-id">Nome de usuário:</label>
+                    <input id="uname-id" class="form-control" name="uname" placeholder="Nome de usuário" type="text">
+                </div>
 
-    		<div class="form-group">
-    			<label for="uname-id">Nome de usuário:</label>
-    			<input id="uname-id" class="form-control" name="uname" placeholder="Nome de usuário" type="text">
-    		</div>
-    		
-    		<div class="form-group">
-    			<label for="pwd-id">Criar uma senha:</label>
-    			<input id="pwd-id" class="form-control" name="pwd" placeholder="Senha" type="password">
-    		</div>
-    		<div class="form-group">
-    			<label for="pwdconfirm-id">Confirmar senha:</label>
-    			<input id="pwdconfirm-id" class="form-control" name="pwdConfirm" placeholder="Senha" type="password">
-    		</div>
+                <div class="form-group">
+                    <label for="pwd-id">Criar uma senha:</label>
+                    <input id="pwd-id" class="form-control" name="pwd" placeholder="Senha" type="password">
+                </div>
+                <div class="form-group">
+                    <label for="pwdconfirm-id">Confirmar senha:</label>
+                    <input id="pwdconfirm-id" class="form-control" name="pwdConfirm" placeholder="Senha" type="password">
+                </div>
 
-    		<div class="form-group">
-    			<input class="btn btn-primary" value="Cadastrar" type="submit">
-    			<input class="btn btn-default" type="reset">
-    		</div>
-    	</form>
+                <div class="form-group">
+                    <input class="btn btn-primary" value="Cadastrar" type="submit">
+                    <input class="btn btn-default" type="reset">
+                </div>
+            </form>
 
-    	{% if message == 'failure' %}
-    		<div class="panel panel-danger">
-    			<div class="panel-heading">Erro: Usuário já cadastrado?</div>
-			</div>
-    	{% endif %}
-    	
-        {% if message == 'success' %}
-    		<div class="panel panel-success">
-    			<div class="panel-heading">Sucesso: Cadastro efetuado.</div>
-			</div>
-    	{% endif %}
-    	
+            {% if message == 'failure' %}
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Erro: Usuário já cadastrado?</div>
+                </div>
+            {% endif %}
+
+            {% if message == 'success' %}
+                <div class="panel panel-success">
+                    <div class="panel-heading">Sucesso: Cadastro efetuado.</div>
+                </div>
+            {% endif %}
+
         </div>
-    <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
     </div>
 {% endblock %}

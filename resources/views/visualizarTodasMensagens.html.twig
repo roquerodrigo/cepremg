@@ -1,17 +1,15 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
-
-    <div class = "panel panel-default">
-        <div class = "col-sm-12">
-            <div class = "text-center">
+    <div class="panel panel-default">
+        <div class="col-sm-12">
+            <div class="text-center">
                 <h2>Solicitaçao de uso dos dados</h2>
             </div>
             <hr>
         </div>
-        <div class = "panel-body">
-            <div class = "col-sm-8">
+        <div class="panel-body">
+            <div class="col-sm-8">
                 {% if(message == 'arquivado') %}
                     <div class="col-sm-4">
                         <label class="alert-success">Mensagem Arquivada</label>
@@ -24,39 +22,39 @@
                 {% endif %}
             </div>
             {% for msg in mensagens %}
-            <div class = "col-sm-6">
-                <div class = "tex-center">
-                    <div class = "panel-default">
-                        <div class = "panel-body">
-                            <div class = "row">
-                                <div class = "col-sm-4">
-                                    <label>Mensagem de : {{ msg.nome }}</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label>Instituicao: {{ msg.instituicao }}</label>
-                                </div>
-                                <div class = "col-sm-2">
-                                    <form method="POST" action="/admin/mensagens/visualizarMsg">
-                                        <button class = "btn btn-default">Ler Mensagem</button>
-                                        <input type="hidden" name="msgId" value="{{ msg.id }}" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class = "row">
-                                {% if(msg.lida == true) %}
+                <div class="col-sm-6">
+                    <div class="tex-center">
+                        <div class="panel-default">
+                            <div class="panel-body">
+                                <div class="row">
                                     <div class="col-sm-4">
-                                        <label class="alert-info">Mensagem lida</label>
+                                        <label>Mensagem de : {{ msg.nome }}</label>
                                     </div>
-                                {% else %}
                                     <div class="col-sm-4">
-                                        <label class="alert-danger">Mensagem não lida</label>
+                                        <label>Instituicao: {{ msg.instituicao }}</label>
                                     </div>
-                                {% endif %}
+                                    <div class="col-sm-2">
+                                        <form method="POST" action="/admin/mensagens/visualizarMsg">
+                                            <button class="btn btn-default">Ler Mensagem</button>
+                                            <input type="hidden" name="msgId" value="{{ msg.id }}"/>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {% if(msg.lida == true) %}
+                                        <div class="col-sm-4">
+                                            <label class="alert-info">Mensagem lida</label>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-sm-4">
+                                            <label class="alert-danger">Mensagem não lida</label>
+                                        </div>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             {% endfor %}
 
         </div>

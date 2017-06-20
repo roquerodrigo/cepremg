@@ -9,7 +9,9 @@
     {% block css %}{% endblock %}
 </head>
 <body>
+{% include 'layouts/navbar.html.twig' %}
 {% block content %}{% endblock %}
+{% include 'layouts/footer.html.twig' %}
 <script src="/js/app.js"></script>
 {% block js %}
 {% endblock %}

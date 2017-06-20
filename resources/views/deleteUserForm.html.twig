@@ -1,33 +1,31 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
-    <div id = "tabela">
-    {% include 'partials/deleteUsersTable.html.twig'
-        with {'Enabled': Enabled, 'Disabled': Disabled}
-    %}
+    <div id="tabela">
+        {% include 'partials/deleteUsersTable.html.twig'
+        with {'Enabled': Enabled, 'Disabled': Disabled} %}
     </div>
 {% endblock %}
 
 
 {% block js %}
     <script type="text/javascript">
-        function deletaUser () {
+        function deletaUser() {
             var usersToDisableId = [];
             var usersToEnableId = [];
-            var i =0;
+            var i = 0;
             $("input[name='disable']").each(function (index) {
-                if($(this).is(":checked")) {
+                if ($(this).is(":checked")) {
                     usersToDisableId[i++] = $(this).val();
                 }
             });
             i = 0;
             $("input[name='enable']").each(function (index) {
-                if($(this).is(":checked"))
+                if ($(this).is(":checked"))
                     usersToEnableId[i++] = $(this).val();
             });
             $.ajax({
-                method:"POST",
+                method: "POST",
                 url: "/admin/disable-user",
                 data: {'usersToDisableId': usersToDisableId, 'usersToEnableId': usersToEnableId},
                 success: function (data) {
