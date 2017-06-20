@@ -12,19 +12,18 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                {#<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>#}
-                {#<li><a href="#">Link</a></li>#}
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            {% if session.auth == true %}
-                <li><a class = "mdi mdi-file-import mdi-12px" href="/import">Carregar Dados</a></li>
-                <li><a class = "mdi mdi-account mdi-12px" href="/user"> {{ session.name }} </a></li>
-                <li><a class = "mdi mdi-logout mdi-12px" href="/logout">Logout</a></li>
-                <li><a id = "mensagens" class ="mdi mdi-message-bulleted  mdi-12px" href="/admin/mensagens">Mensagens</a> </li>
-            {% else %}
-                <li><a id = "mensagens" class ="mdi mdi-message-bulleted mdi-12px" href="/faleConosco">Fale Conosco</a> </li>
-                <li><a class = "mdi mdi-login mdi-12px" href="/login">Login</a></li>
-            {% endif %}
+                {% if session.auth == true %}
+                    <li><a class="mdi mdi-file-import mdi-12px" href="/import">Carregar Dados</a></li>
+                    <li><a class="mdi mdi-account mdi-12px" href="/user"> {{ session.name }} </a></li>
+                    <li><a class="mdi mdi-logout mdi-12px" href="/logout">Logout</a></li>
+                    <li><a id="mensagens" class="mdi mdi-message-bulleted  mdi-12px" href="/admin/mensagens">Mensagens</a></li>
+                {% else %}
+                    <li><a id="mensagens" class="mdi mdi-message-bulleted mdi-12px" href="/faleConosco">Fale Conosco</a></li>
+                    <li><a href="/login"><i class="mdi mdi- mdi-login"></i>Área Restrita</a></li>
+                {% endif %}
 
             </ul>
         </div>
