@@ -2,10 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\DavisDaily;
-use App\Models\DavisHourly;
-use App\Models\DavisMonthly;
-use App\Models\DavisYearly;
 use App\Models\User;
 use Exception;
 use Slim\Http\Request;
@@ -13,76 +9,6 @@ use Slim\Http\Response;
 
 class AdminController extends Controller
 {
-    /**
-     * @route /admin/data-overview
-     *
-     * @method GET
-     */
-    public function dataOverview(Request $request, Response $response, array $args)
-    {
-        $repo = $this->db->getRepository(DavisHourly::class)->findAll();
-        $meta_hourly = [];
-        foreach ($repo as $davis) {
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['UVIndex'] = $davis->getAmountUVIndex() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['SolarRad'] = $davis->getAmountSolarRad() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['Rain'] = $davis->getAmountRain() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['Bar'] = $davis->getAmountBar() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['WindSpeed'] = $davis->getAmountWindSpeed() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['OutHum'] = $davis->getAmountOutHum() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['LowTemp'] = $davis->getAmountLowTemp() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['DewPt'] = $davis->getAmountDewPt() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['HiTemp'] = $davis->getAmountHiTemp() / $davis->getAmountData();
-            $meta_hourly[$davis->getDateTime()->format('d/m/Y H')]['TempOut'] = $davis->getAmountTempOut() / $davis->getAmountData();
-        }
-
-        $repo = $this->db->getRepository(DavisDaily::class)->findAll();
-        $meta_daily = [];
-        foreach ($repo as $davis) {
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['UVIndex'] = array_sum($davis->getAmountUVIndex()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['SolarRad'] = array_sum($davis->getAmountSolarRad()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['Rain'] = array_sum($davis->getAmountRain()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['Bar'] = array_sum($davis->getAmountBar()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['WindSpeed'] = array_sum($davis->getAmountWindSpeed()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['OutHum'] = array_sum($davis->getAmountOutHum()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['LowTemp'] = array_sum($davis->getAmountLowTemp()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['DewPt'] = array_sum($davis->getAmountDewPt()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['HiTemp'] = array_sum($davis->getAmountHiTemp()) / $davis->getAmountData();
-            $meta_daily[$davis->getDateTime()->format('d/m/Y')]['TempOut'] = array_sum($davis->getAmountTempOut()) / $davis->getAmountData();
-        }
-
-        $repo = $this->db->getRepository(DavisMonthly::class)->findAll();
-        $meta_monthly = [];
-        foreach ($repo as $davis) {
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['UVIndex'] = $davis->getAmountUVIndex() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['SolarRad'] = $davis->getAmountSolarRad() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['Rain'] = $davis->getAmountRain() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['Bar'] = $davis->getAmountBar() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['WindSpeed'] = $davis->getAmountWindSpeed() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['OutHum'] = $davis->getAmountOutHum() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['LowTemp'] = $davis->getAmountLowTemp() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['DewPt'] = $davis->getAmountDewPt() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['HiTemp'] = $davis->getAmountHiTemp() / $davis->getAmountData();
-            $meta_monthly[$davis->getDateTime()->format('m/Y')]['TempOut'] = $davis->getAmountTempOut() / $davis->getAmountData();
-        }
-
-        $repo = $this->db->getRepository(DavisYearly::class)->findAll();
-        $meta_yearly = [];
-        foreach ($repo as $davis) {
-            $meta_yearly[$davis->getDateTime()->format('Y')]['UVIndex'] = array_sum($davis->getAmountUVIndex()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['SolarRad'] = array_sum($davis->getAmountSolarRad()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['Rain'] = array_sum($davis->getAmountRain()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['Bar'] = array_sum($davis->getAmountBar()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['WindSpeed'] = array_sum($davis->getAmountWindSpeed()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['OutHum'] = array_sum($davis->getAmountOutHum()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['LowTemp'] = array_sum($davis->getAmountLowTemp()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['DewPt'] = array_sum($davis->getAmountDewPt()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['HiTemp'] = array_sum($davis->getAmountHiTemp()) / $davis->getAmountData();
-            $meta_yearly[$davis->getDateTime()->format('Y')]['TempOut'] = array_sum($davis->getAmountTempOut()) / $davis->getAmountData();
-        }
-
-        return $this->view->render($response, 'dataOverview.html.twig', ['hourly' => $meta_hourly, 'daily' => $meta_daily, 'monthly' => $meta_monthly, 'yearly' => $meta_yearly]);
-    }
-
     /*
      * @route /admin/register-user
      * @method GET

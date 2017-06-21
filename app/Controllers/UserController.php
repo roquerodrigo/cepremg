@@ -51,7 +51,7 @@ class UserController extends Controller
 
         $_SESSION['name'] = $user->getName();
         $_SESSION['id'] = $user->getId();
-        $_SESSION['auth'] = $user->getIsAble();
+        $_SESSION['auth'] = $user->isAble();
         $_SESSION['privilege'] = $user->getPrivilege();
 
         $this->view['session'] = $_SESSION;
