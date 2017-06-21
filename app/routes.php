@@ -56,7 +56,7 @@ $isRoot = function ($request, $response, $next) {
 $app->group('/import', function () {
     $this->get('', ImportController::class . ':showForm');
     $this->post('', ImportController::class . ':import');
-});//->add($isLogedIn);
+}); //->add($isLogedIn);
 
 /***********************************************
  * Routes: /user

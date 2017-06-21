@@ -2,12 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
-use App\Models\DavisHourly;
 use App\Models\DavisDaily;
+use App\Models\DavisHourly;
 use App\Models\DavisMonthly;
 use App\Models\DavisYearly;
-use Doctrine\ORM\Query\ResultSetMapping;
+use App\Models\User;
 use Exception;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -20,9 +19,9 @@ class AdminController extends Controller
      * @method GET
      */
     public function createForm(Request $request, Response $response, array $args)
-    {   
+    {
         return $this->view->render($response, 'createUserForm.html.twig',
-            ['message'=>$args['message']]);
+            ['message'=> $args['message']]);
     }
 
     /*
@@ -62,45 +61,45 @@ class AdminController extends Controller
     public function deleteForm(Request $request, Response $response, array $args)
     {
         $users = $this->getEnabledAndDisabledUsers();
-        if($users == null || count($users) == 0)
+        if ($users == null || count($users) == 0) {
             return $this->view->render($response, 'deleteUserForm.html.twig',
                 ['warning_message'=> 'Não há usuários cadastrados.']);
+        }
 
         return $this->view->render($response, 'deleteUserForm.html.twig',
             ['Enabled' => $users[0],
-             'Disabled'=> $users[1] ]);
+             'Disabled'=> $users[1], ]);
     }
 
-
-    private function getEnabledAndDisabledUsers(){
-        try{
+    private function getEnabledAndDisabledUsers()
+    {
+        try {
             $repository = $this->db->getRepository(User::class);
             $users = $repository->findByPrivilege(1);
         } catch (Exception $e) {
             $e->getMessage();
-            return null;
+
+            return;
         }
 
-        if(count($users) === 0)
+        if (count($users) === 0) {
             return $users;
-
+        }
 
         $enabled = [];
         $disabled = [];
         foreach ($users as $user) {
-
-            if($user->getIsAble() == true) {
-
-                array_push($enabled,array(
-                    'name'=>$user->getName(),
-                    'id'  =>$user->getId()));
+            if ($user->getIsAble() == true) {
+                array_push($enabled, [
+                    'name'=> $user->getName(),
+                    'id'  => $user->getId(), ]);
             } else {
-
-                array_push($disabled,array(
-                    'name'=>$user->getName(),
-                    'id'=>$user->getId()));
+                array_push($disabled, [
+                    'name'=> $user->getName(),
+                    'id'  => $user->getId(), ]);
             }
         }
+
         return [$enabled, $disabled];
     }
 
@@ -109,10 +108,11 @@ class AdminController extends Controller
      * @method POST
      */
 
-    public function delete(Request $request, Response $response, array $args) {
+    public function delete(Request $request, Response $response, array $args)
+    {
         $postParams = $request->getParsedBody();
-        try{
-            foreach ($postParams['usersToDisableId'] as $id){
+        try {
+            foreach ($postParams['usersToDisableId'] as $id) {
                 $user = $this->db->find(User::class, $id);
                 $user->setIsAble(false);
                 $this->db->persist($user);
@@ -125,12 +125,12 @@ class AdminController extends Controller
             }
             $this->db->flush();
         } catch (Exception $e) {
-            return "Erro: ". $e->getMessage();
+            return 'Erro: ' . $e->getMessage();
         }
         $users = $this->getEnabledAndDisabledUsers();
-        return $this->view->render($response, 'partials/deleteUsersTable.html.twig',
-            ['Enabled' => $users[0],
-              'Disabled'=> $users[1]]);
 
+        return $this->view->render($response, 'partials/deleteUsersTable.html.twig',
+            ['Enabled'  => $users[0],
+              'Disabled'=> $users[1], ]);
     }
 }
