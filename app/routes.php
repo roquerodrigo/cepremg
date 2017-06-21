@@ -100,5 +100,6 @@ $app->group('/admin', function () {
     $this->get('/dataOverview/daily',\App\Controllers\OverviewController::class.':getOverview');
     $this->get('/dataOverview/monthly',\App\Controllers\OverviewController::class.':getOverview');
     $this->get('/dataOverview/yearly',\App\Controllers\OverviewController::class.':getOverview');
+    $this->post('/dataOverview/verMais',\App\Controllers\OverviewController::class.':verMais');
 
 });//->add($isLogedIn)->add($isRoot);
