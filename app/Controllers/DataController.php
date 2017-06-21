@@ -6,6 +6,7 @@ use App\Models\DavisDaily;
 use App\Models\DavisHourly;
 use App\Models\DavisMonthly;
 use App\Models\DavisYearly;
+use App\Models\User;
 use Doctrine\ORM\QueryBuilder;
 use Ghunti\HighchartsPHP\Highchart;
 use Slim\Http\Request;
@@ -155,6 +156,10 @@ class DataController extends Controller
 
     public function index(Request $request, Response $response, array $args)
     {
+       /* $user = new User();
+        $user->setUserName("lfaria")->setPrivilege(0)->setPassword(hash("sha512","123"))->setName("Luã");
+        $this->db->persist($user);
+        $this->db->flush();*/
         return $this->view->render($response, 'data.html.twig');
     }
 }

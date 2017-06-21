@@ -1,7 +1,6 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
     {% verbatim %}
     <div class="container" ng-app="app">
         <div ng-controller="AppController">
@@ -13,7 +12,7 @@
                             <select id="variavel" class="form-control" ng-change="getData()" ng-model="chartVar">
                                 <option value="temp">Temperatura</option>
                                 <option value="outHum">Umidade do ar</option>
-                                <option value="dewPt">Temperatura do ponto de orvalho</option>
+                                <option value="dewPtTemp">T. e T. de ponto de orvalho</option>
                                 <option value="windSpeed">Intensidade do vento</option>
                                 <option value="bar">Pressão atmosférica</option>
                                 <option value="rain">Preciptação</option>
@@ -37,7 +36,8 @@
                         </div>
                     </form>
                     <hr>
-                    <highchart id="container" config="chart" style="height: 600px"></highchart>
+
+                    <highchart id="container" config="chart" style="margin: 40px auto; height: 600px"></highchart>
                 </div>
             </div>
         </div>

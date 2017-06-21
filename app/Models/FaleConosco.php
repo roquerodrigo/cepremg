@@ -1,13 +1,12 @@
 <?php
 
-
 namespace App\Models;
-
 
 /**
  * @Entity @Table(name="mensagens")
  **/
-class FaleConosco {
+class FaleConosco
+{
     /**
      * @var int Chave de implementação
      * @Id @Column(type="integer",options={"unsigned":true}) @GeneratedValue
@@ -50,133 +49,142 @@ class FaleConosco {
     private $lida = false;
 
     /**
-     * @param int $id
-     * @return FaleConosco
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @param string $nome
-     *  @return FaleConosco
-     */
-    public function setNome(string $nome)
-    {
-        $this->nome = $nome;
-        return $this;
-    }
-
-    /**
-     * @param string $instituicao
-     *  @return FaleConosco
-     */
-    public function setInstituicao(string $instituicao)
-    {
-        $this->instituicao = $instituicao;
-        return $this;
-    }
-
-    /**
-     * @param string $finalidade
-     *  @return FaleConosco
-     */
-    public function setFinalidade(string $finalidade)
-    {
-        $this->finalidade = $finalidade;
-        return $this;
-    }
-
-    /**
-     * @param bool $isArquivado
-     *  @return FaleConosco
-     */
-    public function setIsArquivado(bool $isArquivado)
-    {
-        $this->isArquivado = $isArquivado;
-        return $this;
-    }
-
-    /**
-     * @param string $periodo
-     *  @return FaleConosco
-     */
-    public function setPeriodo(string $periodo)
-    {
-        $this->periodo = $periodo;
-        return $this;
-    }
-
-    /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
+     * @param int $id
+     *
+     * @return FaleConosco
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
-    public function getNome(): string
+    public function getNome()
     {
         return $this->nome;
     }
 
     /**
+     * @param string $nome
+     *
+     * @return FaleConosco
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
-    public function getInstituicao(): string
+    public function getInstituicao()
     {
         return $this->instituicao;
     }
 
     /**
+     * @param string $instituicao
+     *
+     * @return FaleConosco
+     */
+    public function setInstituicao($instituicao)
+    {
+        $this->instituicao = $instituicao;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
-    public function getFinalidade(): string
+    public function getFinalidade()
     {
         return $this->finalidade;
     }
 
     /**
+     * @param string $finalidade
+     *
+     * @return FaleConosco
+     */
+    public function setFinalidade($finalidade)
+    {
+        $this->finalidade = $finalidade;
+
+        return $this;
+    }
+
+    /**
      * @return bool
      */
-    public function isArquivado(): bool
+    public function isArquivado()
     {
         return $this->isArquivado;
     }
 
     /**
+     * @param bool $isArquivado
+     *
+     * @return FaleConosco
+     */
+    public function setIsArquivado($isArquivado)
+    {
+        $this->isArquivado = $isArquivado;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
-    public function getPeriodo(): string
+    public function getPeriodo()
     {
         return $this->periodo;
     }
 
     /**
+     * @param string $periodo
+     *
+     * @return FaleConosco
+     */
+    public function setPeriodo($periodo)
+    {
+        $this->periodo = $periodo;
+
+        return $this;
+    }
+
+    /**
      * @return bool
      */
-    public function isLida(): bool
+    public function isLida()
     {
         return $this->lida;
     }
 
     /**
      * @param bool $lida
+     *
      * @return FaleConosco
      */
-    public function setLida(bool $lida)
+    public function setLida($lida)
     {
         $this->lida = $lida;
+
         return $this;
     }
-
-
-
-
-
 }

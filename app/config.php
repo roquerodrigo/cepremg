@@ -6,8 +6,8 @@ return [
         'host'     => 'localhost',
         'dbname'   => 'cepremg',
         'user'     => 'root',
-        'password' => '',
+        'password' => 'ypoos',
     ],
-    'displayErrorDetails' => false,
-    'isDevMode'           => false,
+    'displayErrorDetails' => true,
+    'isDevMode'           => true,
 ];
