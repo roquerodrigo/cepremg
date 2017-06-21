@@ -83,4 +83,7 @@ class FaleConoscoController extends Controller
 
         return $this->view->render($response, 'visualizarTodasMensagens.html.twig', ['mensagens'=>$mensagens]);
     }
+    public function sobreNos(Request $request, Response $response, array $args){
+        return $this->view->render($response, 'sobreNos.html.twig');
+    }
 }

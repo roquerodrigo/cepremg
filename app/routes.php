@@ -15,6 +15,7 @@ $app->post('/login', UserController::class . ':login');
 $app->get('/faleConosco', FaleConoscoController::class . ':index');
 $app->post('/faleConosco/enviarMensagem', FaleConoscoController::class . ':criaMensagem');
 $app->post('/faleConosco/countMsg', FaleConoscoController::class . ':listNaoLidasCount');
+$app->get("/sobreNos", FaleConoscoController::class . ':sobreNos');
 
 /***********************************************
  * Middleware: islogedIn
@@ -73,6 +74,7 @@ $app->group('/user', function () {
 })->add($isLogedIn);
 
 $app->get('/logout', UserController::class . ':logout')->add($isLogedIn);
+
 
 /***********************************************
  * Routes: /admin
