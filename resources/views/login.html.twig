@@ -1,34 +1,32 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 well well-lg">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default panel-login">
+            <div class="panel-heading"> Login</div>
+            <div class="panel-body">
+                {% if failure == true %}
+                    <div class="alert alert-danger">Credenciais inválidas</div>
+                {% endif %}
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="uname-id">Login:</label>
+                        <input id="uname-id" class="form-control" name="uname" placeholder="Nome de usuário" type="text">
+                    </div>
 
-            <h1 class="text-center"> Login </h1>
+                    <div class="form-group">
+                        <label for="pwd-id">Senha:</label>
+                        <input id="pwd-id" class="form-control" name="pwd" placeholder="Senha" type="password">
+                    </div>
 
-            <form method="POST">
-                <div class="form-group">
-                    <label for="uname-id">Login:</label>
-                    <input id="uname-id" class="form-control" name="uname" placeholder="Nome de usuário" type="text">
-                </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" value="Login" type="submit">
+                        <input class="btn btn-default" type="reset" value="Limpar campos">
+                    </div>
 
-                <div class="form-group">
-                    <label for="pwd-id">Senha:</label>
-                    <input id="pwd-id" class="form-control" name="pwd" placeholder="Senha" type="password">
-                </div>
-
-                <div class="form-group">
-                    <input class="btn btn-primary" value="Login" type="submit">
-                    <input class="btn btn-default" type="reset">
-                </div>
-            </form>
-            {% if failure == true %}
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Erro: Login inválido</div>
-                </div>
-            {% endif %}
+                </form>
+            </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
+    <div class="clearfix"></div>
 {% endblock %}
