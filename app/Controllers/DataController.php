@@ -133,7 +133,8 @@ class DataController extends Controller
         $qb->select('d.dateTime')
             ->where($qb->expr()->between('d.dateTime', ':start', ':end'))
             ->setParameter('start', $start)
-            ->setParameter('end', $end);
+            ->setParameter('end', $end)
+            ->orderBy('d.dateTime');
 
         if ($type == 'temp') {
             $qb->addSelect('d.hiTemp')
