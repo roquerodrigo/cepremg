@@ -156,7 +156,7 @@ class DataController extends Controller
 
     public function index(Request $request, Response $response, array $args)
     {
-       /* $user = new User();
+        /* $user = new User();
         $user->setUserName("lfaria")->setPrivilege(0)->setPassword(hash("sha512","123"))->setName("Luã");
         $this->db->persist($user);
         $this->db->flush();*/

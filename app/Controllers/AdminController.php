@@ -2,10 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\DavisDaily;
-use App\Models\DavisHourly;
-use App\Models\DavisMonthly;
-use App\Models\DavisYearly;
 use App\Models\User;
 use Exception;
 use Slim\Http\Request;
@@ -13,7 +9,6 @@ use Slim\Http\Response;
 
 class AdminController extends Controller
 {
-
     /*
      * @route /admin/register-user
      * @method GET
