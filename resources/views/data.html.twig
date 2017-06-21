@@ -1,7 +1,6 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    {% include 'layouts/navbar.html.twig' %}
     {% verbatim %}
     <div class="container" ng-app="app">
         <div ng-controller="AppController">
@@ -37,7 +36,8 @@
                         </div>
                     </form>
                     <hr>
-                    <highchart id="container" config="chart" style="height: 600px"></highchart>
+
+                    <highchart id="container" config="chart" style="margin: 40px auto; height: 600px"></highchart>
                 </div>
             </div>
         </div>
