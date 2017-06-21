@@ -28,10 +28,25 @@
                     <th class="col-md-1">HiTemp</th>
                     <th class="col-md-1">TempOut</th>
                 </tr>
-            {% include 'partials/overviewPartial.html.twig' %}
+                <tbody id = "tabela">
+                    {% include 'partials/overviewPartial.html.twig' %}
+                </tbody>
             </table>
-            <button class = "btn btn-info pull-right">Ver Mais</button>
+            <input type="hidden" name = "tipo" value="{{ tipo }}" >
+            <button class = "btn btn-info pull-right" onclick="verMais()">Ver Mais</button>
         </div>
     </div>
-
+<script>
+    var offset = 0;
+    function verMais() {
+        $.ajax({
+            method:"POST",
+            url:"/admin/dataOverview/verMais",
+            data: {tipo: $("input[name='tipo']").val(), offset: ++offset},
+            success:function (data) {
+                $("#tabela").append(data);
+            }
+        });
+    }
+</script>
 {% endblock %}

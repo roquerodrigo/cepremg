@@ -59,10 +59,24 @@ class OverviewController extends Controller {
         }elseif ($tipo === 'yearly'){
             $dados = $this->overViewYearly(100,0);
         }
-        $this->view->render($response, 'dataOverview.html.twig', ['nome'=>ucfirst($tipo), 'dados'=>$dados]);
+        $this->view->render($response, 'dataOverview.html.twig', ['nome'=>ucfirst($tipo), 'dados'=>$dados, 'tipo'=>$tipo]);
 
     }
-
+    public function verMais(Request $request, Response $response, array $args) {
+        $tipo = $request->getParsedBody()['tipo'];
+        $offset = $request->getParsedBody()['offset'];
+        $dados = [];
+        if($tipo === 'hourly'){
+            $dados = $this->overViewOurly(100, $offset);
+        }elseif ($tipo === 'daily'){
+            $dados = $this->overViewDaily(100, $offset);
+        }elseif ($tipo === 'monthly'){
+            $dados = $this->overViewMonthly(100, $offset);
+        }elseif ($tipo === 'yearly'){
+            $dados = $this->overViewYearly(100, $offset);
+        }
+        $this->view->render($response, 'partials/overviewPartial.html.twig', ['dados'=>$dados]);
+    }
     private function overViewOurly($max, $offset){
         $repo = $this->db->createQuery("SELECT h FROM App\Models\DavisHourly h")->setFirstResult($offset*$max)->setMaxResults($max)->getResult();
         $meta_hourly = [];
@@ -83,7 +97,7 @@ class OverviewController extends Controller {
 
 
     private function overViewDaily($max, $offset){
-        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisDaily y")->setFirstResult(0)->setMaxResults(10)->getResult();
+        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisDaily y")->setFirstResult($offset*$max)->setMaxResults($max)->getResult();
         $meta_daily = [];
         foreach ($repo as $davis) {
             $meta_daily[$davis->getDateTime()->format('d/m/Y')]['UVIndex'] = array_sum($davis->getAmountUVIndex()) / $davis->getAmountData();
@@ -101,7 +115,7 @@ class OverviewController extends Controller {
     }
 
     private function overViewMonthly($max, $offset){
-        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisMonthly y")->setFirstResult(0)->setMaxResults(10)->getResult();
+        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisMonthly y")->setFirstResult($offset*$max)->setMaxResults($max)->getResult();
         $meta_monthly = [];
         foreach ($repo as $davis) {
             $meta_monthly[$davis->getDateTime()->format('m/Y')]['UVIndex'] = $davis->getAmountUVIndex() / $davis->getAmountData();
@@ -119,7 +133,7 @@ class OverviewController extends Controller {
     }
 
     private function overViewYearly($max, $offset){
-        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisYearly y")->setFirstResult(0)->setMaxResults(10)->getResult();
+        $repo = $this->db->createQuery("SELECT y FROM App\Models\DavisYearly y")->setFirstResult($offset*$max)->setMaxResults($max)->getResult();
         $meta_yearly = [];
         foreach ($repo as $davis) {
             $meta_yearly[$davis->getDateTime()->format('Y')]['UVIndex'] = array_sum($davis->getAmountUVIndex()) / $davis->getAmountData();
