@@ -1,34 +1,42 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    <div class="row" style="padding-bottom: 300px;">
-        <div class="col-sm-12">
-            <h1 class="text-center"> Seja bem vindo, {{ session.name }}! </h1>
-            <hr>
-        </div>
-        <div class="col-sm-12">
-            <div class="col-md-3 text-center ">
-                <h3>Usuários</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center text-uppercase"> Seja bem vindo, {{ session.name }}! </h1>
                 <hr>
-                <ul class="text-justify">
-                    {% if session.privilege == 0 %}
-                        <li><a class="mdi mdi-account-multiple-plus mdi-24px" href="/admin/register-user">Registrar usuário</a></li>
-                        <li><a class="mdi mdi-account-multiple-minus mdi-24px" href="/admin/disable-user">Remover Usuário</a></li>
-                    {% endif %}
-
-                    <li><a class="mdi mdi-account-edit mdi-24px" href="/user/myaccount">Atualizar seus dados</a></li>
-                </ul>
             </div>
-            <div class="col-md-3 col-md-offset-1 text-center ">
-                <h3>Dados</h3>
-                <hr>
-                <ul class="text-justify">
-                    <li><a class="mdi mdi-file-import mdi-24px" href="/import">Carregar arquivo de dados<i></i></a></li>
-                    <li><a href="/admin/mensagens" class="mdi mdi-message-bulleted mdi-24px">Solicitações de uso dos dados</a></li>
-                    <li><a href="/admin/mensagens/arquivadas" class="mdi mdi-message mdi-24px">Solicitações de uso dos dados Arquivados</a></li>
-                </ul>
+
+            <div class="col-md-4 col-md-offset-2 text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Usuários</div>
+                    <div class="panel-body">
+                        <ul class="text-justify list-unstyled">
+                            {% if session.privilege == 0 %}
+                                <li><a class="mdi mdi-account-multiple-plus mdi-24px" href="/admin/register-user">Registrar usuário</a></li>
+                                <li><a class="mdi mdi-account-multiple-minus mdi-24px" href="/admin/disable-user">Remover Usuário</a></li>
+                            {% endif %}
+
+                            <li><a class="mdi mdi-account-edit mdi-24px" href="/user/myaccount">Atualizar seus dados</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Dados</div>
+                    <div class="panel-body">
+                        <ul class="text-justify list-unstyled">
+                            <li><a class="mdi mdi-file-import mdi-24px" href="/import">Carregar arquivo de dados</a></li>
+                            <li><a href="/admin/mensagens" class="mdi mdi-message-bulleted mdi-24px">Solicitações de uso dos dados</a></li>
+                            <li><a href="/admin/mensagens/arquivadas" class="mdi mdi-message mdi-24px">Solicitações de uso dos dados Arquivados</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
+    <div class="" style="height: 200px"></div>
 {% endblock %}
