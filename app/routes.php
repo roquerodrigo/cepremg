@@ -57,7 +57,7 @@ $isRoot = function ($request, $response, $next) {
 $app->group('/import', function () {
     $this->get('', ImportController::class . ':showForm');
     $this->post('', ImportController::class . ':import');
-}); //->add($isLogedIn);
+})->add($isLogedIn);
 
 /***********************************************
  * Routes: /user
@@ -102,4 +102,4 @@ $app->group('/admin', function () {
     $this->get('/dataOverview/monthly', \App\Controllers\OverviewController::class . ':getOverview');
     $this->get('/dataOverview/yearly', \App\Controllers\OverviewController::class . ':getOverview');
     $this->post('/dataOverview/verMais', \App\Controllers\OverviewController::class . ':verMais');
-}); //->add($isLogedIn)->add($isRoot);
+})->add($isLogedIn)->add($isRoot);
