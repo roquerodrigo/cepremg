@@ -1,86 +1,93 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    <div class="panel panel-default">
-        <div class = "panel-heading">
-            <div class = "row">
-                <div class = "col-sm-12">
-                    <h2 class = "text-center">A Estação Meteorológica</h2>
+    <div class="panel panel-default container">
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <img src="imgs/logo.png" alt="Logo" class="img-responsive">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center">A Estação Meteorológica</h2>
                 </div>
             </div>
 
-            <div class = "row">
-                <div class = "col-sm-3 col-sm-offset-3">
-                    <div class = "text-center">
-                        <ul>
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <div class="text-center">
+                        <ul class="list-unstyled">
                             <li>Modelo: Davis Vantage Pro 2</li>
                             <li>Latitude:S 22°24'49'</li>
                         </ul>
                     </div>
                 </div>
-                <div class = "col-sm-3">
-                    <div class = "text-center">
-                        <ul>
+                <div class="col-sm-3">
+                    <div class="text-center">
+                        <ul class="list-unstyled">
                             <li>Elevação: 848,86 m</li>
                             <li>Longitude:O 45°27'7''</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class = "panel-body">
-            <div class = "row">
-                <div class = "col-sm-12 text-center">
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 text-center">
                     <h3>Dados Gerais sobre a Estação</h3>
                     <p>A estação meteorológica da Universidade Federal de Itajubá é uma estação modelo Davis Vantage Pro 2 Plus, equipada com vários sensores, entre eles:
                 </div>
             </div>
-            <div class = "row">
-                <div class = "col-sm-6 text-center">
-                    <h4>HIGRÔMETRO</h4>
-                    <p>A medição da porcentagem de umidade no ar, nesta estação meteorológica, realiza-se através de um sensor colocado dentro do mesmo escudo protetor onde se encontra o termômetro. Permite identificar, de forma automática, a quantidade de umidade presente na atmosfera. O sensor de umidade, propriamente dito, é denominado de higrômetro e permite, em conjugação com o termômetro, obter dados extremamente importantes, tanto no que diz respeito à previsão meteorológica, como em relação a aspectos do estudo do conforto humano perante a variação climática.
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">HIGRÔMETRO</h4>
+                    <p class="text-justify">A medição da porcentagem de umidade no ar, nesta estação meteorológica, realiza-se através de um sensor colocado dentro do mesmo escudo protetor onde se encontra o termômetro. Permite identificar, de forma automática, a quantidade de umidade presente na atmosfera. O sensor de umidade, propriamente dito, é denominado de higrômetro e permite, em conjugação com o termômetro, obter dados extremamente importantes, tanto no que diz respeito à previsão meteorológica, como em relação a aspectos do estudo do conforto humano perante a variação climática.
                     </p>
                 </div>
-                <div class = "col-sm-6 text-center">
-                    <h4>TERMÔMETRO</h4>
-                    <p>A medição da temperatura do ar, nesta estação meteorológica, realiza-se através de um sensor colocado dentro de um escudo protetor, que lhe permite identificar, de forma automática, a temperatura real à sombra, na medida em que todo o dispositivo se encontra sob a luz direta do sol. A medição da temperatura nesta estação realiza-se em graus Celsius (°C).</p>
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">TERMÔMETRO</h4>
+                    <p class="text-justify">A medição da temperatura do ar, nesta estação meteorológica, realiza-se através de um sensor colocado dentro de um escudo protetor, que lhe permite identificar, de forma automática, a temperatura real à sombra, na medida em que todo o dispositivo se encontra sob a luz direta do sol. A medição da temperatura nesta estação realiza-se em graus Celsius (°C).</p>
                 </div>
             </div>
-            <div class = "row">
-                <div class = "col-sm-6 text-center">
-                    <h4>BARÔMETRO</h4>
-                    <p>Para poder realizar a identificação da pressão atmosférica, a estação meteorológica dispõe de um sensor ligado ao sistema, denominado barómetro. Basicamente, a pressão atmosférica pode medir-se em diversas escalas, contudo, no caso, optou-se pela medida em hPa.
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">BARÔMETRO</h4>
+                    <p class="text-justify">Para poder realizar a identificação da pressão atmosférica, a estação meteorológica dispõe de um sensor ligado ao sistema, denominado barómetro. Basicamente, a pressão atmosférica pode medir-se em diversas escalas, contudo, no caso, optou-se pela medida em hPa.
                     </p>
                 </div>
-                <div class = "col-sm-6 text-center">
-                    <h4>ANEMÔMETRO</h4>
-                    <p>O Anemômetro é um dispositivo que se destina a registrar a velocidade e a direção dos ventos. As unidades de medida usuais na medição da velocidade do vento são quilômetros por hora, milhas por hora , nós ou metros por segundo.
-                    </p>
-                </div>
-            </div>
-
-            <div class = "row">
-                <div class = "col-sm-6 text-center">
-                    <h4>PLUVI&Oacute;GRAFO</h4>
-                    <p>O Pluvi&oacute;grafo é um dispositivo que se destina a registrar a quantidade de precipitação ocorrida num determinado espaço de tempo. Tendo basicamente a forma de um balde, recolhe a precipitação, a qual obriga um mecanismo integrado a encher-se e a esvaziar-se, alternadamente, através de dois receptáculos semelhantes aos pratos de uma balança. A medição utilizada nesta estação ocorre em mm/m2.
-                    </p>
-                </div>
-                <div class = "col-sm-6 text-center">
-                    <h4>SENSOR UV</h4>
-                    <p>A energia do Sol chega à Terra sob a forma de raios visíveis infravermelhos e ultravioletas. A exposição à raios UV pode causar diversos problemas de saúde, como queimaduras solares, envelhecimento prematuro da pele e cataratas, e pode ainda debilitar o sistema imunológico. O sensor UV ajuda a analisar os níveis de variação da radiação ultravioleta e pode servir de aviso para situações em que a exposição é particularmente perigosa a saúde.
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">ANEMÔMETRO</h4>
+                    <p class="text-justify">O Anemômetro é um dispositivo que se destina a registrar a velocidade e a direção dos ventos. As unidades de medida usuais na medição da velocidade do vento são quilômetros por hora, milhas por hora , nós ou metros por segundo.
                     </p>
                 </div>
             </div>
-
-            <div class = "row">
-                <div class = "col-sm-12 text-center">
-                    <h4>SENSOR SOLAR</h4>
-                    <p>A radiação solar é tecnicamente conhecida por Radiação Solar Global, uma medida de intensidade da radiação do Sol quando encontra uma superfície horizontal. Essa irradiação inclui tanto os componentes diretos da radiação solar, como os componentes da reflexão produzidos pelo céu. A medição da radiação solar dá uma medida da quantidade de radiação ao tocar o respectivo sensor em qualquer momento, expressa em Watts/metro quadrado (W/m2). A medição exige, obviamente, o sensor de radiação solar.
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">PLUVI&Oacute;GRAFO</h4>
+                    <p class="text-justify">O Pluvi&oacute;grafo é um dispositivo que se destina a registrar a quantidade de precipitação ocorrida num determinado espaço de tempo. Tendo basicamente a forma de um balde, recolhe a precipitação, a qual obriga um mecanismo integrado a encher-se e a esvaziar-se, alternadamente, através de dois receptáculos semelhantes aos pratos de uma balança. A medição utilizada nesta estação ocorre em mm/m2.
+                    </p>
+                </div>
+                <div class="col-sm-6 text-justify">
+                    <h4 class="text-center">SENSOR UV</h4>
+                    <p class="text-justify">A energia do Sol chega à Terra sob a forma de raios visíveis infravermelhos e ultravioletas. A exposição à raios UV pode causar diversos problemas de saúde, como queimaduras solares, envelhecimento prematuro da pele e cataratas, e pode ainda debilitar o sistema imunológico. O sensor UV ajuda a analisar os níveis de variação da radiação ultravioleta e pode servir de aviso para situações em que a exposição é particularmente perigosa a saúde.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="text-center">SENSOR SOLAR</h4>
+                    <p class="text-justify">A radiação solar é tecnicamente conhecida por Radiação Solar Global, uma medida de intensidade da radiação do Sol quando encontra uma superfície horizontal. Essa irradiação inclui tanto os componentes diretos da radiação solar, como os componentes da reflexão produzidos pelo céu. A medição da radiação solar dá uma medida da quantidade de radiação ao tocar o respectivo sensor em qualquer momento, expressa em Watts/metro quadrado (W/m2). A medição exige, obviamente, o sensor de radiação solar.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
 
 {% endblock %}
