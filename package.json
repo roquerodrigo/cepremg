@@ -24,7 +24,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-daterangepicker": "^0.2.3-alpha1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^5.0.1",
     "cross-env": "^5.0.1",
     "highcharts": "^5.0.10",
     "highcharts-ng": "^1.1.0",

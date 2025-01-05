@@ -859,9 +859,13 @@ bootstrap-daterangepicker@^2.0.0:
     jquery ">=1.10"
     moment "^2.9.0"
 
-bootstrap@^3.0.0, bootstrap@^3.3.7:
+bootstrap@^3.0.0:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
+bootstrap@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.1.tgz#e7939d599119dc818a90478a2a299bdaff037e09"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
